@@ -863,6 +863,7 @@ $include-ext-view-view: dynamic(true);;
 $include-ext-window-messagebox: dynamic(true);;
 $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
+$include-mycustomtheme-panel-panel: dynamic(true);;
 $include-themedemoapp-application: dynamic(true);;
 $include-themedemoapp-store-personnel: dynamic(true);;
 $include-themedemoapp-view-main-list: dynamic(true);;

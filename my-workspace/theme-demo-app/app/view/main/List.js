@@ -7,6 +7,17 @@ Ext.define('ThemeDemoApp.view.main.List', {
 
     ui: 'highlight',
     frame: true,
+    tbar: [{
+        text: 'Show Message',
+        handler: function() {
+            Ext.Msg.show({
+                title: 'Info',
+                msg: 'Message Box with custom icon',
+                buttons: Ext.MessageBox.OK,
+                icon: Ext.MessageBox.INFO
+            });
+        }
+    }],
 
     requires: [
         'ThemeDemoApp.store.Personnel'
