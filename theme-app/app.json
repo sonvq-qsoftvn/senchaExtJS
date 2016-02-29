@@ -558,7 +558,8 @@
         "classic": {
             "toolkit": "classic",
             
-            "theme": "theme-triton",
+            //"theme": "theme-triton",
+            "theme": "theme-neptune",
             
             "sass": {
                 // "save": "classic/sass/save.scss"

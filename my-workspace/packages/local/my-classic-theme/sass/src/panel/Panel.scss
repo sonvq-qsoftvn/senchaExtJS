@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 22, 2016, 4:32:56 PM
+    Author     : sonvq
+*/
+
+@include extjs-panel-ui(
+    $ui: 'highlight-framed',
+    $ui-header-background-color: red,
+    $ui-border-color: red,
+    $ui-header-border-color: red,
+    $ui-body-border-color: red,
+    $ui-border-width: 5px,
+    $ui-border-radius: 5px,
+    $ui-header-color: white
+);
