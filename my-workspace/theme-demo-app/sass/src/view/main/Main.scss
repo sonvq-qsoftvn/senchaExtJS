@@ -1,6 +1,11 @@
 /**
  * Generates a set of style rules for the "navigation" tab UI.
  */
+
+.content-panel-body h2 {
+    color: orange;
+}
+
 @include extjs-tab-panel-ui(
     $ui: 'navigation',
     $ui-tab-background-color: transparent,

@@ -85,9 +85,11 @@ Ext.define('ThemeDemoApp.view.main.Main', {
     }, {
         title: 'Users',
         iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        html: '<h2>Content appropriate for the current navigation.</h2>',
+        bodyCls: 'content-panel-body',
+//        bind: {
+//            html: '{loremIpsum}'
+//        }
     }, {
         title: 'Groups',
         iconCls: 'fa-users',

@@ -3,7 +3,9 @@
      *  An array of the paths to all the applications present in this workspace
      */
     "apps": [
-        "theme-demo-app"
+        "theme-demo-app",
+        "another-app",
+        "theme-spotifext-app"
     ],
 
     /**

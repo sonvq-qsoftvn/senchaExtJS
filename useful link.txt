@@ -1,0 +1,12 @@
+https://www.sencha.com/blog/how-to-create-a-dark-ext-js-theme-part-1/
+
+https://www.sencha.com/blog/how-to-create-a-dark-ext-js-theme-part-2/
+
+
+http://localhost:1841/theme-spotifext-app/?platformTags=fashion:true
+
+
+https://docs.sencha.com/extjs/6.0/6.0.0-classic/#!/api/Ext.panel.Panel
+
+
+https://docs.sencha.com/extjs/6.0/core_concepts/theming.html#Building_a_Custom_Theme

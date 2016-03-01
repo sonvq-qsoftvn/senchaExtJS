@@ -1850,7 +1850,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/src/view/View.scss:1 */
 .x-view-item-focused {
-    outline: 1px dashed #317040!important;
+    outline: 1px dashed #724289!important;
     outline-offset: -1px;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/src/view/BoundList.scss:8 */
@@ -2254,7 +2254,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/src/grid/column/Action.scss:5 */
 .x-grid-cell-inner-action-col :focus {
-    outline: 0 solid #53865f;
+    outline: 0 solid #87619a;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/src/grid/column/Action.scss:10 */
 .x-action-col-icon {
@@ -2268,7 +2268,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/src/grid/column/Check.scss:5 */
 .x-grid-cell-inner-checkcolumn :focus {
-    outline: 0 solid #53865f;
+    outline: 0 solid #87619a;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/src/grid/column/Check.scss:10 */
 .x-grid-checkcolumn {
@@ -2398,7 +2398,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/src/grid/plugin/RowExpander.scss:7 */
 .x-grid-row-expander:focus {
-    outline: 0 solid #53865f;
+    outline: 0 solid #87619a;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/src/grid/selection/SpreadsheetModel.scss:1 */
 .x-ssm-row-numberer-hd {
@@ -2895,7 +2895,7 @@ the height of a multi-line element */
 .x-mask.x-focus {
     border-style: solid;
     border-width: 1px;
-    border-color: #317040;
+    border-color: #724289;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/LoadMask.scss:29 */
 .x-mask-msg {
@@ -5046,9 +5046,9 @@ the height of a multi-line element */
     background-image: -o-linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
     background-image: -ms-linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
     background-image: linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
 .x-btn-default-toolbar-small .x-btn-arrow-el {
@@ -5066,7 +5066,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-default-toolbar-small.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #306340;
+    border: 1px solid #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
 .x-btn-over.x-btn-default-toolbar-small {
@@ -5082,9 +5082,9 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-default-toolbar-small {
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
 .x-btn.x-btn-menu-active.x-btn-default-toolbar-small,
@@ -5102,9 +5102,9 @@ the height of a multi-line element */
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-default-toolbar-small,
 .x-btn-focus.x-btn-pressed.x-btn-default-toolbar-small {
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
 .x-btn.x-btn-disabled.x-btn-default-toolbar-small {
@@ -5340,18 +5340,18 @@ the height of a multi-line element */
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-default-toolbar-small:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-default-toolbar-small:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-default-toolbar-small:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-default-toolbar-small:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
 .x-cmd-slicer.x-btn-focus.x-btn-default-toolbar-small:before {
@@ -5653,9 +5653,9 @@ the height of a multi-line element */
     background-image: -o-linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
     background-image: -ms-linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
     background-image: linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
 .x-btn-default-toolbar-medium .x-btn-arrow-el {
@@ -5673,7 +5673,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-default-toolbar-medium.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #306340;
+    border: 1px solid #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
 .x-btn-over.x-btn-default-toolbar-medium {
@@ -5689,9 +5689,9 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-default-toolbar-medium {
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
 .x-btn.x-btn-menu-active.x-btn-default-toolbar-medium,
@@ -5709,9 +5709,9 @@ the height of a multi-line element */
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-default-toolbar-medium,
 .x-btn-focus.x-btn-pressed.x-btn-default-toolbar-medium {
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
 .x-btn.x-btn-disabled.x-btn-default-toolbar-medium {
@@ -5947,18 +5947,18 @@ the height of a multi-line element */
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-default-toolbar-medium:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-default-toolbar-medium:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-default-toolbar-medium:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-default-toolbar-medium:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
 .x-cmd-slicer.x-btn-focus.x-btn-default-toolbar-medium:before {
@@ -6260,9 +6260,9 @@ the height of a multi-line element */
     background-image: -o-linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
     background-image: -ms-linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
     background-image: linear-gradient(top, #3f4655, #2a3142 50%, #282f3f 51%, #2a3142);
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
 .x-btn-default-toolbar-large .x-btn-arrow-el {
@@ -6280,7 +6280,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-default-toolbar-large.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #306340;
+    border: 1px solid #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
 .x-btn-over.x-btn-default-toolbar-large {
@@ -6296,9 +6296,9 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-default-toolbar-large {
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
 .x-btn.x-btn-menu-active.x-btn-default-toolbar-large,
@@ -6316,9 +6316,9 @@ the height of a multi-line element */
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-default-toolbar-large,
 .x-btn-focus.x-btn-pressed.x-btn-default-toolbar-large {
-    -webkit-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    -moz-box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
-    box-shadow: #306340 0 1px 0px 0 inset, #306340 0 -1px 0px 0 inset, #306340 -1px 0 0px 0 inset, #306340 1px 0 0px 0 inset;
+    -webkit-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    -moz-box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
+    box-shadow: #643f7b 0 1px 0px 0 inset, #643f7b 0 -1px 0px 0 inset, #643f7b -1px 0 0px 0 inset, #643f7b 1px 0 0px 0 inset;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
 .x-btn.x-btn-disabled.x-btn-default-toolbar-large {
@@ -6554,18 +6554,18 @@ the height of a multi-line element */
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-default-toolbar-large:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-default-toolbar-large:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-default-toolbar-large:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-default-toolbar-large:after {
     border-width: 1px;
-    border-color: #306340;
+    border-color: #643f7b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
 .x-cmd-slicer.x-btn-focus.x-btn-default-toolbar-large:before {
@@ -9580,7 +9580,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:228 */
 .x-window-default {
-    border-color: #50855d;
+    border-color: #875e9b;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -9711,12 +9711,12 @@ the height of a multi-line element */
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:264 */
 .x-window-header-default {
     font-size: 15px;
-    border-color: #50855d;
-    background-color: #50855d;
+    border-color: #875e9b;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:269 */
 .x-window-header-default .x-tool-img {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:282 */
 .x-window-header-default-horizontal .x-window-header-default-tab-bar {
@@ -9754,7 +9754,7 @@ the height of a multi-line element */
     position: absolute;
     top: 0;
     right: 0;
-    color: #96b69e;
+    color: #b79fc3;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:332 */
 .x-window-header-title-default > .x-title-text-default.x-rtl:after {
@@ -9802,7 +9802,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:414 */
 .x-ie8 .x-window-header-title-default > .x-title-icon-wrap-default > .x-title-icon-default {
-    color: #a7c2ae;
+    color: #c3afcd;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-window-header-default-top {
@@ -9821,11 +9821,11 @@ the height of a multi-line element */
     padding: 5px 5px 5px 5px;
     border-width: 5px 5px 5px 5px;
     border-style: solid;
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-top-mc {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-top {
@@ -9938,11 +9938,11 @@ the height of a multi-line element */
     padding: 5px 5px 5px 5px;
     border-width: 5px 5px 5px 5px;
     border-style: solid;
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-right-mc {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-right {
@@ -10064,11 +10064,11 @@ the height of a multi-line element */
     padding: 5px 5px 5px 5px;
     border-width: 5px 5px 5px 5px;
     border-style: solid;
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-bottom-mc {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-bottom {
@@ -10181,11 +10181,11 @@ the height of a multi-line element */
     padding: 5px 5px 5px 5px;
     border-width: 5px 5px 5px 5px;
     border-style: solid;
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-left-mc {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-left {
@@ -10300,11 +10300,11 @@ the height of a multi-line element */
     padding: 5px 5px 5px 5px;
     border-width: 5px;
     border-style: solid;
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-collapsed-top-mc {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-collapsed-top {
@@ -10410,11 +10410,11 @@ the height of a multi-line element */
     padding: 5px 5px 5px 5px;
     border-width: 5px;
     border-style: solid;
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-collapsed-right-mc {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-collapsed-right {
@@ -10529,11 +10529,11 @@ the height of a multi-line element */
     padding: 5px 5px 5px 5px;
     border-width: 5px;
     border-style: solid;
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-collapsed-bottom-mc {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-collapsed-bottom {
@@ -10639,11 +10639,11 @@ the height of a multi-line element */
     padding: 5px 5px 5px 5px;
     border-width: 5px;
     border-style: solid;
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-collapsed-left-mc {
-    background-color: #50855d;
+    background-color: #875e9b;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-collapsed-left {
@@ -10766,7 +10766,7 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:564 */
 .x-ie8 .x-window-header-default .x-window-header-glyph {
-    color: #a7c2ae;
+    color: #c3afcd;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:573 */
 .x-window-header-default-horizontal .x-tool-after-title {
@@ -10870,105 +10870,105 @@ the height of a multi-line element */
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:2 */
 .x-window-default-outer-border-l {
-    border-left-color: #50855d !important;
+    border-left-color: #875e9b !important;
     border-left-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:6 */
 .x-window-default-outer-border-b {
-    border-bottom-color: #50855d !important;
+    border-bottom-color: #875e9b !important;
     border-bottom-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:10 */
 .x-window-default-outer-border-bl {
-    border-bottom-color: #50855d !important;
+    border-bottom-color: #875e9b !important;
     border-bottom-width: 1px !important;
-    border-left-color: #50855d !important;
+    border-left-color: #875e9b !important;
     border-left-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:16 */
 .x-window-default-outer-border-r {
-    border-right-color: #50855d !important;
+    border-right-color: #875e9b !important;
     border-right-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:20 */
 .x-window-default-outer-border-rl {
-    border-right-color: #50855d !important;
+    border-right-color: #875e9b !important;
     border-right-width: 1px !important;
-    border-left-color: #50855d !important;
+    border-left-color: #875e9b !important;
     border-left-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:26 */
 .x-window-default-outer-border-rb {
-    border-right-color: #50855d !important;
+    border-right-color: #875e9b !important;
     border-right-width: 1px !important;
-    border-bottom-color: #50855d !important;
+    border-bottom-color: #875e9b !important;
     border-bottom-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:32 */
 .x-window-default-outer-border-rbl {
-    border-right-color: #50855d !important;
+    border-right-color: #875e9b !important;
     border-right-width: 1px !important;
-    border-bottom-color: #50855d !important;
+    border-bottom-color: #875e9b !important;
     border-bottom-width: 1px !important;
-    border-left-color: #50855d !important;
+    border-left-color: #875e9b !important;
     border-left-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:40 */
 .x-window-default-outer-border-t {
-    border-top-color: #50855d !important;
+    border-top-color: #875e9b !important;
     border-top-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:44 */
 .x-window-default-outer-border-tl {
-    border-top-color: #50855d !important;
+    border-top-color: #875e9b !important;
     border-top-width: 1px !important;
-    border-left-color: #50855d !important;
+    border-left-color: #875e9b !important;
     border-left-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:50 */
 .x-window-default-outer-border-tb {
-    border-top-color: #50855d !important;
+    border-top-color: #875e9b !important;
     border-top-width: 1px !important;
-    border-bottom-color: #50855d !important;
+    border-bottom-color: #875e9b !important;
     border-bottom-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:56 */
 .x-window-default-outer-border-tbl {
-    border-top-color: #50855d !important;
+    border-top-color: #875e9b !important;
     border-top-width: 1px !important;
-    border-bottom-color: #50855d !important;
+    border-bottom-color: #875e9b !important;
     border-bottom-width: 1px !important;
-    border-left-color: #50855d !important;
+    border-left-color: #875e9b !important;
     border-left-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:64 */
 .x-window-default-outer-border-tr {
-    border-top-color: #50855d !important;
+    border-top-color: #875e9b !important;
     border-top-width: 1px !important;
-    border-right-color: #50855d !important;
+    border-right-color: #875e9b !important;
     border-right-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:70 */
 .x-window-default-outer-border-trl {
-    border-top-color: #50855d !important;
+    border-top-color: #875e9b !important;
     border-top-width: 1px !important;
-    border-right-color: #50855d !important;
+    border-right-color: #875e9b !important;
     border-right-width: 1px !important;
-    border-left-color: #50855d !important;
+    border-left-color: #875e9b !important;
     border-left-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:78 */
 .x-window-default-outer-border-trb {
-    border-top-color: #50855d !important;
+    border-top-color: #875e9b !important;
     border-top-width: 1px !important;
-    border-right-color: #50855d !important;
+    border-right-color: #875e9b !important;
     border-right-width: 1px !important;
-    border-bottom-color: #50855d !important;
+    border-bottom-color: #875e9b !important;
     border-bottom-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/border-management.scss:86 */
 .x-window-default-outer-border-trbl {
-    border-color: #50855d !important;
+    border-color: #875e9b !important;
     border-width: 1px !important;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:706 */
@@ -11844,11 +11844,11 @@ a.x-monthpicker-yearnav-button:hover {
     padding: 2px 2px 2px 2px;
     border-width: 1px;
     border-style: solid;
-    background-color: #edf2ee;
+    background-color: #f3eef5;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-tip-default-mc {
-    background-color: #edf2ee;
+    background-color: #f3eef5;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-tip-default {
@@ -11946,13 +11946,13 @@ a.x-monthpicker-yearnav-button:hover {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/tip/Tip.scss:112 */
 .x-tip-default {
-    background-color: #edf2ee;
+    background-color: #f3eef5;
     border-color: #122d5e;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/tip/Tip.scss:122 */
 .x-tip-default .x-tool-img {
     background-image: url(images/tools/tool-sprites-dark.png);
-    background-color: #edf2ee;
+    background-color: #f3eef5;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/tip/Tip.scss:137 */
 .x-tip-header-default .x-tool-after-title {
@@ -12001,11 +12001,11 @@ a.x-monthpicker-yearnav-button:hover {
     padding: 2px 2px 2px 2px;
     border-width: 1px;
     border-style: solid;
-    background-color: #edf2ee;
+    background-color: #f3eef5;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-tip-form-invalid-mc {
-    background-color: #edf2ee;
+    background-color: #f3eef5;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-tip-form-invalid {
@@ -12103,13 +12103,13 @@ a.x-monthpicker-yearnav-button:hover {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/tip/Tip.scss:112 */
 .x-tip-form-invalid {
-    background-color: #edf2ee;
+    background-color: #f3eef5;
     border-color: #122d5e;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/tip/Tip.scss:122 */
 .x-tip-form-invalid .x-tool-img {
     background-image: url(images/tools/tool-sprites-dark.png);
-    background-color: #edf2ee;
+    background-color: #f3eef5;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/tip/Tip.scss:137 */
 .x-tip-header-form-invalid .x-tool-after-title {
@@ -12333,8 +12333,8 @@ a.x-color-picker-item:hover {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/form/field/Tag.scss:170 */
 .x-form-text-default .x-tagfield-item.x-tagfield-item-selected {
-    background-color: #50855d;
-    border-color: #50855d;
+    background-color: #875e9b;
+    border-color: #875e9b;
     color: #fff;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/form/field/Tag.scss:179 */
@@ -12433,7 +12433,7 @@ a.x-color-picker-item:hover {
     bottom: 0px;
     left: 0px;
     pointer-events: none;
-    border: 0 solid #53865f;
+    border: 0 solid #87619a;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/view/Table.scss:83 */
 .x-grid-item-selected {
@@ -12656,7 +12656,7 @@ a.x-color-picker-item:hover {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    border: 0px solid #326642;
+    border: 0px solid #66417d;
     pointer-events: none;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/grid/column/Column.scss:64 */
@@ -12680,7 +12680,7 @@ a.x-color-picker-item:hover {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/grid/column/Column.scss:112 */
 .x-column-header-open .x-column-header-trigger {
-    background-color: #e3e9e4;
+    background-color: #e9e4ec;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/grid/column/Column.scss:117 */
 .x-column-header-over .x-column-header-trigger,
@@ -14146,15 +14146,15 @@ a.x-color-picker-item:hover {
 .x-ssm-extender-drag-handle {
     height: 7px;
     width: 7px;
-    background-color: #317040;
+    background-color: #724289;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/grid/selection/SpreadsheetModel.scss:22 */
 .x-ssm-extender-mask {
-    border: 1px dotted #317040;
+    border: 1px dotted #724289;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/layout/container/Accordion.scss:1 */
 .x-accordion-layout-ct {
-    background-color: #50855d;
+    background-color: #875e9b;
     padding: 5px 5px 0;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/layout/container/Accordion.scss:6 */
@@ -14405,7 +14405,7 @@ div.x-border-layout-ct {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/selection/CheckboxModel.scss:21 */
 .x-grid-row-checker:focus {
-    outline: 0 solid #53865f;
+    outline: 0 solid #87619a;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/selection/CheckboxModel.scss:25 */
 .x-column-header-checkbox .x-column-header-inner {
@@ -15932,7 +15932,7 @@ div.x-border-layout-ct {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/tab/Bar.scss:158 */
 .x-tab-bar-default {
-    background-color: #317040;
+    background-color: #724289;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/tab/Bar.scss:197 */
 .x-tab-bar-default-top > .x-tab-bar-body-default {
