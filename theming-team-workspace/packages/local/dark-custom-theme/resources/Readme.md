@@ -1,0 +1,3 @@
+# dark-custom-theme/resources
+
+This folder contains static resources (typically an `"images"` folder as well).
