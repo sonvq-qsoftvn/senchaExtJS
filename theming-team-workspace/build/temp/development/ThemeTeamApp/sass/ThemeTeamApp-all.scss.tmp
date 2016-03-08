@@ -1134,6 +1134,16 @@ $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/classic/theme-triton/sass/var/tab/Bar';
 @import '../../../../../ext/classic/theme-triton/sass/var/tree/View';
 
+/* including package dark-custom-theme */
+$dark-custom-theme-resource-root: '' !default;
+$dark-custom-theme-resource-path: 'images' !default;
+$current-package: 'dark-custom-theme';
+$current-resource-root: $dark-custom-theme-resource-root;
+$relative-image-path-for-uis: $dark-custom-theme-resource-path;
+@import '../../../../../packages/local/dark-custom-theme/sass/var/Component';
+@import '../../../../../packages/local/dark-custom-theme/sass/var/grid/Panel';
+@import '../../../../../packages/local/dark-custom-theme/sass/var/tab/Panel';
+
 /* including package ThemeTeamApp */
 $ThemeTeamApp-resource-root: '' !default;
 $ThemeTeamApp-resource-path: 'images' !default;
@@ -1349,6 +1359,15 @@ $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/classic/theme-triton/sass/src/tab/Tab';
 @import '../../../../../ext/classic/theme-triton/sass/src/tree/View';
 @import '../../../../../ext/classic/theme-triton/sass/src/window/Toast';
+
+/* including package dark-custom-theme */
+$dark-custom-theme-resource-root: '' !default;
+$dark-custom-theme-resource-path: 'images' !default;
+$current-package: 'dark-custom-theme';
+$current-resource-root: $dark-custom-theme-resource-root;
+$relative-image-path-for-uis: $dark-custom-theme-resource-path;
+@import '../../../../../packages/local/dark-custom-theme/sass/src/grid/Panel';
+@import '../../../../../packages/local/dark-custom-theme/sass/src/tree/Panel';
 
 /* including package ThemeTeamApp */
 $ThemeTeamApp-resource-root: '' !default;

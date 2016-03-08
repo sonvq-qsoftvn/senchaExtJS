@@ -16,3 +16,8 @@ https://docs.sencha.com/extjs/5.1/core_concepts/theming.html
 
 
 https://github.com/savelee/sencha-theming-tutorial
+
+
+https://vimeo.com/17879651
+
+http://www.slideshare.net/senchainc/theming-sencha-touch

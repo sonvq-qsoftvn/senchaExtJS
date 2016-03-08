@@ -1,0 +1,43 @@
+// ------------ GLOBAL SENCHA VARS --------------
+
+//$base-color: #639000;
+$base-color: #79AC38;
+//$base-color: orange;
+
+$light-white-color: #DEDEDE;
+$dark-color: #000;
+$light-dark-color: #414248;
+$header-color: #adafb2;
+$white-color: #fff;
+
+$highlight-color2: lighten($base-color, 20%);
+$highlight-color3: darken($base-color, 20%);
+
+
+// ------------ Application Font -----------------
+$font-family: 'Montserrat', helvetica , arial , verdana , sans-serif;
+$font-size: 16px;
+$color: $light-white-color;
+$enable-font-smoothing: true;
+
+
+// ------------ SENCHA COMPONENT VARS ------------
+/*
+ * Style Basic Panel and Basic Frame Panel
+ */
+$panel-base-color: $dark-color;
+$panel-body-background-color : $light-dark-color;
+$panel-frame-background-color: $light-dark-color;
+$panel-header-font-size: 16px;
+$panel-header-font-weight: 700;
+$panel-header-color: $header-color;
+$panel-frame-border-radius: 8px;
+$panel-frame-border-color: $base-color;
+
+
+$toolbar-footer-background-color: $dark-color;
+$toolbar-background-color: $dark-color;
+$toolbar-text-color: $light-white-color;
+$toolbar-font-size: 16px;
+
+

@@ -1,0 +1,27 @@
+.x-grid-view::-webkit-scrollbar {
+    background: $light-dark-color;
+}
+
+.x-grid-view::-webkit-scrollbar-thumb,
+.x-grid-view::-webkit-scrollbar-thumb:window-inactive,
+.x-grid-view::-webkit-scrollbar-thumb:disabled {
+    background-color: rgb(255, 255, 255);
+    background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from($base-color), color-stop(0.6, lighten($base-color,10%)), to(darken($base-color, 10%)));
+    border-radius: 10px;
+}
+
+.x-grid-row-checker {
+    color: $light-white-color;
+}
+
+.x-column-header {
+    color: $white-color;
+}
+
+.x-column-header-text-container .x-column-header-text {
+    color: $white-color;
+}
+
+.x-webkit .x-form-text {
+    background: $light-dark-color;
+}

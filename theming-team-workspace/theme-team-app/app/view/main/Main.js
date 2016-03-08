@@ -59,7 +59,8 @@ Ext.define('ThemeTeamApp.view.main.Main', {
 
     defaults: {
         bodyPadding: 20,
-        bodyStyle: 'background:#B7B2B2;',
+//        bodyStyle: 'background:#B7B2B2;',
+        bodyStyle: 'background:#fff;',
         tabConfig: {
             plugins: 'responsive',
             responsiveConfig: {
@@ -77,13 +78,13 @@ Ext.define('ThemeTeamApp.view.main.Main', {
     },
 
     items: [
-    /*{
+    {
         title: 'Home',
         iconCls: 'fa-home',
         items: [{
             xtype: 'mainlist'
         }]
-    },*/ 
+    },
     {
         title: 'Basic Panel',
         iconCls: 'fa fa-list-alt',
@@ -124,7 +125,7 @@ Ext.define('ThemeTeamApp.view.main.Main', {
                 { type:'refresh' },
                 { type:'search' },
                 { type:'save' }
-            ],
+            ] 
         },
         {
             xtype: 'panel',
@@ -171,7 +172,7 @@ Ext.define('ThemeTeamApp.view.main.Main', {
                 { type:'refresh' },
                 { type:'search' },
                 { type:'save' }
-            ],
+            ]
         },
         {
             xtype: 'panel',
@@ -230,6 +231,7 @@ Ext.define('ThemeTeamApp.view.main.Main', {
             xtype: 'tabpanel',
             height: 200,
             width: 320,
+//            ui: 'alternative',
             activeTab: 0,
             plain: true,
             items: [
@@ -263,9 +265,7 @@ Ext.define('ThemeTeamApp.view.main.Main', {
         },
         {
             xtype: 'tabpanel',
-            //ui: 'alternative',
             frame: true,
-            plain: true,
             height: 200,
             width: 320,
             activeTab: 0,
@@ -274,7 +274,7 @@ Ext.define('ThemeTeamApp.view.main.Main', {
                     xtype: 'panel',
                     title: 'Tab 1',
                     bodyPadding: 10,
-                    html: 'This is a frame and plain tab panel'
+                    html: 'This is a frame tab panel'
                 },
                 {
                     xtype: 'panel',

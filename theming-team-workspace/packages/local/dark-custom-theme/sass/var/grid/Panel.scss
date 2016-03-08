@@ -1,0 +1,24 @@
+$grid-header-background-color: $base-color;
+$grid-header-over-background-color: $highlight-color3;
+$grid-header-border-color: $highlight-color2;
+$grid-header-border-width: 1px;
+$grid-header-line-height: 28px;
+$grid-header-padding: 10px;
+
+$grid-row-cell-background-color : $dark-color;
+$grid-row-cell-alt-background-color: $dark-color;
+$grid-row-cell-border-width: 2px;
+$grid-row-cell-border-color: lighten($dark-color, 20%);
+$grid-row-cell-focus-border-width: 0;
+$grid-row-cell-color: $light-white-color;
+
+$grid-row-cell-over-background-color : lighten($dark-color, 15%);
+$grid-row-cell-over-color : $light-white-color;
+
+$grid-row-cell-selected-background-color : lighten($dark-color, 15%);
+$grid-row-cell-selected-color : $highlight-color2;
+$grid-row-cell-selected-border-width: 0;
+
+$grid-row-cell-focus-color : $highlight-color2;
+
+$grid-row-cell-line-height: 28px;

@@ -1,0 +1,31 @@
+.x-tree-view {
+    background: $light-dark-color;    
+    
+    .x-grid-cell-inner-treecolumn {
+        padding: 2px;
+    }
+
+    .x-grid-item {
+        color: $light-white-color;
+        background: lighten($light-dark-color, 2%);
+        border-left: 4px solid transparent;
+    }
+
+    .x-grid-item-over {
+        background: lighten($light-dark-color, 10%);
+    }
+
+    .x-grid-item-selected {
+        background: darken($light-dark-color, 10%);
+        border-left: 4px solid $base-color;
+        outline: none;
+        border-top: none;
+        color: $base-color;
+    }
+    .x-grid-item-focused .x-grid-cell-inner:before {
+        border: none;
+    }
+    .x-grid-item-focused {
+        color: $base-color;
+    }
+}

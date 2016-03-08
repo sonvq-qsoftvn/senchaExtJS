@@ -54,8 +54,11 @@
      */
     
     
-    //"theme": "theme-triton",
+    /*
+     * "theme": "theme-triton",
+     */
     "theme": "dark-custom-theme",
+    
     
     /**
      * The list of required packages (with optional versions; default is "latest").

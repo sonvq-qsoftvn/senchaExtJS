@@ -1,0 +1,17 @@
+/*
+ * Style base tab
+ */
+$tabbar-base-color: $dark-color;
+$tab-base-color-active: $base-color;
+$tab-color-active: $white-color;
+$tab-color-over: $base-color;
+
+/*
+ * Style plain tab
+ */
+$tab-plain-background-color: $dark-color;
+$tab-plain-background-color-over: $highlight-color3;
+$tab-plain-background-color-active: $base-color;
+$tab-plain-color: $header-color;
+$tab-plain-color-active: $white-color;
+$tab-plain-color-over: $white-color;
