@@ -1366,6 +1366,7 @@ $dark-custom-theme-resource-path: 'images' !default;
 $current-package: 'dark-custom-theme';
 $current-resource-root: $dark-custom-theme-resource-root;
 $relative-image-path-for-uis: $dark-custom-theme-resource-path;
+@import '../../../../../packages/local/dark-custom-theme/sass/src/button/Button';
 @import '../../../../../packages/local/dark-custom-theme/sass/src/grid/Panel';
 @import '../../../../../packages/local/dark-custom-theme/sass/src/tree/Panel';
 

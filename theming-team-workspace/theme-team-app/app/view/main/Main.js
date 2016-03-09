@@ -480,6 +480,68 @@ Ext.define('ThemeTeamApp.view.main.Main', {
                 xtype: 'button',
                 scale: 'large',
                 text: 'Large Button'
+            },
+            {
+                xtype: 'splitbutton',
+                text: 'Split Button',
+                menu:  [{
+                        text:'Menu Item 1'
+                    },{
+                        text:'Menu Item 2'
+                    },{
+                        text:'Menu Item 3'
+                    }]
+            },            
+            {
+                xtype: 'button',
+                ui: 'round',
+                text: 'round: small'
+            },
+            {
+                xtype: 'button',
+                scale: 'medium',
+                ui: 'round',
+                text: 'round: medium'
+            },
+            {
+                xtype: 'button',
+                scale: 'large',
+                ui: 'round',
+                text: 'round: large'
+            },
+            {
+                xtype: 'button',
+                ui: 'gray',
+                text: 'gray: small'
+            },
+            {
+                xtype: 'button',
+                scale: 'medium',
+                ui: 'gray',
+                text: 'gray: medium'
+            },
+            {
+                xtype: 'button',
+                scale: 'large',
+                ui: 'gray',
+                text: 'gray: large'
+            },
+            {
+                xtype: 'button',
+                ui: 'roundorange',
+                text: 'roundorange: small'
+            },
+            {
+                xtype: 'button',
+                scale: 'medium',
+                ui: 'roundorange',
+                text: 'roundorange: medium'
+            },
+            {
+                xtype: 'button',
+                scale: 'large',
+                ui: 'roundorange',
+                text: 'roundorgange: large'
             }
         ]
     }]

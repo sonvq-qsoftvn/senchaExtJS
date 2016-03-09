@@ -1,0 +1,84 @@
+@include extjs-button-small-ui(
+    $ui: 'round',
+    $font-weight: bold,
+    $padding: 5px,
+    $background-color: $base-color 
+);
+
+@include extjs-button-medium-ui(
+    $ui: 'round',
+    $font-weight: bold,
+    $padding: 8px,
+    $background-color: $base-color
+);
+
+@include extjs-button-large-ui(
+    $ui: 'round',
+    $font-weight: bold,
+    $padding: 12px,
+    $background-color: $base-color
+);
+
+@include extjs-button-small-ui(
+    $ui: 'gray',
+    $font-weight: bold,
+    $padding: 5px,
+    $background-color: $dark-color
+);
+
+@include extjs-button-medium-ui(
+    $ui: 'gray',
+    $font-weight: bold,
+    $padding: 8px,
+    $background-color: $dark-color
+);
+
+@include extjs-button-large-ui(
+    $ui: 'gray',
+    $font-weight: bold,
+    $padding: 12px,
+    $background-color: $dark-color
+);
+
+.x-btn-inner:hover {
+    color: #fff;
+}
+
+.x-btn-gray-small,
+.x-btn-gray-medium,
+.x-btn-gray-large,
+.x-btn-round-large,
+.x-btn-round-medium,
+.x-btn-round-small {
+    -ms-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    text-transform: uppercase;	
+}
+
+.x-btn-gray-large,
+.x-btn-gray-medium,
+.x-btn-gray-small {
+    background-color: darken($header-color, 20%);
+    &:hover {
+        color: $white-color;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+    }
+}
+
+.x-btn-round-large,
+.x-btn-round-medium,
+.x-btn-round-small {
+    &:hover {
+        color: $white-color;
+        background-color: darken($base-color, 10%);
+        -webkit-transition: background-color 0.5s ease-out;
+        -moz-transition: background-color 0.5s ease-out;
+        -o-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+    }
+}
