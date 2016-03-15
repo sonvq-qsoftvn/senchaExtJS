@@ -21,3 +21,14 @@ https://github.com/savelee/sencha-theming-tutorial
 https://vimeo.com/17879651
 
 http://www.slideshare.net/senchainc/theming-sencha-touch
+
+
+http://localhost:1841/theme-team-app/?platformTags=fashion:true
+
+http://examples.sencha.com/extjs/6.0.1/examples/classic/themes/index.html?
+
+https://docs.sencha.com/extjs/6.0/6.0.0-classic/#!/api/Global_CSS
+
+https://fortawesome.github.io/Font-Awesome/icons/
+
+http://docs.sencha.com/extjs/4.2.0/extjs-build/examples/build/KitchenSink/ext-theme-neptune/#basic-buttons

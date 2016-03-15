@@ -50,6 +50,9 @@
 .x-btn-round-large,
 .x-btn-round-medium,
 .x-btn-round-small {
+    &:hover {
+        color: $white-color;
+    }
     -ms-border-radius: 50px;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;

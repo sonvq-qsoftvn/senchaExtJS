@@ -9634,11 +9634,11 @@ body > .x-mask {
     padding: 0 0 0 0;
     border-width: 2px;
     border-style: solid;
-    background-color: #fff;
+    background-color: red;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-default-mc {
-    background-color: #fff;
+    background-color: red;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-default {
@@ -9739,7 +9739,7 @@ body > .x-mask {
     border-color: #79ac38;
     border-width: 1px;
     border-style: solid;
-    background: #fff;
+    background: #414248;
     color: #000;
     font-size: 16px;
     font-weight: 300;
@@ -9749,11 +9749,11 @@ body > .x-mask {
 .x-window-header-default {
     font-size: 16px;
     border-color: #79ac38;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:269 */
 .x-window-header-default .x-tool-img {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:282 */
 .x-window-header-default-horizontal .x-window-header-default-tab-bar {
@@ -9791,7 +9791,7 @@ body > .x-mask {
     position: absolute;
     top: 0;
     right: 0;
-    color: #8ead69;
+    color: #454647;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:332 */
 .x-window-header-title-default > .x-title-text-default.x-rtl:after {
@@ -9857,11 +9857,11 @@ body > .x-mask {
     padding: 10px 14px 10px 14px;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-top-mc {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-top {
@@ -9974,11 +9974,11 @@ body > .x-mask {
     padding: 14px 10px 14px 10px;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-right-mc {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-right {
@@ -10100,11 +10100,11 @@ body > .x-mask {
     padding: 10px 14px 10px 14px;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-bottom-mc {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-bottom {
@@ -10217,11 +10217,11 @@ body > .x-mask {
     padding: 14px 10px 14px 10px;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-left-mc {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-left {
@@ -10336,11 +10336,11 @@ body > .x-mask {
     padding: 10px 14px 10px 14px;
     border-width: 2px;
     border-style: solid;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-collapsed-top-mc {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-collapsed-top {
@@ -10446,11 +10446,11 @@ body > .x-mask {
     padding: 14px 10px 14px 10px;
     border-width: 2px;
     border-style: solid;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-collapsed-right-mc {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-collapsed-right {
@@ -10565,11 +10565,11 @@ body > .x-mask {
     padding: 10px 14px 10px 14px;
     border-width: 2px;
     border-style: solid;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-collapsed-bottom-mc {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-collapsed-bottom {
@@ -10675,11 +10675,11 @@ body > .x-mask {
     padding: 14px 10px 14px 10px;
     border-width: 2px;
     border-style: solid;
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-header-default-collapsed-left-mc {
-    background-color: #79ac38;
+    background-color: #000;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-header-default-collapsed-left {
@@ -11143,7 +11143,7 @@ body > .x-mask {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/MessageBox.scss:1 */
 .x-message-box .x-window-body {
-    background-color: #fff;
+    background-color: #414248;
     border-width: 0;
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/MessageBox.scss:10 */

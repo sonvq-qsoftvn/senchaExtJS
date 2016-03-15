@@ -11079,13 +11079,22 @@
     border-radius: 50px;
     text-transform: uppercase;
 }
-/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/button/Button.scss:60 */
+/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/button/Button.scss:53 */
+.x-btn-gray-small:hover,
+.x-btn-gray-medium:hover,
+.x-btn-gray-large:hover,
+.x-btn-round-large:hover,
+.x-btn-round-medium:hover,
+.x-btn-round-small:hover {
+    color: #fff;
+}
+/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/button/Button.scss:63 */
 .x-btn-gray-large,
 .x-btn-gray-medium,
 .x-btn-gray-small {
     background-color: #797c80;
 }
-/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/button/Button.scss:64 */
+/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/button/Button.scss:67 */
 .x-btn-gray-large:hover,
 .x-btn-gray-medium:hover,
 .x-btn-gray-small:hover {
@@ -11095,7 +11104,7 @@
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
-/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/button/Button.scss:76 */
+/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/button/Button.scss:79 */
 .x-btn-round-large:hover,
 .x-btn-round-medium:hover,
 .x-btn-round-small:hover {
@@ -11105,6 +11114,10 @@
     -moz-transition: background-color 0.5s ease-out;
     -o-transition: background-color 0.5s ease-out;
     transition: background-color 0.5s ease-out;
+}
+/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/window/Window.scss:1 */
+.x-window-default .x-toolbar-footer {
+    background: #414248;
 }
 /* http://localhost:1841/packages/local/dark-custom-theme/sass/src/grid/Panel.scss:1 */
 .x-grid-view::-webkit-scrollbar {

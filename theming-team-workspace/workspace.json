@@ -4,7 +4,8 @@
      */
     "apps": [
         "theme-team-app",
-        "tai-demo-app"
+        "tai-demo-app",
+        "qsoft-training-app"
     ],
 
     /**
