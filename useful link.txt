@@ -32,3 +32,13 @@ https://docs.sencha.com/extjs/6.0/6.0.0-classic/#!/api/Global_CSS
 https://fortawesome.github.io/Font-Awesome/icons/
 
 http://docs.sencha.com/extjs/4.2.0/extjs-build/examples/build/KitchenSink/ext-theme-neptune/#basic-buttons
+
+
+
+http://stackoverflow.com/questions/24530893/javascript-unable-to-get-reference-to-form-in-extjs-5
+http://training.figleaf.com/tutorials/senchacomplete/chapter3/lesson8/7.cfm
+http://stackoverflow.com/questions/10870851/extjs4-how-to-show-validation-error-message-next-to-textbox-combobox-etc
+http://docs.sencha.com/extjs/4.1.3/#!/example/restful/restful.html
+http://www.oracle.com/technetwork/middleware/webcenter/rest-sample-peopleconn-with-ext-098953.html
+http://dev.sencha.com/ext/5.1.0/examples/restful/restful.html
+https://docs.sencha.com/extjs/6.0/components/forms.html

@@ -11,7 +11,6 @@ Ext.define('QsoftTrainingApp.view.login.LoginController', {
     onLoginClick: function() {        
         var loginFormValue = this.lookupReference('loginForm').getValues();
 
-        console.log(loginFormValue);
         var loginParams = new Object();;
         loginParams.email = loginFormValue.email;
         loginParams.password = loginFormValue.password;
@@ -25,6 +24,7 @@ Ext.define('QsoftTrainingApp.view.login.LoginController', {
         
         var apiURL = baseApiURL + 'users/auth';                
         
+        var that = this;
         Ext.Ajax.request({
             url: apiURL,
             method: 'POST',
@@ -33,11 +33,19 @@ Ext.define('QsoftTrainingApp.view.login.LoginController', {
                 //locate the people connections entry point                        
                 if(response.status == '202') {
                     // The tokenKey is valid, allow user to logged in
-                    // Set the localStorage value to true
-                    localStorage.setItem("tokenKey", true);
+                    // Set the localStorage value to tokenKey
+                    var result = Ext.decode(response.responseText);
 
+                    localStorage.setItem("tokenKey", result.key);
+
+                    Ext.Msg.show({
+                        title: 'Login success',
+                        msg: 'Successfully logged in, have fun!!!',
+                        buttons: Ext.Msg.OK,
+                        icon: 'smiles-icon'
+                    });
                     // Remove Login Window
-                    this.getView().destroy();
+                    that.getView().destroy();
 
                     // Add the main view to the viewport
                     Ext.create({
@@ -46,23 +54,20 @@ Ext.define('QsoftTrainingApp.view.login.LoginController', {
                 } else if (response.status == '200') {
                     Ext.Msg.show({
                         title: 'Login failed',
-                        msg: 'Login failed please contact the development team',
+                        msg: Ext.decode(response.responseText),
                         buttons: Ext.Msg.OK,
                         icon: Ext.Msg.ERROR
                     });
                 }
             },
-            failure: function(response, opts) { 
-                Ext.Msg.show({
-                    title: 'Login failed',
-                    msg: 'Login failed please contact the development team',
-                    buttons: Ext.Msg.OK,
-                    icon: Ext.Msg.ERROR
-                });
+            failure: function(response, opts) {                 
                 if(response.status == '412') {
-                    console.log(response);
-                    var message = Ext.decode(response.responseText);    
-                    console.log('Login error: ' + message);    
+                    Ext.Msg.show({
+                        title: 'Login failed',
+                        msg: Ext.decode(response.responseText),
+                        buttons: Ext.Msg.OK,
+                        icon: Ext.Msg.ERROR
+                    }); 
                 }
             },
             headers: {
