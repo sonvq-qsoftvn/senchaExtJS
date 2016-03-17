@@ -8,6 +8,10 @@ Ext.define('QsoftTrainingApp.Application', {
 
     name: 'QsoftTrainingApp',
 
+    requires: [
+        'QsoftTrainingApp.common.variable.Global' 
+    ],
+    
     stores: [
         // TODO: add global / shared stores here
     ],
@@ -17,21 +21,52 @@ Ext.define('QsoftTrainingApp.Application', {
         'QsoftTrainingApp.view.main.Main'
     ],
     launch: function () {
-
+        var baseApiURL = QsoftTrainingApp.common.variable.Global.baseApiURL;
+        
         // It's important to note that this type of application could use
         // any type of storage, i.e., Cookies, LocalStorage, etc.
-        var loggedIn;
+        var tokenKey;
 
         // Check to see the current value of the localStorage key
-        loggedIn = localStorage.getItem("TutorialLoggedIn");
+        tokenKey = localStorage.getItem("tokenKey");
 
-        // This ternary operator determines the value of the TutorialLoggedIn key.
-        // If TutorialLoggedIn isn't true, we display the login window,
-        // otherwise, we display the main view
-        Ext.create({
-            xtype: loggedIn ? 'app-main' : 'login'
-        });
-
+        // Check tokenKey is valid
+        // Case 1, if tokenKey is null, then definitely loggedIn = false
+        if(tokenKey == null) {
+            Ext.create({ xtype: 'login' });
+        }
+        // Case 2, if tokenKey is not null, call sessions api to check tokenKey is valid or not
+        if(tokenKey != null) {
+            // Check length of tokenKey
+            if(tokenKey.length <= 0) {
+                Ext.create({ xtype: 'login' });
+            } else {
+                // Call api
+                //create a request for the resourceIndex
+                var apiURL = baseApiURL + 'users/sessions?token=' + tokenKey;
+                Ext.Ajax.request({
+                    url: apiURL,
+                    method: 'GET',
+                    success: function(response, opts) {
+                        //locate the people connections entry point                        
+                        if(response.status == '200') {
+                            // The tokenKey is valid, allow user to logged in
+                            Ext.create({ xtype: 'app-main' });                            
+                        }
+                    },
+                    failure: function(response, opts) {                        
+                        Ext.create({ xtype: 'login' });
+                        if(response.status == '401') {
+                            var message = Ext.decode(response.responseText);    
+                            console.log('You are logged out because of: ' + message);    
+                        }
+                    },
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });                
+            }
+        }
     },
 
     onAppUpdate: function () {

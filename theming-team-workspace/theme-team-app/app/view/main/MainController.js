@@ -17,5 +17,14 @@ Ext.define('ThemeTeamApp.view.main.MainController', {
         if (choice === 'yes') {
             //
         }
+    },
+    
+    onLoginClick: function(){
+        Ext.Msg.show({
+            title: 'Login success',
+            msg: 'WHOOHOO, YOU LOGGED IN!!!',
+            buttons: Ext.Msg.OK,
+            icon: 'smiles-icon'
+        });
     }
 });

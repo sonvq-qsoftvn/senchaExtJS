@@ -20,21 +20,28 @@ Ext.define('QsoftTrainingApp.view.login.Login', {
     draggable: false,
     autoShow: true,    
     region: "center",
-    
+        
     items: {
         xtype: 'form',
-        reference: 'form',
+        reference: 'loginForm',
         items: [{
             xtype: 'textfield',
-            name: 'username',
-            fieldLabel: 'Username',
-            allowBlank: false
+            name: 'email',
+            fieldLabel: 'Email',
+            allowBlank: false,
+            msgTarget: 'under',
+            vtype: 'email',
+            vtypeText: 'Enter a valid email',
+            emptyText: 'user@qsoft.com.vn'
         }, {
             xtype: 'textfield',
             name: 'password',
             inputType: 'password',
             fieldLabel: 'Password',
-            allowBlank: false
+            allowBlank: false,
+            msgTarget: 'under',
+            regex: /^[a-zA-Z0-9!@#$%^&*]{6,16}$/,
+            regexText: 'Enter a valid password'
         }, {
             xtype: 'displayfield',
             hideEmptyLabel: false,

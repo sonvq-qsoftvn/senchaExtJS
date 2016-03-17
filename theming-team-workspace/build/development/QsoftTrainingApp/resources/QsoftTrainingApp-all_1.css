@@ -9736,11 +9736,11 @@ body > .x-mask {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:250 */
 .x-window-body-default {
-    border-color: #79ac38;
+    border-color: #fff;
     border-width: 1px;
     border-style: solid;
     background: #414248;
-    color: #000;
+    color: #fff;
     font-size: 16px;
     font-weight: 300;
     font-family: 'Montserrat', helvetica, arial, verdana, sans-serif;

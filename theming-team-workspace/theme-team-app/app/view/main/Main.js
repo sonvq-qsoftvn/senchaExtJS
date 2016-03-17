@@ -544,5 +544,63 @@ Ext.define('ThemeTeamApp.view.main.Main', {
                 text: 'roundorgange: large'
             }
         ]
+    },
+    {
+        title: 'Window',
+        iconCls: 'fa fa-windows',
+        layout: {
+            type: 'table',
+            columns: 4,
+            tdAttrs: { style: 'padding: 10px;' }
+        },
+        items: [
+            { 
+                extend: 'Ext.window.Window',
+                xtype: 'window',
+
+                bodyPadding: 30,
+                closable: true,
+                draggable: true,
+                autoShow: true,   
+                title: 'Login Window',
+
+                items: {
+                    xtype: 'form',
+                    reference: 'loginForm',
+                    items: [{
+                        xtype: 'textfield',
+                        name: 'email',
+                        fieldLabel: 'Email',
+                        allowBlank: false,
+                        msgTarget: 'under',
+                        vtype: 'email',
+                        vtypeText: 'Enter a valid email',
+                        emptyText: 'user@qsoft.com.vn'
+                    }, {
+                        xtype: 'textfield',
+                        name: 'password',
+                        inputType: 'password',
+                        fieldLabel: 'Password',
+                        allowBlank: false,
+                        msgTarget: 'under',
+                        regex: /^[a-zA-Z0-9!@#$%^&*]{6,16}$/,
+                        regexText: 'Enter a valid password'
+                    }, {
+                        xtype: 'displayfield',
+                        hideEmptyLabel: false,
+                        value: 'Use your Qsoft account'
+                    }],
+                    buttons: [{
+                        text: 'Sign in',
+                        formBind: true,
+                        listeners: {
+                            click: 'onLoginClick'
+                        },
+                        scale: 'medium',
+                        ui: 'round'
+                    }]
+                },
+            }
+        ]
     }]
 });

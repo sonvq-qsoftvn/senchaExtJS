@@ -112,7 +112,7 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
             listeners: { 
                 click: 'onLogoutClick'
             },
-            tooltip: 'Click here to logout out the app!',
+            tooltip: 'Click here to logout out the app!'
         }
     }]
 });

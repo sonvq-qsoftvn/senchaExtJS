@@ -21,7 +21,7 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
     
     onLogoutClick: function () {
         // Remove the localStorage key/value
-        localStorage.removeItem('TutorialLoggedIn');
+        localStorage.removeItem('tokenKey');
 
         // Remove Main View
         this.getView().destroy();
