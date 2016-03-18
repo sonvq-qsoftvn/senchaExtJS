@@ -8,7 +8,7 @@ class Team extends SmartLoquent {
      * @var string
      */
     protected $collection = 'teams';
-    protected $hidden = array('_id');
+    protected $hidden = array('deleted_at', 'created_at', 'updated_at');
     protected $guarded = array('key');
     public $timestamps = true;
 

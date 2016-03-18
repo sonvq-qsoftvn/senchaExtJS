@@ -50,6 +50,8 @@ Ext.define('QsoftTrainingApp.Application', {
                     success: function(response, opts) {
                         //locate the people connections entry point                        
                         if(response.status == '200') {
+                            var result = Ext.decode(response.responseText);
+                            QsoftTrainingApp.common.variable.Global.userLoggedInID = result.sessions[0].user_id;
                             // The tokenKey is valid, allow user to logged in
                             Ext.create({ xtype: 'app-main' });                            
                         }

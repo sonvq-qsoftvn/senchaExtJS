@@ -9634,11 +9634,11 @@ body > .x-mask {
     padding: 0 0 0 0;
     border-width: 2px;
     border-style: solid;
-    background-color: red;
+    background-color: #fff;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
 .x-window-default-mc {
-    background-color: red;
+    background-color: #fff;
 }
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
 .x-nbr .x-window-default {
@@ -9736,11 +9736,11 @@ body > .x-mask {
 }
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/window/Window.scss:250 */
 .x-window-body-default {
-    border-color: #79ac38;
+    border-color: #fff;
     border-width: 1px;
     border-style: solid;
     background: #414248;
-    color: #000;
+    color: #fff;
     font-size: 16px;
     font-weight: 300;
     font-family: 'Montserrat', helvetica, arial, verdana, sans-serif;

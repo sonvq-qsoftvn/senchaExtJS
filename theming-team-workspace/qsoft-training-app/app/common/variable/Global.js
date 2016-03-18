@@ -8,5 +8,7 @@
 Ext.define('QsoftTrainingApp.common.variable.Global', {
     alias: 'widget.AppConstants',
     singleton: true,
-    baseApiURL: 'http://localhost/extjs/theming-team-workspace/qsoft-training-api/public/v1/'
+    baseApiURL: 'http://localhost/extjs/theming-team-workspace/qsoft-training-api/public/v1/',
+    baseUserApiURL: 'http://localhost/extjs/theming-team-workspace/qsoft-training-api/public/v1/users',
+    userLoggedInID: ''
 });

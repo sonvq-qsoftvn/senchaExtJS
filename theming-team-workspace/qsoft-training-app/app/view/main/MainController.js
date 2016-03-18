@@ -20,15 +20,46 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
     },
     
     onLogoutClick: function () {
-        // Remove the localStorage key/value
-        localStorage.removeItem('tokenKey');
+        var baseApiURL = QsoftTrainingApp.common.variable.Global.baseApiURL;
+        
+        var apiURL = baseApiURL + 'users/' + QsoftTrainingApp.common.variable.Global.userLoggedInID + '/logout';                
+        
+        var logoutParams = new Object();;
+        logoutParams.token = localStorage.getItem("tokenKey");
+        
+        var that = this;
+        Ext.Ajax.request({
+            url: apiURL,
+            method: 'POST',
+            params: logoutParams,
+            success: function(response, opts) {
+                //locate the people connections entry point                        
+                if(response.status == '202') {
+                    // Remove the localStorage key/value
+                    localStorage.removeItem('tokenKey');
 
-        // Remove Main View
-        this.getView().destroy();
+                    // Remove Main View
+                    that.getView().destroy();
 
-        // Add the Login Window
-        Ext.create({
-            xtype: 'login'
-        });
+                    // Add the Login Window
+                    Ext.create({
+                        xtype: 'login'
+                    });                     
+                }
+            },
+            failure: function(response, opts) {                 
+                if(response.status == '401') {
+                    Ext.Msg.show({
+                        title: 'Logout failed',
+                        msg: Ext.decode(response.responseText),
+                        buttons: Ext.Msg.OK,
+                        icon: Ext.Msg.ERROR
+                    }); 
+                }
+            },
+            headers: {
+                'Accept': 'application/json'
+            }
+        });                       
     }
 });

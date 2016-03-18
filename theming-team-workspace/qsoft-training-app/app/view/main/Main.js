@@ -15,7 +15,7 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
 
         'QsoftTrainingApp.view.main.MainController',
         'QsoftTrainingApp.view.main.MainModel',
-        'QsoftTrainingApp.view.main.List'
+        'QsoftTrainingApp.view.user.UserList'
     ],
     
     plugins: 'viewport',
@@ -78,20 +78,13 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
         title: 'Users',
         iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+            xtype: 'userslist' 
+        }]
     }, {
-        title: 'Groups',
+        title: 'Team',
         iconCls: 'fa-users',
         bind: {
             html: '{loremIpsum}'

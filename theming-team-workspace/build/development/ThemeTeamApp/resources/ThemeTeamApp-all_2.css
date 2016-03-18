@@ -11119,6 +11119,15 @@
 .x-window-default .x-toolbar-footer {
     background: #414248;
 }
+/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/window/Window.scss:5 */
+.smiles-icon {
+    background-image: url('images/icon-info.png');
+    background-repeat: no-repeat;
+}
+/* http://localhost:1841/packages/local/dark-custom-theme/sass/src/window/Window.scss:10 */
+.x-window-body-default {
+    color: #fff;
+}
 /* http://localhost:1841/packages/local/dark-custom-theme/sass/src/grid/Panel.scss:1 */
 .x-grid-view::-webkit-scrollbar {
     background: #414248;
