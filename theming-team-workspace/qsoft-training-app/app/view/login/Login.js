@@ -20,7 +20,7 @@ Ext.define('QsoftTrainingApp.view.login.Login', {
     draggable: false,
     autoShow: true,    
     region: "center",
-        
+
     items: {
         xtype: 'form',
         reference: 'loginForm',
@@ -54,8 +54,23 @@ Ext.define('QsoftTrainingApp.view.login.Login', {
                 click: 'onLoginClick'
             },
             scale: 'medium',
-            ui: 'round'
-        }]
+            ui: 'round',
+            id: 'loginButton',
+        }],
+        defaults:{
+            enableKeyEvents:true,
+            listeners:{
+                specialKey: function(field, el)
+                {
+                    if (el.getKey() == Ext.EventObject.ENTER)
+                    {   
+                        if(Ext.getCmp('loginButton').disabled != true) {
+                            Ext.getCmp('loginButton').fireEvent('click');
+                        }
+                    }
+                }
+            }
+        },
     },
     listeners: {
         show: function() {

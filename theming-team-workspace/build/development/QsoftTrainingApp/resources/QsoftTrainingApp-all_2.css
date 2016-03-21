@@ -13228,3 +13228,16 @@
 html {
     background: url('images/bg_final.png') top center;
 }
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:91 */
+.x-grid-group-hd {
+    background: url('images/pattern3.png') top center;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:95 */
+.x-grid-group-title {
+    color: black;
+    font-weight: bold;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:100 */
+.x-grid-group-hd-collapsible .x-grid-group-title:before {
+    color: black;
+}

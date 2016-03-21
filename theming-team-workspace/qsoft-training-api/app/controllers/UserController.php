@@ -5,7 +5,20 @@ class UserController extends BaseController {
 	public $restful = true;
 
 	public function index() {
-		return User::all();
+            $userCollection = User::all();
+
+            if (count($userCollection) > 0) {
+                foreach ($userCollection as &$user) {
+                    if ($user->team_id != null) {
+                        $teamObject = Team::where('_id', '=', $user->team_id)->first();
+                        $user->team_name = $teamObject->name;
+                    } else {
+                        $user->team_name = 'No Team';
+                    }
+                    
+                }
+            }
+            return $userCollection;
 	}
 	
 	/**

@@ -4,10 +4,10 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
-Ext.define('QsoftTrainingApp.view.user.UserController', {
+Ext.define('QsoftTrainingApp.view.team.TeamController', {
     extend: 'Ext.app.ViewController',
 
-    alias: 'controller.user'
+    alias: 'controller.team'
 
    
 });

@@ -10,10 +10,12 @@ class Team extends SmartLoquent {
     protected $collection = 'teams';
     protected $hidden = array('deleted_at', 'created_at', 'updated_at');
     protected $guarded = array('key');
+    protected $with = array('children');
     public $timestamps = true;
+    
 
-    public function user() {
-        return $this->belongsTo('User');
+    public function children() {
+        return $this->hasMany('User', 'team_id', '_id');
     }
 
 }

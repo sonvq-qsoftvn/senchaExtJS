@@ -12,7 +12,7 @@ Ext.define('QsoftTrainingApp.model.User', {
             name: 'phone_number'
         },
         {
-            name: 'team_name', type: 'auto', mapping:'team_object.name'
+            name: 'team_name'
         }
     ]
 });

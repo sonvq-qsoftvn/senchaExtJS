@@ -85,3 +85,16 @@
 html {
     background: url('images/bg_final.png') top center;
 }
+
+.x-grid-group-hd {
+    background: url('images/pattern3.png') top center; 
+}
+
+.x-grid-group-title {
+    color: black;
+    font-weight: bold;
+}
+
+.x-grid-group-hd-collapsible .x-grid-group-title:before {
+    color: black;
+}

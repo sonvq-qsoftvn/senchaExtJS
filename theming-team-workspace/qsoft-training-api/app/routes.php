@@ -52,6 +52,8 @@ Route::group(array('prefix' => 'v1'), function(){
     Route::post('users/auth/facebook',  array('as' => 'v1.users.auth.facebook', 'uses' => 'UserController@authenticateFacebook') );
 
     Route::resource('users', 'UserController', array('only' => array('index', 'store')) );
+    
+    Route::resource('teams', 'TeamController', array('only' => array('index')) );
 
     //	user needs to have a registered and active token
     Route::group(array('before' => 'logged_in'), function() {

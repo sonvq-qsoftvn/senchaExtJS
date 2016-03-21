@@ -15,7 +15,9 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
 
         'QsoftTrainingApp.view.main.MainController',
         'QsoftTrainingApp.view.main.MainModel',
-        'QsoftTrainingApp.view.user.UserList'
+        'QsoftTrainingApp.view.user.UserList',
+        'QsoftTrainingApp.view.team.TeamList',
+        'QsoftTrainingApp.view.teamtree.TeamTreeList'
     ],
     
     plugins: 'viewport',
@@ -39,7 +41,7 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'fa fa-mortar-board'
     },
 
     tabBar: {
@@ -86,15 +88,15 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
     }, {
         title: 'Team',
         iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+            xtype: 'teamslist' 
+        }]
     }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        title: 'Team members',
+        iconCls: 'fa fa-weixin',
+        items: [{
+            xtype: 'teamtreelist' 
+        }]
     },{
         title: 'Sign out',        
         iconCls: 'fa-sign-out',
