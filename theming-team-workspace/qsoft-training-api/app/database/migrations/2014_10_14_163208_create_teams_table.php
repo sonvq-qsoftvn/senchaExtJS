@@ -16,6 +16,7 @@ class CreateTeamsTable extends Migration {
         {
             $table->increments('_id');
             $table->string('name');
+            $table->string('slogan');
             $table->softDeletes();
             $table->timestamps();
         });

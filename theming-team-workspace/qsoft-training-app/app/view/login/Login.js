@@ -55,7 +55,7 @@ Ext.define('QsoftTrainingApp.view.login.Login', {
             },
             scale: 'medium',
             ui: 'round',
-            id: 'loginButton',
+            id: 'loginButton'
         }],
         defaults:{
             enableKeyEvents:true,
@@ -70,7 +70,7 @@ Ext.define('QsoftTrainingApp.view.login.Login', {
                     }
                 }
             }
-        },
+        }
     },
     listeners: {
         show: function() {

@@ -16,7 +16,12 @@ Ext.define('QsoftTrainingApp.view.teamtree.TeamTreeList', {
     },
     features: [groupingFeature],
     collapsible: true,
-    
+    fbarCfg:{
+          buttonAlign:'center'  //for center align
+         // buttonAlign:'left' //for left align
+         // buttonAlign:'right' //for right align 
+    },
+    buttonAlign: 'left',
     fbar: [
         {
             xtype: 'button',

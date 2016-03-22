@@ -7,7 +7,19 @@
 Ext.define('QsoftTrainingApp.view.team.TeamController', {
     extend: 'Ext.app.ViewController',
 
-    alias: 'controller.team'
+    alias: 'controller.team',
 
-   
+    init: function () {
+        this.control({
+            'teamslist > toolbar > button[action=add]': {
+                click: this.showAddForm
+            }
+        });
+    },
+    
+    showAddForm: function () {
+        var createTeamForm = Ext.create('QsoftTrainingApp.view.team.TeamForm');
+        
+        createTeamForm.show();
+    }
 });

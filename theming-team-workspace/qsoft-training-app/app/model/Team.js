@@ -4,6 +4,9 @@ Ext.define('QsoftTrainingApp.model.Team', {
     fields: [
         {
             name: 'name'
+        },
+        {
+            name: 'slogan'
         }
     ]
 });

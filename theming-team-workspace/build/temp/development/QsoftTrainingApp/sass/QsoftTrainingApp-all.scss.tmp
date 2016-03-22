@@ -889,6 +889,7 @@ $include-qsofttrainingapp-view-main-main: dynamic(true);;
 $include-qsofttrainingapp-view-main-maincontroller: dynamic(true);;
 $include-qsofttrainingapp-view-main-mainmodel: dynamic(true);;
 $include-qsofttrainingapp-view-team-teamcontroller: dynamic(true);;
+$include-qsofttrainingapp-view-team-teamform: dynamic(true);;
 $include-qsofttrainingapp-view-team-teamlist: dynamic(true);;
 $include-qsofttrainingapp-view-teamtree-teamtreecontroller: dynamic(true);;
 $include-qsofttrainingapp-view-teamtree-teamtreelist: dynamic(true);;

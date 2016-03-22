@@ -7,19 +7,43 @@ class DatabaseSeeder extends Seeder {
         
         $team1 = Team::create(
             array(
-                'name'                 => 'Team 1'
+                'name'                 => 'Team 1',
+                'slogan'               => 'Workable Product!'
             )
         );
         
         $team2 = Team::create(
             array(
-                'name'                 => 'Team 2'
+                'name'                 => 'Team 2',
+                'slogan'               => 'Incredible Team!'
             )
         );
         
         $team3 = Team::create(
             array(
-                'name'                 => 'Team 3'
+                'name'                 => 'Team 3',
+                'slogan'               => 'Your strategic software partner'
+            )
+        );
+        
+        $team4 = Team::create(
+            array(
+                'name'                 => 'Team 4',
+                'slogan'               => 'Whoohoo, Banana Team!'
+            )
+        );
+        
+        $team5 = Team::create(
+            array(
+                'name'                 => 'Team 5',
+                'slogan'               => 'We are the Champions'
+            )
+        );
+        
+        $team4 = Team::create(
+            array(
+                'name'                 => 'Team 6',
+                'slogan'               => 'Teamwork makes DREAM work'
             )
         );
         
@@ -50,10 +74,19 @@ class DatabaseSeeder extends Seeder {
         
         $user3 = User::create(
             array(
-                'email'                 => 'taipm@qsoft.com.vn',
-                'name'                  => 'Pham Minh Tai',
+                'email'                 => 'thangvx@qsoft.com.vn',
+                'name'                  => 'Vu Xuan Thang',
                 'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
-                'phone_number'          => '0912345678'
+                'phone_number'          => '0912456142'
+            )
+        );
+        
+        $user4 = User::create(
+            array(
+                'email'                 => 'bachnx@qsoft.com.vn',
+                'name'                  => 'Nguyen Xuan Bach',
+                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+                'phone_number'          => '0985621236'
             )
         );
         
