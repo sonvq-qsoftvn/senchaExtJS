@@ -59,11 +59,20 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                     }                    
                 },
                 failure: function (response) {
-                    that.lookupReference('addteamform').up('window').destroy();
-                    if(response.status == '401' || response.status == '412') {
+                    if(response.status == '401') {
                         Ext.Msg.show({
                             title: 'Create team failed',
                             msg: Ext.decode(response.responseText),
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.ERROR
+                        }); 
+                    } else if (response.status == '412') {
+                        var textReturn = Ext.decode(response.responseText);
+                        var messageError = textReturn.validation.name;
+                        console.log(messageError);
+                        Ext.Msg.show({
+                            title: 'Create team failed',
+                            msg: messageError,
                             buttons: Ext.Msg.OK,
                             icon: Ext.Msg.ERROR
                         }); 

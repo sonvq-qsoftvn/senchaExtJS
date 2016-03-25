@@ -19,7 +19,7 @@ class Team extends SmartLoquent {
     }
     
     protected static $createRules = array(
-        'name'				=>	'required',
+        'name'				=>	'required|unique:teams',
         'slogan'			=>	'required'
     );
     
