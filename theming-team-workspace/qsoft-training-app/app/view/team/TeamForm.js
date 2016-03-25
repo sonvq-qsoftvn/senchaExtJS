@@ -5,9 +5,20 @@ Ext.define('QsoftTrainingApp.view.team.TeamForm', {
     width: 350,
     layout: 'fit',
     resizable: false,
-    reference: 'teamsForm',
+    id: 'addteamwindow',
     closeAction: 'hide',
+    controller: 'team',    
     modal: true,
+    
+    requires: [
+        'QsoftTrainingApp.store.Teams',
+        'QsoftTrainingApp.view.team.TeamController',
+    ],
+    
+    store: {
+        type: 'Teams'
+    },
+    
     config: {
         recordIndex: 0,
         action: ''
@@ -15,6 +26,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamForm', {
     items: [{
         xtype: 'form',
         layout: 'anchor',
+        reference: 'addteamform',
         bodyStyle: {
             background: 'none',
             padding: '10px',
@@ -24,10 +36,8 @@ Ext.define('QsoftTrainingApp.view.team.TeamForm', {
             xtype: 'textfield',
             anchor: '100%'
         },
-        items: [{
-                name: 'id',
-                xtype: 'hiddenfield'
-            }, {
+        items: [
+            {
                 name: 'name',
                 fieldLabel: 'Team Name',
                 allowBlank: false,
@@ -41,7 +51,9 @@ Ext.define('QsoftTrainingApp.view.team.TeamForm', {
     }],
     buttons: [{
         text: 'OK',
-        action: 'add',
+        listeners: {
+            click: 'doAddTeam'
+        },
         scale: 'medium',
         ui: 'round',
         xtype: 'button'

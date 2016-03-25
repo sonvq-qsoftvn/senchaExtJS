@@ -67,6 +67,7 @@ Route::group(array('prefix' => 'v1'), function(){
 
         });
 
+        Route::post('teams',           array('as' => 'v1.team.store',          'uses' => 'TeamController@store') );
     });
     
 

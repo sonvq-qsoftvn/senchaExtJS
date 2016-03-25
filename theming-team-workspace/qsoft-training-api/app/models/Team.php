@@ -17,5 +17,15 @@ class Team extends SmartLoquent {
     public function children() {
         return $this->hasMany('User', 'team_id', '_id');
     }
+    
+    protected static $createRules = array(
+        'name'				=>	'required',
+        'slogan'			=>	'required'
+    );
+    
+    public static function getCreateRules() {		
+        return self::$createRules;         
+    }
+    
 
 }

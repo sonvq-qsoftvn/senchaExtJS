@@ -6,9 +6,11 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
     xtype: 'teamslist',
     
     requires: [
-        'QsoftTrainingApp.store.Teams'
+        'QsoftTrainingApp.store.Teams',
+        'QsoftTrainingApp.view.team.TeamController'
     ],
     
+    id: "teamlistall",
     controller: 'team',
     
     alias   : 'widget.teamslist',
