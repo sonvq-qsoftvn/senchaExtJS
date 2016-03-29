@@ -21,6 +21,10 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
         type: 'Teams'
     },
     
+    listeners: {
+        select: 'onItemSelected'
+    },
+    
     initComponent: function () {        
         this.columns = [
             {header: 'Name', dataIndex: 'name', flex: 1},
@@ -50,20 +54,40 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
     
     deleteTeam: function (grid, record) {
         var data = record.getData();
-        console.log(data);
+        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + data._id + '?token=' + localStorage.getItem("tokenKey");
+        var teamName = data.name;
         if (grid) {
             Ext.Msg.confirm(
                 'Remove Selected Team',
                 'Are you sure you want to delete?',
                 function (button) {
-                    if (button == 'yes') {                        
+                    if (button == 'yes') {  
                         Ext.Ajax.request({
-                            url: 'books/delete/' + data.id,
+                            url: deleteUrl,
+                            method: 'DELETE',
                             success: function (response) {
-                                grid.getStore().load();
+                                if (response.status == '200') {
+                                    var messageShow = 'Successfully delete selected team named: ' + teamName;
+                                    Ext.Msg.show({
+                                        title: 'Delete team successfully',
+                                        msg: messageShow,
+                                        buttons: Ext.Msg.OK,
+                                        icon: 'smiles-icon',
+                                        fn: function (btn) {
+                                            if (btn == 'ok') {
+                                                grid.getStore().load();                           
+                                            }
+                                        }
+                                    });
+                                }                    
                             },
                             failure: function (response) {
-                                Ext.Msg.alert('Failure', 'Failed to delete Book details.');
+                                Ext.Msg.show({
+                                    title: 'Delete team failed',
+                                    msg: Ext.decode(response.responseText),
+                                    buttons: Ext.Msg.OK,
+                                    icon: Ext.Msg.ERROR
+                                }); 
                             }
                         });
                     }

@@ -66,8 +66,8 @@ Route::group(array('prefix' => 'v1'), function(){
             Route::post('logout',       array('as' => 'v1.users.logout',    'uses' => 'UserController@logout') );
 
         });
-
-        Route::post('teams',           array('as' => 'v1.team.store',          'uses' => 'TeamController@store') );
+        
+        Route::resource('teams', 'TeamController', array('except' => array('index')) );
     });
     
 

@@ -12,7 +12,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamForm', {
     
     requires: [
         'QsoftTrainingApp.store.Teams',
-        'QsoftTrainingApp.view.team.TeamController',
+        'QsoftTrainingApp.view.team.TeamController'
     ],
     
     store: {
@@ -52,7 +52,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamForm', {
     buttons: [{
         text: 'OK',
         listeners: {
-            click: 'doAddTeam'
+            click: 'doAddOrUpdateTeam'
         },
         scale: 'medium',
         ui: 'round',

@@ -22,9 +22,16 @@ class Team extends SmartLoquent {
         'name'				=>	'required|unique:teams',
         'slogan'			=>	'required'
     );
-    
+        
     public static function getCreateRules() {		
         return self::$createRules;         
+    }
+    
+    public static function getUpdateRules($id) {	
+        return array(
+            'name'			=>	"required|unique:teams,name,$id,_id",
+            'slogan'			=>	'required'
+        );     
     }
     
 

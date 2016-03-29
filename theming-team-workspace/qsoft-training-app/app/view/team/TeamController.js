@@ -19,11 +19,28 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
         });
     },   
     
-    doAddTeam: function () {          
-        var teamFormValue = this.lookupReference('addteamform').getValues();        
+    onItemSelected: function(me, record, item, index) {
+        if (Ext.getCmp('addteamwindow') != null) {
+            Ext.getCmp('addteamwindow').destroy();
+        }
+        var createTeamForm = Ext.create('QsoftTrainingApp.view.team.TeamForm');
+        createTeamForm.setTitle('Edit Team');
+        createTeamForm.setAction('edit');
+        createTeamForm.setRecordIndex(record.getData());
         
-        var that = this;       
+        createTeamForm.down('form').getForm().setValues(record.getData());
+        
+        createTeamForm.show();
 
+    },
+    
+    doAddOrUpdateTeam: function () {          
+        var teamFormValue = this.lookupReference('addteamform').getValues();        
+
+        var that = this;       
+        
+        var formAction = Ext.getCmp('addteamwindow').getAction();
+                
         if (teamFormValue.name == '' || teamFormValue.slogan == '') {
             Ext.Msg.show({
                 title: 'Form error',
@@ -32,15 +49,30 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                 icon: Ext.Msg.ERROR
             });
         } else {
-            var createTeamParams = new Object();
-            createTeamParams.name = teamFormValue.name;
-            createTeamParams.slogan = teamFormValue.slogan;
-            createTeamParams.token = localStorage.getItem("tokenKey");
+            
+            var teamParams = new Object();
+            teamParams.name = teamFormValue.name;
+            teamParams.slogan = teamFormValue.slogan;            
+            teamParams.token = localStorage.getItem("tokenKey");
 
+            var ajaxUrl = '';
+            var method = '';
+            var textMessage = '';
+            if (formAction == 'add') {
+                textMessage = 'Create';    
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL;
+                method = 'POST';
+            } else if (formAction == 'edit') {
+                var objectEdit = Ext.getCmp('addteamwindow').getRecordIndex();
+                //ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + objectEdit._id + '?token=' + localStorage.getItem("tokenKey");
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + objectEdit._id;
+                method = 'PUT';
+                textMessage = 'Update';    
+            }
             Ext.Ajax.request({
-                url: QsoftTrainingApp.common.variable.Global.baseTeamApiURL,
-                method: 'POST',
-                params: createTeamParams,
+                url: ajaxUrl,
+                method: method,
+                params: teamParams,
                 success: function (response) {
                     if (response.status == '200') {
                         var messageShow = 'Successfully created a new team named: ' + teamFormValue.name;
@@ -59,9 +91,10 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                     }                    
                 },
                 failure: function (response) {
-                    if(response.status == '401') {
+                    var messageShow = textMessage + ' team failed';
+                    if(response.status == '401' || response.status == '404') {
                         Ext.Msg.show({
-                            title: 'Create team failed',
+                            title: messageShow,
                             msg: Ext.decode(response.responseText),
                             buttons: Ext.Msg.OK,
                             icon: Ext.Msg.ERROR
@@ -69,9 +102,8 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                     } else if (response.status == '412') {
                         var textReturn = Ext.decode(response.responseText);
                         var messageError = textReturn.validation.name;
-                        console.log(messageError);
                         Ext.Msg.show({
-                            title: 'Create team failed',
+                            title: messageShow,
                             msg: messageError,
                             buttons: Ext.Msg.OK,
                             icon: Ext.Msg.ERROR
@@ -87,7 +119,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
             Ext.getCmp('addteamwindow').destroy();
         }
         var createTeamForm = Ext.create('QsoftTrainingApp.view.team.TeamForm');
-        
+        createTeamForm.setAction('add');
         createTeamForm.show();
     }
 });
