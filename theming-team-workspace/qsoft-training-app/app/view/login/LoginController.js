@@ -37,7 +37,9 @@ Ext.define('QsoftTrainingApp.view.login.LoginController', {
                     var result = Ext.decode(response.responseText);
 
                     localStorage.setItem("tokenKey", result.key);
-
+                    localStorage.setItem("userLoggedInID", result.user_id);
+                    localStorage.setItem("username", result.user.name);
+                    
                     Ext.Msg.show({
                         title: 'Login success',
                         msg: 'Successfully logged in, have fun!!!',
@@ -50,7 +52,19 @@ Ext.define('QsoftTrainingApp.view.login.LoginController', {
                     // Add the main view to the viewport
                     Ext.create({
                         xtype: 'app-main'
-                    });                       
+                    });        
+                    setTimeout(function(){
+                        $('.x-panel-body.x-panel-body-navigation').backstretch([
+                            "resources/images/main-background.jpg"
+                          , "resources/images/main-background1.jpg"
+                          , "resources/images/main-background2.jpg"
+                          , "resources/images/main-background3.jpg"
+                          , "resources/images/main-background4.jpg"
+                          , "resources/images/main-background5.jpg"
+                          , "resources/images/main-background7.jpg"
+                          , "resources/images/main-background8.jpg"
+                        ], {duration: 5000, fade: 750});
+                    }, 2000);
                 } else if (response.status == '200') {
                     Ext.Msg.show({
                         title: 'Login failed',

@@ -895,6 +895,7 @@ $include-qsofttrainingapp-view-teamtree-teamtreecontroller: dynamic(true);;
 $include-qsofttrainingapp-view-teamtree-teamtreelist: dynamic(true);;
 $include-qsofttrainingapp-view-user-usercontroller: dynamic(true);;
 $include-qsofttrainingapp-view-user-userlist: dynamic(true);;
+$include-userloggedin: dynamic(true);;
 $output-paths: ("path": "../resources");
 
 /* ======================== ETC ======================== */

@@ -46,12 +46,11 @@ Route::group(array('prefix' => 'v1'), function(){
     Route::get('users/reset/{key}', function($key){
         return ApiResponse::toApplication('reset/'.$key);
     });
-    Route::post('users/reset',          array('as' => 'v1.users.reset',     'uses' => 'UserController@resetPassword') );
-    
+    Route::post('users/reset',          array('as' => 'v1.users.reset',     'uses' => 'UserController@resetPassword') );    
     Route::post('users/auth',           array('as' => 'v1.users.auth',          'uses' => 'UserController@authenticate') );
     Route::post('users/auth/facebook',  array('as' => 'v1.users.auth.facebook', 'uses' => 'UserController@authenticateFacebook') );
-
     Route::resource('users', 'UserController', array('only' => array('index', 'store')) );
+    
     
     Route::resource('teams', 'TeamController', array('only' => array('index')) );
 
@@ -59,7 +58,8 @@ Route::group(array('prefix' => 'v1'), function(){
     Route::group(array('before' => 'logged_in'), function() {
 
         Route::get('users/sessions',    array('as' => 'v1.users.sessions',      'uses' => 'UserController@sessions') );
-
+        Route::resource('users', 'UserController', array('only' => array('destroy')) );
+        
         Route::group(array('prefix' => 'users/{users}'), function() {
 
             Route::get('show',          array('as' => 'v1.users.show',      'uses' => 'UserController@show') );

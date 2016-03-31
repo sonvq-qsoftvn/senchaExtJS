@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration {
             $table->string('email');
             $table->string('name');
             $table->string('password');
+            $table->string('role')->default('user');
             $table->string('facebook_id')->nullable();
             $table->string('phone_number')->nullable();            
             $table->integer('team_id')->unsigned()->index()->nullable();

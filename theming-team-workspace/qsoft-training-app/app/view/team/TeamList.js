@@ -54,8 +54,11 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
     
     deleteTeam: function (grid, record) {
         var data = record.getData();
-        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + data._id + '?token=' + localStorage.getItem("tokenKey");
+        
+        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + data._id;
         var teamName = data.name;
+        var teamParams = new Object();          
+            teamParams.token = localStorage.getItem("tokenKey");
         if (grid) {
             Ext.Msg.confirm(
                 'Remove Selected Team',
@@ -65,6 +68,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
                         Ext.Ajax.request({
                             url: deleteUrl,
                             method: 'DELETE',
+                            params: teamParams,
                             success: function (response) {
                                 if (response.status == '200') {
                                     var messageShow = 'Successfully delete selected team named: ' + teamName;

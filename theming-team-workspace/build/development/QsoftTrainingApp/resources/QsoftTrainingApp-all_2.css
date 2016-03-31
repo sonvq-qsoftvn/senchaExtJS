@@ -13241,3 +13241,19 @@ html {
 .x-grid-group-hd-collapsible .x-grid-group-title:before {
     color: black;
 }
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:104 */
+.x-tabpanel-child .x-panel-body.x-panel-body-default {
+    background: transparent;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:108 */
+.x-panel-body.x-panel-body-navigation {
+    background: url('images/main-background8.jpg') top center;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:112 */
+.app-title {
+    text-align: left;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:115 */
+.app-title span {
+    font-size: 13px;
+}

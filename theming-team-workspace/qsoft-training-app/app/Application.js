@@ -21,6 +21,19 @@ Ext.define('QsoftTrainingApp.Application', {
         'QsoftTrainingApp.view.main.Main'
     ],
     launch: function () {
+        setTimeout(function(){
+            $('.x-panel-body.x-panel-body-navigation').backstretch([
+                "resources/images/main-background.jpg"
+              , "resources/images/main-background1.jpg"
+              , "resources/images/main-background2.jpg"
+              , "resources/images/main-background3.jpg"
+              , "resources/images/main-background4.jpg"
+              , "resources/images/main-background5.jpg"
+              , "resources/images/main-background7.jpg"
+              , "resources/images/main-background8.jpg"
+            ], {duration: 5000, fade: 750});
+        }, 2000);
+        
         var baseApiURL = QsoftTrainingApp.common.variable.Global.baseApiURL;
         
         // It's important to note that this type of application could use
@@ -51,7 +64,8 @@ Ext.define('QsoftTrainingApp.Application', {
                         //locate the people connections entry point                        
                         if(response.status == '200') {
                             var result = Ext.decode(response.responseText);
-                            QsoftTrainingApp.common.variable.Global.userLoggedInID = result.sessions[0].user_id;
+                            localStorage.setItem("userLoggedInID", result._id);
+                            localStorage.setItem("username", result.name);
                             // The tokenKey is valid, allow user to logged in
                             Ext.create({ xtype: 'app-main' });                            
                         }

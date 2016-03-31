@@ -52,6 +52,16 @@ class DatabaseSeeder extends Seeder {
         
         DB::table('users')->delete();
         
+        $userAdmin = User::create(
+            array(
+                'email'                 => 'tuanta@qsoft.com.vn',
+                'name'                  => 'Tran Anh Tuan',
+                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+                'phone_number'          => '0981234567',
+                'role'                  => 'admin'
+            )
+        );
+        
         $user1 = User::create(
             array(
                 'email'                 => 'sonvq@qsoft.com.vn',

@@ -2,275 +2,284 @@
 
 class UserController extends BaseController {
 
-	public $restful = true;
+    public $restful = true;
 
-	public function index() {
-            $userCollection = User::all();
+    public function index() {
+        $userCollection = User::all();
 
-            if (count($userCollection) > 0) {
-                foreach ($userCollection as &$user) {
-                    if ($user->team_id != null) {
-                        $teamObject = Team::where('_id', '=', $user->team_id)->first();
-                        $user->team_name = $teamObject->name;
-                    } else {
-                        $user->team_name = 'No Team';
-                    }
-                    
+        if (count($userCollection) > 0) {
+            foreach ($userCollection as &$user) {
+                if ($user->team_id != null) {
+                    $teamObject = Team::where('_id', '=', $user->team_id)->first();
+                    $user->team_name = $teamObject->name;
+                } else {
+                    $user->team_name = 'No Team';
                 }
             }
-            return $userCollection;
-	}
-	
-	/**
-	 *	Create a new user account
-	 */
-	public function store() {
+        }
+        return $userCollection;
+    }
 
-		$input = Input::all();
-		$user = '';
+    /**
+     * 	Create a new user account
+     */
+    public function store() {
 
-		$validator = Validator::make( $input, User::getCreateRules() );
+        $input = Input::all();
+        $user = '';
 
-		if ( $validator->passes() ) {
-			
-                        $user = new User();
-			$user->email 			= Input::has('email')? $input['email'] : '';
-			$user->name 			= Input::has('name')? $input['name'] : '';
-			$user->password 		= Hash::make( $input['password'] );
-                        $user->phone_number             = Input::has('phone_number')? $input['phone_number'] : '';
+        $validator = Validator::make($input, User::getCreateRules());
 
-			if ( !$user->save() )
-				$user = ApiResponse::errorInternal('An error occured. Please, try again.');
+        if ($validator->passes()) {
 
-		}
-		else {
-			return ApiResponse::validation($validator);
-		}
-                
-		Log::info('<!> Created : '.$user);
+            $user = new User();
+            $user->email = Input::has('email') ? $input['email'] : '';
+            $user->name = Input::has('name') ? $input['name'] : '';
+            $user->password = Hash::make($input['password']);
+            $user->phone_number = Input::has('phone_number') ? $input['phone_number'] : '';
 
-                $userReturn = User::where('email', '=', $user->email)->first();
-                
-		return ApiResponse::json($userReturn->toArray());
-	}
+            if (!$user->save())
+                $user = ApiResponse::errorInternal('An error occured. Please, try again.');
+        }
+        else {
+            return ApiResponse::validation($validator);
+        }
 
-	/**
-	 *	Authenticate a registered user, with its email and password
-	 */
-	public function authenticate() {
+        Log::info('<!> Created : ' . $user);
 
-		$input = Input::all();
-		$validator = Validator::make( $input, User::getAuthRules() );
+        $userReturn = User::where('email', '=', $user->email)->first();
 
-		if ( $validator->passes() ){
+        return ApiResponse::json($userReturn->toArray());
+    }
 
-			$user = User::where('email', '=', $input['email'])->first();
-			if ( !($user instanceof User) ) {
-				return ApiResponse::json("User is not registered.");
-			}
-			
-			if ( Hash::check( $input['password'] , $user->password) ) {
+    /**
+     * 	Authenticate a registered user, with its email and password
+     */
+    public function authenticate() {
 
-				$device_id = Input::has('device_id')? $input['device_id'] : '';
-				$device_type = Input::has('device_type')? $input['device_type'] : '';
-				$device_token = Input::has('device_token')? $input['device_token'] : '';
+        $input = Input::all();
+        $validator = Validator::make($input, User::getAuthRules());
 
-				$token = $user->login( $device_id, $device_type, $device_token );
+        if ($validator->passes()) {
 
-				Log::info('<!> Device Token Received : '. $device_token .' - Device ID Received : '. $device_id .' for user id: '.$token->user_id);
-				Log::info('<!> Logged : '.$token->user_id.' on '.$token->device_os.'['.$token->device_id.'] with token '.$token->key);
-				
-				$token->user = $user->toArray();
-				$token = ApiResponse::json($token, '202');
-			}
-			else $token = ApiResponse::json("Incorrect password.", '412');
-			
-			return $token;
-		}
-		else {
-			return ApiResponse::validation($validator);
-		}
-	}
-        
-        /**
-	 *	Authenticate a user based on Facebook access token. If the email address from facebook is already in the database, 
-	 *	the facebook user id will be added. 
-	 *	If not, a new user will be created with a random password and user info from facebook.
-	 */
-	public function authenticateFacebook() {
+            $user = User::where('email', '=', $input['email'])->first();
+            if (!($user instanceof User)) {
+                return ApiResponse::json("User is not registered.");
+            }
 
-		$input = Input::all();
-		$validator = Validator::make( $input, User::getAuthFBRules() );
+            if (Hash::check($input['password'], $user->password)) {
 
-		if ( $validator->passes() ){
+                $device_id = Input::has('device_id') ? $input['device_id'] : '';
+                $device_type = Input::has('device_type') ? $input['device_type'] : '';
+                $device_token = Input::has('device_token') ? $input['device_token'] : '';
 
-			$facebook = new FacebookWrapper();
-			$facebook->loginAsUser( $input['access_token'] );
+                $token = $user->login($device_id, $device_type, $device_token);
 
-			$profile = $facebook->getMe();
+                Log::info('<!> Device Token Received : ' . $device_token . ' - Device ID Received : ' . $device_id . ' for user id: ' . $token->user_id);
+                Log::info('<!> Logged : ' . $token->user_id . ' on ' . $token->device_os . '[' . $token->device_id . '] with token ' . $token->key);
 
-			if ( is_array($profile) && isset($profile['error']) )
-				return json_encode($profile);
+                $token->user = $user->toArray();
+                $token = ApiResponse::json($token, '202');
+            } else
+                $token = ApiResponse::json("Incorrect password.", '412');
 
-			Log::info( json_encode( $profile->asArray() ) );
+            return $token;
+        }
+        else {
+            return ApiResponse::validation($validator);
+        }
+    }
 
-			$user = User::where('facebook_id', '=', $profile->getId() )->first();
-			
-			if ( !($user instanceof User) )
-				$user = User::where('email', '=', $profile->getProperty('email') )->first();
+    /**
+     * 	Authenticate a user based on Facebook access token. If the email address from facebook is already in the database, 
+     * 	the facebook user id will be added. 
+     * 	If not, a new user will be created with a random password and user info from facebook.
+     */
+    public function authenticateFacebook() {
 
-			if ( !($user instanceof User) ){
-				// Create an account if none is found                                
-                                
-				$user = new User();
-				$user->name             = $profile->getName();
-				$user->email            = $profile->getProperty('email');
-				$user->password         = Hash::make( uniqid() );
-			}
-				
-			$user->facebook_id = $profile->getId();
-			$user->save();
+        $input = Input::all();
+        $validator = Validator::make($input, User::getAuthFBRules());
 
-			$device_id = Input::has('device_id')? $input['device_id'] : '';
-			$device_type = Input::has('device_type')? $input['device_type'] : '';
-			$device_token = Input::has('device_token')? $input['device_token'] : '';
+        if ($validator->passes()) {
 
-			$token = $user->login( $device_id, $device_type, $device_token );
-			
-			Log::info('<!> Device Token Received : '. $device_token .' - Device ID Received : '. $device_id .' for user id: '.$token->user_id);
-			Log::info('<!> FACEBOOK Logged : '.$token->user_id.' on '.$token->device_os.'['.$token->device_id.'] with token '.$token->token);
+            $facebook = new FacebookWrapper();
+            $facebook->loginAsUser($input['access_token']);
 
-			$token = $token->toArray();
-                        $userReturn = User::where('email', '=', $user->email)->first();
-			$token['user'] = $userReturn->toArray();
+            $profile = $facebook->getMe();
 
-			Log::info( json_encode($token) );
-			
-			return ApiResponse::json($token);
-		}
-		else {
-			return ApiResponse::validation($validator);
-		}
-	}
+            if (is_array($profile) && isset($profile['error']))
+                return json_encode($profile);
 
-	/**
-	 *	Logout a user: remove the specified active token from the database
-	 *	@param user User
-	 */
-	public function logout( $user ) {
+            Log::info(json_encode($profile->asArray()));
 
-		if ( !Input::has('token') ) return ApiResponse::json('No token given.');
+            $user = User::where('facebook_id', '=', $profile->getId())->first();
 
-		$input_token = Input::get('token');
-		$token = Token::where('key', '=', $input_token)->first();
+            if (!($user instanceof User))
+                $user = User::where('email', '=', $profile->getProperty('email'))->first();
 
-		if ( empty($token) ) return ApiResponse::json('No active session found.');
+            if (!($user instanceof User)) {
+                // Create an account if none is found                                
 
-		if ( $token->user_id !== $user->_id ) return ApiResponse::errorForbidden('You do not own this token.');
+                $user = new User();
+                $user->name = $profile->getName();
+                $user->email = $profile->getProperty('email');
+                $user->password = Hash::make(uniqid());
+            }
 
-		if ( $token->delete() ){
-			Log::info('<!> Logged out from : '.$input_token );
-			return ApiResponse::json('User logged out successfully.', '202');
-		}	
-		else
-			return ApiResponse::errorInternal('User could not log out. Please try again.');
+            $user->facebook_id = $profile->getId();
+            $user->save();
 
-	}
+            $device_id = Input::has('device_id') ? $input['device_id'] : '';
+            $device_type = Input::has('device_type') ? $input['device_type'] : '';
+            $device_token = Input::has('device_token') ? $input['device_token'] : '';
 
-	/**
-	 *	Show all active sessions for the specified user, check access rights
-	 */
-	public function sessions() {
+            $token = $user->login($device_id, $device_type, $device_token);
 
-		if ( !Input::has('token') ) return ApiResponse::json('No token given.');
+            Log::info('<!> Device Token Received : ' . $device_token . ' - Device ID Received : ' . $device_id . ' for user id: ' . $token->user_id);
+            Log::info('<!> FACEBOOK Logged : ' . $token->user_id . ' on ' . $token->device_os . '[' . $token->device_id . '] with token ' . $token->token);
 
-		$user = Token::userFor ( Input::get('token') );
+            $token = $token->toArray();
+            $userReturn = User::where('email', '=', $user->email)->first();
+            $token['user'] = $userReturn->toArray();
 
-		if ( empty($user) ) return ApiResponse::json('User not found.');
+            Log::info(json_encode($token));
 
-		$user->sessions;
+            return ApiResponse::json($token);
+        } else {
+            return ApiResponse::validation($validator);
+        }
+    }
 
-		return ApiResponse::json( $user );
-	}
+    /**
+     * 	Logout a user: remove the specified active token from the database
+     * 	@param user User
+     */
+    public function logout($user) {
 
-	/**
-	 *	Initiate request for new password
-	 */
-	public function forgot() {
-		$input = Input::all();
-		$validator = Validator::make( $input, User::getForgotRules() );
+        if (!Input::has('token'))
+            return ApiResponse::json('No token given.');
 
-		if ( $validator->passes() ) {
+        $input_token = Input::get('token');
+        $token = Token::where('key', '=', $input_token)->first();
 
-			$user = User::where('email', '=', $input['email'])->first();
-			$reset = $user->generateResetKey();
+        if (empty($token))
+            return ApiResponse::json('No active session found.');
 
-			$sent = false;
+        if ($token->user_id !== $user->_id)
+            return ApiResponse::errorForbidden('You do not own this token.');
 
-			if ( $reset->save() ){
-				Log::info($reset);
-				$sent = EmailRunner::send( 'lost_password', $reset );
-			}
+        if ($token->delete()) {
+            Log::info('<!> Logged out from : ' . $input_token);
+            return ApiResponse::json('User logged out successfully.', '202');
+        } else
+            return ApiResponse::errorInternal('User could not log out. Please try again.');
+    }
 
-			if ( $sent )
-				return ApiResponse::json('Email sent successfully.');
-			else
-				return ApiResponse::json('An error has occured, the Email was not sent.', 500);
-		}
-		else {
-			return ApiResponse::validation($validator);
-		}
-	}
+    /**
+     * 	Show all active sessions for the specified user, check access rights
+     */
+    public function sessions() {
 
-	/**
-	 *	Send reset password form with KEY
-	 */
-	public function resetPassword() {
-		$input = Input::all();
-		$validator = Validator::make( $input, User::getResetRules() );
+        if (!Input::has('token'))
+            return ApiResponse::json('No token given.');
 
-		if ( $validator->passes() ) {
-			$reset = ResetKey::where('key', $input['key'])->first();
-			$user = User::where('email', $input['email'])->first();
+        $user = Token::userFor(Input::get('token'));
 
-			if ( !($reset instanceof ResetKey) )
-				return ApiResponse::errorUnauthorized("Invalid reset key.");
+        if (empty($user))
+            return ApiResponse::json('User not found.');
 
-			if ( $reset->user_id != $user->_id )
-				return ApiResponse::errorUnauthorized("Reset key does not belong to this user.");
+        $user->sessions;
 
-			if ( $reset->isExpired() ) {
-				$reset->delete();
-				return ApiResponse::errorUnauthorized("Reset key is expired.");
-			}
+        return ApiResponse::json($user);
+    }
 
-			$user = $reset->user;
+    /**
+     * 	Initiate request for new password
+     */
+    public function forgot() {
+        $input = Input::all();
+        $validator = Validator::make($input, User::getForgotRules());
 
-			$user->password = Hash::make($input['password']);
-			$user->save();
+        if ($validator->passes()) {
 
-			$reset->delete();
+            $user = User::where('email', '=', $input['email'])->first();
+            $reset = $user->generateResetKey();
 
-			return ApiResponse::json('Password reset successfully!');
-		}
-		else {
-			return ApiResponse::validation($validator);
-		}
-	}
+            $sent = false;
 
-	/**
-	 *	Show all active sessions for the specified user, no access right check
-	 *	@param user User
-	 */
-	public function show($user) {
-		$user->sessions;
-		// Log::info('<!> Showing : '.$user );
-		return $user;
-	}
+            if ($reset->save()) {
+                Log::info($reset);
+                $sent = EmailRunner::send('lost_password', $reset);
+            }
 
-	public function missingMethod( $parameters = array() )
-	{
-	    return ApiResponse::errorNotFound('Sorry, no method found');
-	}
+            if ($sent)
+                return ApiResponse::json('Email sent successfully.');
+            else
+                return ApiResponse::json('An error has occured, the Email was not sent.', 500);
+        }
+        else {
+            return ApiResponse::validation($validator);
+        }
+    }
+
+    /**
+     * 	Send reset password form with KEY
+     */
+    public function resetPassword() {
+        $input = Input::all();
+        $validator = Validator::make($input, User::getResetRules());
+
+        if ($validator->passes()) {
+            $reset = ResetKey::where('key', $input['key'])->first();
+            $user = User::where('email', $input['email'])->first();
+
+            if (!($reset instanceof ResetKey))
+                return ApiResponse::errorUnauthorized("Invalid reset key.");
+
+            if ($reset->user_id != $user->_id)
+                return ApiResponse::errorUnauthorized("Reset key does not belong to this user.");
+
+            if ($reset->isExpired()) {
+                $reset->delete();
+                return ApiResponse::errorUnauthorized("Reset key is expired.");
+            }
+
+            $user = $reset->user;
+
+            $user->password = Hash::make($input['password']);
+            $user->save();
+
+            $reset->delete();
+
+            return ApiResponse::json('Password reset successfully!');
+        } else {
+            return ApiResponse::validation($validator);
+        }
+    }
+
+    /**
+     * 	Show all active sessions for the specified user, no access right check
+     * 	@param user User
+     */
+    public function show($user) {
+        $user->sessions;
+        // Log::info('<!> Showing : '.$user );
+        return $user;
+    }
+
+    public function missingMethod($parameters = array()) {
+        return ApiResponse::errorNotFound('Sorry, no method found');
+    }
+
+    public function destroy($id) {
+        $userObject = User::where('_id', '=', $id)->first();
+
+        if (!($userObject instanceof User)) {
+            return ApiResponse::errorNotFound("User does not exist!");
+        }
+        $userObject->delete();
+
+        return ApiResponse::json('Successfully delete selected user', 200);
+    }
 
 }

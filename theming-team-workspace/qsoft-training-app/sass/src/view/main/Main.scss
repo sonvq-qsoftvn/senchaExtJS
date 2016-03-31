@@ -98,3 +98,18 @@ html {
 .x-grid-group-hd-collapsible .x-grid-group-title:before {
     color: black;
 }
+
+.x-tabpanel-child .x-panel-body.x-panel-body-default {
+    background: transparent; 
+}
+
+.x-panel-body.x-panel-body-navigation {
+    background: url('images/main-background8.jpg') top center; 
+}
+
+.app-title {
+    text-align: left;
+}
+.app-title span {
+    font-size: 13px;
+}

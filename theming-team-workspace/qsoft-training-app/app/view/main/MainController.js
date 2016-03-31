@@ -22,9 +22,9 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
     onLogoutClick: function () {
         var baseApiURL = QsoftTrainingApp.common.variable.Global.baseApiURL;
         
-        var apiURL = baseApiURL + 'users/' + QsoftTrainingApp.common.variable.Global.userLoggedInID + '/logout';                
+        var apiURL = baseApiURL + 'users/' + localStorage.getItem("userLoggedInID") + '/logout';                
         
-        var logoutParams = new Object();;
+        var logoutParams = new Object();
         logoutParams.token = localStorage.getItem("tokenKey");
         
         var that = this;
@@ -37,6 +37,8 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                 if(response.status == '202') {
                     // Remove the localStorage key/value
                     localStorage.removeItem('tokenKey');
+                    localStorage.removeItem('userLoggedInID');
+                    localStorage.removeItem('username');
 
                     // Remove Main View
                     that.getView().destroy();
@@ -48,7 +50,7 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                 }
             },
             failure: function(response, opts) {                 
-                if(response.status == '401') {
+                if(response.status == '401' || response.status == '403') {
                     Ext.Msg.show({
                         title: 'Logout failed',
                         msg: Ext.decode(response.responseText),

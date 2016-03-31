@@ -8,7 +8,7 @@
 Ext.define('QsoftTrainingApp.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
-
+    
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
@@ -35,15 +35,19 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         layout: {
             align: 'stretchmax'
         },
-        title: {
-            bind: {
-                text: '{name}'
-            },
+        title: {           
             flex: 0
         },
         iconCls: 'fa fa-mortar-board'
     },
 
+    listeners: {
+        afterrender: function (panel) {
+            var headerTitle = '<div class="app-title">QSoft Training App<br> <span>Wellcome, ' + localStorage.getItem('username') + ' </span></div>'
+            panel.setTitle(headerTitle);
+        }
+    },
+    
     tabBar: {
         flex: 1,
         layout: {

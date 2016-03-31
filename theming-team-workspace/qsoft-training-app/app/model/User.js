@@ -13,6 +13,9 @@ Ext.define('QsoftTrainingApp.model.User', {
         },
         {
             name: 'team_name'
+        },
+        {
+            name: 'role'
         }
     ]
 });

@@ -20,9 +20,9 @@ class User extends SmartLoquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	protected $hidden = array('password', '_id', 'deleted_at', 'created_at', 'updated_at');
+	protected $hidden = array('password', 'deleted_at', 'created_at', 'updated_at');
 	protected $dates = ['deleted_at'];
-        protected $fillable = array('email', 'name', 'password', 'phone_number', 'team_id');        
+        protected $fillable = array('email', 'name', 'password', 'phone_number', 'team_id', 'role');        
     
 	protected static $createRules = array(
 		'name'				=>	'required',

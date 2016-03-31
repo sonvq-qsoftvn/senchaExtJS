@@ -45,7 +45,8 @@ Ext.define('QsoftTrainingApp.view.teamtree.TeamTreeList', {
     columns: [
         {header: 'Email', dataIndex: 'email', flex: 1, sortable:false},
         {header: 'Name', dataIndex: 'name', flex: 1, sortable:false},
-        {header: 'Phone Number', dataIndex: 'phone_number', flex: 1, sortable:false},
+        {header: 'Role', dataIndex: 'role', flex: 1, sortable:false},
+        {header: 'Phone Number', dataIndex: 'phone_number', flex: 1, sortable:false},        
         {header: 'Team Name', dataIndex: 'team_name', flex: 1, sortable:false}         
     ]
 });
