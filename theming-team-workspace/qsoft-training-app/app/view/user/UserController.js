@@ -7,7 +7,24 @@
 Ext.define('QsoftTrainingApp.view.user.UserController', {
     extend: 'Ext.app.ViewController',
 
-    alias: 'controller.user'
+    alias: 'controller.user',
 
+    
+    init: function () {
+        this.control({
+            'userslist > toolbar > button[action=add]': {
+                click: this.showAddForm
+            }
+        });
+    }, 
+    
+    showAddForm: function () {
+        if (Ext.getCmp('adduserwindow') != null) {
+            Ext.getCmp('adduserwindow').destroy();
+        }
+        var createUserForm = Ext.create('QsoftTrainingApp.view.user.UserForm');
+        createUserForm.setAction('add');
+        createUserForm.show();
+    }
    
 });

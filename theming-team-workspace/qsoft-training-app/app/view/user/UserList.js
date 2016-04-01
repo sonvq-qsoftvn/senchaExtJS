@@ -6,14 +6,18 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
     xtype: 'userslist',
     
     requires: [
-        'QsoftTrainingApp.store.Users'
+        'QsoftTrainingApp.store.Users',
+        'QsoftTrainingApp.view.user.UserController',
+        'QsoftTrainingApp.view.user.UserForm'
     ],
     
     title: 'User List',
-
+    id: "userlistall",
     store: {
         type: 'Users'
     },
+    controller: 'user',
+    alias   : 'widget.userslist',
     
     initComponent: function () {        
         this.columns = [
@@ -21,8 +25,11 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
             {header: 'Name', dataIndex: 'name', flex: 1},
             {header: 'Role', dataIndex: 'role', flex: 1},
             {header: 'Phone Number', dataIndex: 'phone_number', flex: 1},
-            {header: 'Team Name', dataIndex: 'team_name', flex: 1},
-            {header: '', width: 50, xtype:'actioncolumn',
+            {header: 'Team Name', dataIndex: 'team_name', flex: 1}
+        ];
+        
+        if (localStorage.getItem('role') == 'admin') { 
+            var actionColumn = {header: '', width: 50, xtype:'actioncolumn',
                 items : [{
                         iconAlign: 'center',
                         textAlign: 'center',
@@ -33,28 +40,30 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                         grid.deleteUser(grid, grid.getStore().getAt(rowIndex));
                     }
                 }]                
-            }
-        ];
-        this.bbar = [{
-            xtype: 'button',
-            text: 'Create New User',
-            action: 'add',
-            ui: 'round',
-            iconCls: 'fa fa-user-plus'
-        }];
+            };
+            
+            this.columns.push(actionColumn);
+            
+            this.bbar = [{
+                xtype: 'button',
+                text: 'Create New User',
+                action: 'add',
+                ui: 'round',
+                iconCls: 'fa fa-user-plus'
+            }];
+        }
         this.callParent(arguments);        
     },
     
     deleteUser: function (grid, record) {
         var data = record.getData();
-        console.log(data);
-        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseUserApiURL + '/' + data._id + '?token=' + localStorage.getItem("tokenKey");
+        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseUserApiURL + '/' + data._id;
         var userName = data.name;
         var userParams = new Object();          
             userParams.token = localStorage.getItem("tokenKey");
         if (grid) {
             Ext.Msg.confirm(
-                'Remove Selected Team',
+                'Remove Selected User',
                 'Are you sure you want to delete?',
                 function (button) {
                     if (button == 'yes') {  
@@ -72,7 +81,8 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                                         icon: 'smiles-icon',
                                         fn: function (btn) {
                                             if (btn == 'ok') {
-                                                grid.getStore().load();                           
+                                                grid.getStore().load();                                                       
+                                                Ext.getCmp('teamtreelistall').getStore().load();
                                             }
                                         }
                                     });

@@ -20,7 +20,7 @@ class CreateRelationForeignkeys extends Migration {
         });
         
         Schema::table('users', function($table) {
-            $table->foreign('team_id')->references('_id')->on('teams')->onDelete('cascade');;
+            $table->foreign('team_id')->references('_id')->on('teams');
         });
     }
 

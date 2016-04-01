@@ -64,7 +64,6 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                 method = 'POST';
             } else if (formAction == 'edit') {
                 var objectEdit = Ext.getCmp('addteamwindow').getRecordIndex();
-                //ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + objectEdit._id + '?token=' + localStorage.getItem("tokenKey");
                 ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + objectEdit._id;
                 method = 'PUT';
                 textMessage = 'Update';    
@@ -84,6 +83,8 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                             fn: function (btn) {
                                 if (btn == 'ok') {
                                     Ext.getCmp('teamlistall').getStore().load();
+                                    Ext.getCmp('teamtreelistall').getStore().load();
+                                    Ext.getCmp('userlistall').getStore().load();                                    
                                     Ext.getCmp('addteamwindow').close();                                    
                                 }
                             }

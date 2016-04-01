@@ -64,7 +64,7 @@ class UserController extends BaseController {
 
             $user = User::where('email', '=', $input['email'])->first();
             if (!($user instanceof User)) {
-                return ApiResponse::json("User is not registered.");
+                return ApiResponse::errorUnauthorized("User is not registered.");
             }
 
             if (Hash::check($input['password'], $user->password)) {
@@ -81,7 +81,7 @@ class UserController extends BaseController {
                 $token->user = $user->toArray();
                 $token = ApiResponse::json($token, '202');
             } else
-                $token = ApiResponse::json("Incorrect password.", '412');
+                $token = ApiResponse::errorUnauthorized("Incorrect password.");
 
             return $token;
         }
@@ -157,13 +157,13 @@ class UserController extends BaseController {
     public function logout($user) {
 
         if (!Input::has('token'))
-            return ApiResponse::json('No token given.');
+            return ApiResponse::errorUnauthorized('No token given.');
 
         $input_token = Input::get('token');
         $token = Token::where('key', '=', $input_token)->first();
 
         if (empty($token))
-            return ApiResponse::json('No active session found.');
+            return ApiResponse::errorNotFound('No active session found.');
 
         if ($token->user_id !== $user->_id)
             return ApiResponse::errorForbidden('You do not own this token.');
@@ -181,12 +181,12 @@ class UserController extends BaseController {
     public function sessions() {
 
         if (!Input::has('token'))
-            return ApiResponse::json('No token given.');
+            return ApiResponse::errorUnauthorized('No token given.');
 
         $user = Token::userFor(Input::get('token'));
 
         if (empty($user))
-            return ApiResponse::json('User not found.');
+            return ApiResponse::errorNotFound('User not found.');
 
         $user->sessions;
 
@@ -271,13 +271,16 @@ class UserController extends BaseController {
         return ApiResponse::errorNotFound('Sorry, no method found');
     }
 
-    public function destroy($id) {
-        $userObject = User::where('_id', '=', $id)->first();
+    public function destroy($userDelete) {
+        $token = Input::get('token');
+        $tokenObject = Token::where('key', '=', $token)->first();
 
-        if (!($userObject instanceof User)) {
-            return ApiResponse::errorNotFound("User does not exist!");
+        if ($tokenObject->user_id == $userDelete->_id) {
+            return ApiResponse::errorForbidden("You cannot delete yourself!");
         }
-        $userObject->delete();
+        
+        $allTokenObjectDelete = Token::where('user_id', '=', $userDelete->_id)->delete();
+        $userDelete->delete();
 
         return ApiResponse::json('Successfully delete selected user', 200);
     }

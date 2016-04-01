@@ -34,30 +34,27 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
             params: logoutParams,
             success: function(response, opts) {
                 //locate the people connections entry point                        
-                if(response.status == '202') {
-                    // Remove the localStorage key/value
-                    localStorage.removeItem('tokenKey');
-                    localStorage.removeItem('userLoggedInID');
-                    localStorage.removeItem('username');
+                // Remove the localStorage key/value
+                localStorage.removeItem('tokenKey');
+                localStorage.removeItem('userLoggedInID');
+                localStorage.removeItem('username');
+                localStorage.removeItem('role');
 
-                    // Remove Main View
-                    that.getView().destroy();
+                // Remove Main View
+                that.getView().destroy();
 
-                    // Add the Login Window
-                    Ext.create({
-                        xtype: 'login'
-                    });                     
-                }
+                // Add the Login Window
+                Ext.create({
+                    xtype: 'login'
+                });                     
             },
             failure: function(response, opts) {                 
-                if(response.status == '401' || response.status == '403') {
-                    Ext.Msg.show({
-                        title: 'Logout failed',
-                        msg: Ext.decode(response.responseText),
-                        buttons: Ext.Msg.OK,
-                        icon: Ext.Msg.ERROR
-                    }); 
-                }
+                Ext.Msg.show({
+                    title: 'Logout failed',
+                    msg: Ext.decode(response.responseText),
+                    buttons: Ext.Msg.OK,
+                    icon: Ext.Msg.ERROR
+                }); 
             },
             headers: {
                 'Accept': 'application/json'

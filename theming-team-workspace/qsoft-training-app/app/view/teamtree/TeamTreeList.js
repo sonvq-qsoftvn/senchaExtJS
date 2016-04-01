@@ -11,6 +11,8 @@ Ext.define('QsoftTrainingApp.view.teamtree.TeamTreeList', {
     
     title: 'Team Member List',
     
+    id: "teamtreelistall",
+    
     store: {
         type: 'TeamsTree'
     },

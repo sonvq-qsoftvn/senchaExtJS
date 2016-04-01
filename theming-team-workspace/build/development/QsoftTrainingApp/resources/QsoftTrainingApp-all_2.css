@@ -13257,3 +13257,7 @@ html {
 .app-title span {
     font-size: 13px;
 }
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:119 */
+.x-boundlist .x-boundlist-item {
+    color: black;
+}

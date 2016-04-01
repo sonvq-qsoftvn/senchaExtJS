@@ -39,6 +39,7 @@ Ext.define('QsoftTrainingApp.view.login.LoginController', {
                     localStorage.setItem("tokenKey", result.key);
                     localStorage.setItem("userLoggedInID", result.user_id);
                     localStorage.setItem("username", result.user.name);
+                    localStorage.setItem("role", result.user.role);
                     
                     Ext.Msg.show({
                         title: 'Login success',
@@ -65,24 +66,15 @@ Ext.define('QsoftTrainingApp.view.login.LoginController', {
                           , "resources/images/main-background8.jpg"
                         ], {duration: 5000, fade: 750});
                     }, 2000);
-                } else if (response.status == '200') {
-                    Ext.Msg.show({
-                        title: 'Login failed',
-                        msg: Ext.decode(response.responseText),
-                        buttons: Ext.Msg.OK,
-                        icon: Ext.Msg.ERROR
-                    });
                 }
             },
             failure: function(response, opts) {                 
-                if(response.status == '412') {
-                    Ext.Msg.show({
-                        title: 'Login failed',
-                        msg: Ext.decode(response.responseText),
-                        buttons: Ext.Msg.OK,
-                        icon: Ext.Msg.ERROR
-                    }); 
-                }
+                Ext.Msg.show({
+                    title: 'Login failed',
+                    msg: Ext.decode(response.responseText),
+                    buttons: Ext.Msg.OK,
+                    icon: Ext.Msg.ERROR
+                }); 
             },
             headers: {
                 'Accept': 'application/json'

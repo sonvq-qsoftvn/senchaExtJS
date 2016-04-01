@@ -38,12 +38,21 @@ class TeamController extends BaseController {
         return ApiResponse::json($teamReturn->toArray());
     }
     
-    public function destroy($id) {        
+    public function destroy($id) { 
         $teamObject = Team::where('_id', '=', $id)->first();
         
         if ( !($teamObject instanceof Team) ) {
             return ApiResponse::errorNotFound("Team does not exist!");
         }
+        
+        // Remove relationship from user first
+        $allUserObject = User::where('team_id', '=', $id)->get();
+        
+        foreach ($allUserObject as $singleUser) {
+            $singleUser->team_id = null;
+            $singleUser->save();
+        }
+        
         $teamObject->delete();
         
         return ApiResponse::json('Successfully delete selected team', 200);

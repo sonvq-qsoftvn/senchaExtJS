@@ -28,8 +28,12 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
     initComponent: function () {        
         this.columns = [
             {header: 'Name', dataIndex: 'name', flex: 1},
-            {header: 'Team Slogan', dataIndex: 'slogan', flex: 1},
-            {header: '', width: 50, xtype:'actioncolumn',
+            {header: 'Team Slogan', dataIndex: 'slogan', flex: 1}            
+        ];
+        
+    
+        if (localStorage.getItem('role') == 'admin') { 
+            var actionColumn = {header: '', width: 50, xtype:'actioncolumn',
                 items : [{
                         iconAlign: 'center',
                         textAlign: 'center',
@@ -40,15 +44,18 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
                         grid.deleteTeam(grid, grid.getStore().getAt(rowIndex));
                     }
                 }]                
-            }
-        ];
-        this.bbar = [{
-            xtype: 'button',
-            text: 'Create New Team',
-            action: 'add',
-            ui: 'round',
-            iconCls: 'fa fa-plus-circle'
-        }];
+            };
+            
+            this.columns.push(actionColumn);
+            
+            this.bbar = [{
+                xtype: 'button',
+                text: 'Create New Team',
+                action: 'add',
+                ui: 'round',
+                iconCls: 'fa fa-plus-circle'
+            }];
+        }
         this.callParent(arguments);        
     },
     
@@ -80,6 +87,8 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
                                         fn: function (btn) {
                                             if (btn == 'ok') {
                                                 grid.getStore().load();                           
+                                                Ext.getCmp('teamtreelistall').getStore().load();
+                                                Ext.getCmp('userlistall').getStore().load();  
                                             }
                                         }
                                     });

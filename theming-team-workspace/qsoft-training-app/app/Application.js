@@ -9,7 +9,7 @@ Ext.define('QsoftTrainingApp.Application', {
     name: 'QsoftTrainingApp',
 
     requires: [
-        'QsoftTrainingApp.common.variable.Global' 
+        'QsoftTrainingApp.common.variable.Global'
     ],
     
     stores: [
@@ -33,7 +33,7 @@ Ext.define('QsoftTrainingApp.Application', {
               , "resources/images/main-background8.jpg"
             ], {duration: 5000, fade: 750});
         }, 2000);
-        
+                
         var baseApiURL = QsoftTrainingApp.common.variable.Global.baseApiURL;
         
         // It's important to note that this type of application could use
@@ -66,16 +66,29 @@ Ext.define('QsoftTrainingApp.Application', {
                             var result = Ext.decode(response.responseText);
                             localStorage.setItem("userLoggedInID", result._id);
                             localStorage.setItem("username", result.name);
+                            localStorage.setItem("role", result.role);
                             // The tokenKey is valid, allow user to logged in
                             Ext.create({ xtype: 'app-main' });                            
                         }
                     },
-                    failure: function(response, opts) {                        
-                        Ext.create({ xtype: 'login' });
-                        if(response.status == '401') {
-                            var message = Ext.decode(response.responseText);    
-                            console.log('You are logged out because of: ' + message);    
-                        }
+                    failure: function(response, opts) {
+                        var message = 'You are logged out because of: ' + Ext.decode(response.responseText);
+                        Ext.Msg.show({
+                            title: 'You are logged out',
+                            msg: message,
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.ERROR,
+                            fn: function (btn) {
+                                if (btn == 'ok') {
+                                    Ext.create({ xtype: 'login' });
+                                }
+                            }
+                        }); 
+                        
+                        localStorage.removeItem('tokenKey');
+                        localStorage.removeItem('userLoggedInID');
+                        localStorage.removeItem('username');
+                        localStorage.removeItem('role');                                                
                     },
                     headers: {
                         'Accept': 'application/json'
