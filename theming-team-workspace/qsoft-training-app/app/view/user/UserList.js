@@ -19,6 +19,10 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
     controller: 'user',
     alias   : 'widget.userslist',
     
+    listeners: {
+        itemdblclick: 'onUserSelected'
+    },
+    
     initComponent: function () {        
         this.columns = [
             {header: 'Email', dataIndex: 'email', flex: 1},

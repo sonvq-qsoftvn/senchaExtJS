@@ -49,7 +49,7 @@ Route::group(array('prefix' => 'v1'), function(){
     Route::post('users/reset',          array('as' => 'v1.users.reset',     'uses' => 'UserController@resetPassword') );    
     Route::post('users/auth',           array('as' => 'v1.users.auth',          'uses' => 'UserController@authenticate') );
     Route::post('users/auth/facebook',  array('as' => 'v1.users.auth.facebook', 'uses' => 'UserController@authenticateFacebook') );
-    Route::resource('users', 'UserController', array('only' => array('index', 'store')) );
+    Route::resource('users', 'UserController', array('only' => array('index')) );
     
     
     Route::resource('teams', 'TeamController', array('only' => array('index')) );
@@ -63,11 +63,12 @@ Route::group(array('prefix' => 'v1'), function(){
             Route::post('logout',       array('as' => 'v1.users.logout',    'uses' => 'UserController@logout') );
         });
         
-        Route::resource('teams', 'TeamController', array('except' => array('index')) );
+        Route::resource('teams', 'TeamController', array('only' => array('show')) );
     });
     
     Route::group(array('before' => array('logged_in', 'is_admin')), function() {
-        Route::resource('users', 'UserController', array('only' => array('destroy')) );
+        Route::resource('users', 'UserController', array('only' => array('destroy', 'store', 'update')));
+        Route::resource('teams', 'TeamController', array('only' => array('destroy', 'store', 'update')));
     });
     
 

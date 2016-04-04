@@ -25,12 +25,21 @@ class User extends SmartLoquent implements UserInterface, RemindableInterface {
         protected $fillable = array('email', 'name', 'password', 'phone_number', 'team_id', 'role');        
     
 	protected static $createRules = array(
-		'name'				=>	'required',
+		'name'                                  =>	'required',
 		'password'				=>	'required|min:6|confirmed',
 		'password_confirmation'                 =>	'required|min:6',
 		'email'					=>	'required|email|unique:users,email',
                 'phone_number'                          =>      'min:6'
 	);
+        
+        public static function getUpdateRules($id) {	
+            return array(
+                'name'                                  =>	'required',
+		'email'					=>	"required|email|unique:users,email,$id,_id",
+                'phone_number'                          =>      'min:6'
+            );     
+        }
+                
 	protected static $authRules = array(
 		'email'					=>	'required|email',
 		'password'				=>	'required',

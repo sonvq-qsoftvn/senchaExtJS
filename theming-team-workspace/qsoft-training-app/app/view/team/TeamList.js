@@ -22,7 +22,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
     },
     
     listeners: {
-        select: 'onItemSelected'
+        itemdblclick: 'onItemSelected'
     },
     
     initComponent: function () {        

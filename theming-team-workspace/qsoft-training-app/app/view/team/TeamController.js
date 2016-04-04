@@ -59,14 +59,14 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
             var method = '';
             var textMessage = '';
             if (formAction == 'add') {
-                textMessage = 'Create';    
+                textMessage = 'create';    
                 ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL;
                 method = 'POST';
             } else if (formAction == 'edit') {
                 var objectEdit = Ext.getCmp('addteamwindow').getRecordIndex();
                 ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + objectEdit._id;
                 method = 'PUT';
-                textMessage = 'Update';    
+                textMessage = 'update';    
             }
             Ext.Ajax.request({
                 url: ajaxUrl,
@@ -74,7 +74,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                 params: teamParams,
                 success: function (response) {
                     if (response.status == '200') {
-                        var messageShow = 'Successfully created a new team named: ' + teamFormValue.name;
+                        var messageShow = 'Successfully ' + textMessage + ' a team named: ' + teamFormValue.name;
                         Ext.Msg.show({
                             title: 'Created new team',
                             msg: messageShow,
@@ -92,7 +92,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                     }                    
                 },
                 failure: function (response) {
-                    var messageShow = textMessage + ' team failed';
+                    var messageShow = 'Error, ' + textMessage + ' team failed';
                     if(response.status == '401' || response.status == '404') {
                         Ext.Msg.show({
                             title: messageShow,
@@ -102,7 +102,8 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                         }); 
                     } else if (response.status == '412') {
                         var textReturn = Ext.decode(response.responseText);
-                        var messageError = textReturn.validation.name;
+                        var validationObject = textReturn.validation;
+                        var messageError = validationObject[Object.keys(validationObject)[0]];
                         Ext.Msg.show({
                             title: messageShow,
                             msg: messageError,

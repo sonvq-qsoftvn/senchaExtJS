@@ -81,14 +81,14 @@ Ext.define('QsoftTrainingApp.view.user.UserForm', {
                 regexText: 'Enter a valid password',
                 listeners: {
                     change: function(field) {
-                        var confirmField = field.up('form').down('[name=pass-cfrm]');
+                        var confirmField = field.up('form').down('[name=passcfrm]');
                         confirmField.validate();
                     }
                 }
             },
             {
                 fieldLabel: 'Confirm Pass',
-                name: 'pass-cfrm',
+                name: 'passcfrm',
                 inputType: 'password',  
                 vtype: 'password',
                 allowBlank: false,
@@ -127,8 +127,9 @@ Ext.define('QsoftTrainingApp.view.user.UserForm', {
                 },
                 queryMode: 'local',
                 displayField: 'name',
-                valueField: 'name',
-                editable: false 
+                valueField: '_id',
+                editable: false,
+                name: 'team_id'
             }
             
         ]
