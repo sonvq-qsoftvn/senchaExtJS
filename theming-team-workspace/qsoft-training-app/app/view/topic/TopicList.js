@@ -1,47 +1,47 @@
 /**
  * This view is an example list of people.
  */
-Ext.define('QsoftTrainingApp.view.user.UserList', {
+Ext.define('QsoftTrainingApp.view.topic.TopicList', {
     extend: 'Ext.grid.Panel',
-    xtype: 'userslist',
+    xtype: 'topicslist',
     
     requires: [
-        'QsoftTrainingApp.store.Users',
-        'QsoftTrainingApp.view.user.UserController',
-        'QsoftTrainingApp.view.user.UserForm'
+        'QsoftTrainingApp.store.Topics',
+        'QsoftTrainingApp.view.topic.TopicController'
     ],
     
-    title: 'User List',
-    id: "userlistall",
+    id: "topiclistall",
+    controller: 'topic',
+    
+    alias   : 'widget.topicslist',
+    
+    title: 'Topic List',
+
     store: {
-        type: 'Users'
+        type: 'Topics'
     },
-    controller: 'user',
-    alias   : 'widget.userslist',
     
     listeners: {
-        itemdblclick: 'onUserSelected'
+        itemdblclick: 'onItemSelected'
     },
     
     initComponent: function () {        
         this.columns = [
-            {header: 'Email', dataIndex: 'email', flex: 1},
             {header: 'Name', dataIndex: 'name', flex: 1},
-            {header: 'Role', dataIndex: 'role', flex: 1},
-            {header: 'Phone Number', dataIndex: 'phone_number', flex: 1},
-            {header: 'Team Name', dataIndex: 'team_name', flex: 1}
+            {header: 'Team name', dataIndex: 'team_name', flex: 1}
         ];
         
+    
         if (localStorage.getItem('role') == 'admin') { 
             var actionColumn = {header: '', width: 50, xtype:'actioncolumn',
                 items : [{
                         iconAlign: 'center',
                         textAlign: 'center',
                     icon: 'resources/images/remove-btn.png',
-                    tooltip : 'Delete User',
+                    tooltip : 'Delete Topic',
                     handler : function(gView, rowIndex, colIndex) {
                         var grid = gView.up('grid');
-                        grid.deleteUser(grid, grid.getStore().getAt(rowIndex));
+                        grid.deleteTopic(grid, grid.getStore().getAt(rowIndex));
                     }
                 }]                
             };
@@ -50,45 +50,46 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
             
             this.bbar = [{
                 xtype: 'button',
-                text: 'Create New User',
+                text: 'Create New Topic',
                 action: 'add',
                 ui: 'round',
-                iconCls: 'fa fa-user-plus'
+                iconCls: 'fa fa-plus-circle'
             }];
         }
         this.callParent(arguments);        
     },
     
-    deleteUser: function (grid, record) {
+    deleteTopic: function (grid, record) {
         var data = record.getData();
-        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseUserApiURL + '/' + data._id;
-        var userName = data.name;
-        var userParams = new Object();          
-            userParams.token = localStorage.getItem("tokenKey");
+        
+        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseTopicApiURL + '/' + data._id;
+        var topicName = data.name;
+        var topicParams = new Object();          
+            topicParams.token = localStorage.getItem("tokenKey");
         if (grid) {
             Ext.Msg.confirm(
-                'Remove Selected User',
+                'Remove Selected Topic',
                 'Are you sure you want to delete?',
                 function (button) {
                     if (button == 'yes') {  
                         Ext.Ajax.request({
                             url: deleteUrl,
                             method: 'DELETE',
-                            params: userParams,
+                            params: topicParams,
                             success: function (response) {
                                 if (response.status == '200') {
-                                    var messageShow = 'Successfully delete selected user named: ' + userName;
+                                    var messageShow = 'Successfully delete selected topic named: ' + topicName;
                                     Ext.Msg.show({
-                                        title: 'Delete user successfully',
+                                        title: 'Delete topic successfully',
                                         msg: messageShow,
                                         buttons: Ext.Msg.OK,
                                         icon: 'smiles-icon',
                                         fn: function (btn) {
                                             if (btn == 'ok') {
-                                                grid.getStore().load();                                                       
+                                                grid.getStore().load();                           
                                                 Ext.getCmp('teamtreelistall').getStore().load();
-                                                Ext.getCmp('teamlistall').getStore().load();                                                
-                                                Ext.getCmp('topiclistall').getStore().load();
+                                                Ext.getCmp('userlistall').getStore().load(); 
+                                                Ext.getCmp('teamlistall').getStore().load();
                                             }
                                         }
                                     });
@@ -96,7 +97,7 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                             },
                             failure: function (response) {
                                 Ext.Msg.show({
-                                    title: 'Delete user failed',
+                                    title: 'Delete topic failed',
                                     msg: Ext.decode(response.responseText),
                                     buttons: Ext.Msg.OK,
                                     icon: Ext.Msg.ERROR

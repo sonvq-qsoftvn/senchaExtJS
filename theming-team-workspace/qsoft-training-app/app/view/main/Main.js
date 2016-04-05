@@ -101,7 +101,13 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         items: [{
             xtype: 'teamtreelist' 
         }]
-    },{
+    }, {
+        title: 'Topic - Team',
+        iconCls: 'fa fa-book',
+        items: [{
+            xtype: 'topicslist' 
+        }]
+    }, {
         title: 'Sign out',        
         iconCls: 'fa-sign-out',
         ui: 'leftalign',

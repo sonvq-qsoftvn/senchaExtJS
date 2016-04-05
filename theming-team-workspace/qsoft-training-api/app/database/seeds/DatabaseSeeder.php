@@ -100,7 +100,49 @@ class DatabaseSeeder extends Seeder {
             )
         );
         
-        $this->command->info('User table seeded!');
+        $this->command->info('User table seeded!');        
+        
+        DB::table('topics')->delete();
+        
+        $topic1 = Topic::create(
+            array(
+                'name'                  => 'Introduction -  Core Concepts'
+            )
+        );
+        
+        $topic2 = Topic::create(
+            array(
+                'name'                  => 'Components',
+                'team_id'               => $team1->getKey()
+            )
+        );
+        
+        $topic3 = Topic::create(
+            array(
+                'name'                  => 'Application Architecture',
+                'team_id'               => $team2->getKey()
+            )
+        );
+        
+        $topic4 = Topic::create(
+            array(
+                'name'                  => 'Sencha Cmd'
+            )
+        );
+        
+        $topic5 = Topic::create(
+            array(
+                'name'                  => 'Ext JS Themes'
+            )
+        );
+        
+        $topic6 = Topic::create(
+            array(
+                'name'                  => 'Tools and Debugging - Best Practices'
+            )
+        );
+        
+        $this->command->info('Topic table seeded!');
     }
 
 }

@@ -11,5 +11,5 @@ Ext.define('QsoftTrainingApp.common.variable.Global', {
     baseApiURL: 'http://localhost/extjs/theming-team-workspace/qsoft-training-api/public/v1/',
     baseUserApiURL: 'http://localhost/extjs/theming-team-workspace/qsoft-training-api/public/v1/users',
     baseTeamApiURL: 'http://localhost/extjs/theming-team-workspace/qsoft-training-api/public/v1/teams',
-    userLoggedInID: ''
+    baseTopicApiURL: 'http://localhost/extjs/theming-team-workspace/qsoft-training-api/public/v1/topics'
 });

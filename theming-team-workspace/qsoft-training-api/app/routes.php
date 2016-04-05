@@ -53,6 +53,7 @@ Route::group(array('prefix' => 'v1'), function(){
     
     
     Route::resource('teams', 'TeamController', array('only' => array('index')) );
+    Route::resource('topics', 'TopicController', array('only' => array('index')) );
 
     //	user needs to have a registered and active token
     Route::group(array('before' => 'logged_in'), function() {
@@ -64,11 +65,13 @@ Route::group(array('prefix' => 'v1'), function(){
         });
         
         Route::resource('teams', 'TeamController', array('only' => array('show')) );
+        Route::resource('topics', 'TopicController', array('only' => array('show')) );
     });
     
     Route::group(array('before' => array('logged_in', 'is_admin')), function() {
         Route::resource('users', 'UserController', array('only' => array('destroy', 'store', 'update')));
         Route::resource('teams', 'TeamController', array('only' => array('destroy', 'store', 'update')));
+        Route::resource('topics', 'TopicController', array('only' => array('destroy', 'store', 'update')));
     });
     
 

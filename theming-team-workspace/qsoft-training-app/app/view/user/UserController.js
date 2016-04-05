@@ -117,7 +117,8 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
                                 if (btn == 'ok') {
                                     Ext.getCmp('teamlistall').getStore().load();
                                     Ext.getCmp('teamtreelistall').getStore().load();
-                                    Ext.getCmp('userlistall').getStore().load();                                    
+                                    Ext.getCmp('userlistall').getStore().load(); 
+                                    Ext.getCmp('topiclistall').getStore().load();
                                     Ext.getCmp('adduserwindow').close();                                    
                                 }
                             }

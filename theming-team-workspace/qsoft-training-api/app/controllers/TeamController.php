@@ -53,6 +53,14 @@ class TeamController extends BaseController {
             $singleUser->save();
         }
         
+        // Secondly Remove relationship from topic
+        $allTopicObject = Topic::where('team_id', '=', $id)->get();
+        
+        foreach ($allTopicObject as $singleTopic) {
+            $singleTopic->team_id = null;
+            $singleTopic->save();
+        }
+        
         $teamObject->delete();
         
         return ApiResponse::json('Successfully delete selected team', 200);

@@ -4,79 +4,78 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
-Ext.define('QsoftTrainingApp.view.team.TeamController', {
+Ext.define('QsoftTrainingApp.view.topic.TopicController', {
     extend: 'Ext.app.ViewController',
 
-    alias: 'controller.team',
+    alias: 'controller.topic',
 
-    store: 'Teams',
+    store: 'Topics',
     
     init: function () {
         this.control({
-            'teamslist > toolbar > button[action=add]': {
+            'topicslist > toolbar > button[action=add]': {
                 click: this.showAddForm
             }
         });
     },   
     
     onItemSelected: function(me, record, item, index) {
-        if (Ext.getCmp('addteamwindow') != null) {
-            Ext.getCmp('addteamwindow').destroy();
+        if (Ext.getCmp('addtopicwindow') != null) {
+            Ext.getCmp('addtopicwindow').destroy();
         }
-        var createTeamForm = Ext.create('QsoftTrainingApp.view.team.TeamForm');
-        createTeamForm.setTitle('Edit Team');
-        createTeamForm.setAction('edit');
-        createTeamForm.setRecordIndex(record.getData());
+        var createTopicForm = Ext.create('QsoftTrainingApp.view.topic.TopicForm');
+        createTopicForm.setTitle('Edit Topic');
+        createTopicForm.setAction('edit');
+        createTopicForm.setRecordIndex(record.getData());
         
-        createTeamForm.down('form').getForm().setValues(record.getData());
+        createTopicForm.down('form').getForm().setValues(record.getData());
         
-        createTeamForm.show();
+        createTopicForm.show();
 
     },
     
-    doAddOrUpdateTeam: function () {          
-        var teamFormValue = this.lookupReference('addteamform').getValues();        
+    doAddOrUpdateTopic: function () {          
+        var topicFormValue = this.lookupReference('addtopicform').getValues();        
 
         var that = this;       
         
-        var formAction = Ext.getCmp('addteamwindow').getAction();
+        var formAction = Ext.getCmp('addtopicwindow').getAction();
                 
-        if (teamFormValue.name == '' || teamFormValue.slogan == '') {
+        if (topicFormValue.name == '') {
             Ext.Msg.show({
                 title: 'Form error',
-                msg: 'Name and slogan fields are required',
+                msg: 'Topic name field is required',
                 buttons: Ext.Msg.OK,
                 icon: Ext.Msg.ERROR
             });
         } else {
-            
-            var teamParams = new Object();
-            teamParams.name = teamFormValue.name;
-            teamParams.slogan = teamFormValue.slogan;            
-            teamParams.token = localStorage.getItem("tokenKey");
+            var topicParams = new Object();
+            topicParams.name = topicFormValue.name;
+            topicParams.team_id = topicFormValue.team_id;            
+            topicParams.token = localStorage.getItem("tokenKey");
 
             var ajaxUrl = '';
             var method = '';
             var textMessage = '';
             if (formAction == 'add') {
                 textMessage = 'create';    
-                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL;
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTopicApiURL;
                 method = 'POST';
             } else if (formAction == 'edit') {
-                var objectEdit = Ext.getCmp('addteamwindow').getRecordIndex();
-                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + objectEdit._id;
+                var objectEdit = Ext.getCmp('addtopicwindow').getRecordIndex();
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTopicApiURL + '/' + objectEdit._id;
                 method = 'PUT';
                 textMessage = 'update';    
             }
             Ext.Ajax.request({
                 url: ajaxUrl,
                 method: method,
-                params: teamParams,
+                params: topicParams,
                 success: function (response) {
                     if (response.status == '200') {
-                        var messageShow = 'Successfully ' + textMessage + ' a team named: ' + teamFormValue.name;
+                        var messageShow = 'Successfully ' + textMessage + ' a topic named: ' + topicFormValue.name;
                         Ext.Msg.show({
-                            title: 'Created new team',
+                            title: 'Created new topic',
                             msg: messageShow,
                             buttons: Ext.Msg.OK,
                             icon: 'smiles-icon',
@@ -86,14 +85,14 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                                     Ext.getCmp('teamtreelistall').getStore().load();
                                     Ext.getCmp('userlistall').getStore().load();  
                                     Ext.getCmp('topiclistall').getStore().load();
-                                    Ext.getCmp('addteamwindow').close();                                    
+                                    Ext.getCmp('addtopicwindow').close();                                    
                                 }
                             }
                         });
                     }                    
                 },
                 failure: function (response) {
-                    var messageShow = 'Error, ' + textMessage + ' team failed';
+                    var messageShow = 'Error, ' + textMessage + ' topic failed';
                     if(response.status == '401' || response.status == '404') {
                         Ext.Msg.show({
                             title: messageShow,
@@ -118,11 +117,11 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
     },
     
     showAddForm: function () {
-        if (Ext.getCmp('addteamwindow') != null) {
-            Ext.getCmp('addteamwindow').destroy();
+        if (Ext.getCmp('addtopicwindow') != null) {
+            Ext.getCmp('addtopicwindow').destroy();
         }
-        var createTeamForm = Ext.create('QsoftTrainingApp.view.team.TeamForm');
-        createTeamForm.setAction('add');
-        createTeamForm.show();
+        var createTopicForm = Ext.create('QsoftTrainingApp.view.topic.TopicForm');
+        createTopicForm.setAction('add');
+        createTopicForm.show();
     }
 });
