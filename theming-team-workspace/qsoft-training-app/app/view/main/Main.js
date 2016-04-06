@@ -38,7 +38,10 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         title: {           
             flex: 0
         },
-        iconCls: 'fa fa-mortar-board'
+        iconCls: 'fa fa-mortar-board',
+//        bind: {
+//            title: '<div class="app-title">QSoft Training App<br> <span>Wellcome, ' + localStorage.getItem('username') + ' </span></div>'
+//        }
     },
 
     listeners: {
