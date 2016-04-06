@@ -39,6 +39,13 @@ class User extends SmartLoquent implements UserInterface, RemindableInterface {
                 'phone_number'                          =>      'min:6'
             );     
         }
+        
+        public static function getChangePasswordRules() {	
+            return array(
+		'new_password'				=>	'required|min:6|confirmed',
+		'new_password_confirmation'                 =>	'required|min:6'
+            );     
+        }
                 
 	protected static $authRules = array(
 		'email'					=>	'required|email',

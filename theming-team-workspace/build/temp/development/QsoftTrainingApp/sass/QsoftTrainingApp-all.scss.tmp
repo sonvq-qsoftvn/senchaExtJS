@@ -898,6 +898,7 @@ $include-qsofttrainingapp-view-teamtree-teamtreelist: dynamic(true);;
 $include-qsofttrainingapp-view-topic-topiccontroller: dynamic(true);;
 $include-qsofttrainingapp-view-topic-topicform: dynamic(true);;
 $include-qsofttrainingapp-view-topic-topiclist: dynamic(true);;
+$include-qsofttrainingapp-view-user-changepassform: dynamic(true);;
 $include-qsofttrainingapp-view-user-usercontroller: dynamic(true);;
 $include-qsofttrainingapp-view-user-userform: dynamic(true);;
 $include-qsofttrainingapp-view-user-userlist: dynamic(true);;

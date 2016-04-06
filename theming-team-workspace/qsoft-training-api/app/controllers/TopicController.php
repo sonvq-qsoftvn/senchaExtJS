@@ -25,7 +25,7 @@ class TopicController extends BaseController {
             $topic->team_id = Input::has('team_id') ? $input['team_id'] : null;
             
             if (!$topic->save())
-                $topic = ApiResponse::errorInternal('An error occured. Please, try again.');
+                return ApiResponse::errorInternal('An error occured. Please, try again.');
         }
         else {
             return ApiResponse::validation($validator);
@@ -69,7 +69,7 @@ class TopicController extends BaseController {
             $topic->team_id = Input::has('team_id') ? $input['team_id'] : null;
             
             if (!$topic->save())
-                $topic = ApiResponse::errorInternal('An error occured. Please, try again.');
+                return ApiResponse::errorInternal('An error occured. Please, try again.');
         }
         else {
             return ApiResponse::validation($validator);

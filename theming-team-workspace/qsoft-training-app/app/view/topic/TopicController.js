@@ -19,19 +19,20 @@ Ext.define('QsoftTrainingApp.view.topic.TopicController', {
         });
     },   
     
-    onItemSelected: function(me, record, item, index) {
-        if (Ext.getCmp('addtopicwindow') != null) {
-            Ext.getCmp('addtopicwindow').destroy();
-        }
-        var createTopicForm = Ext.create('QsoftTrainingApp.view.topic.TopicForm');
-        createTopicForm.setTitle('Edit Topic');
-        createTopicForm.setAction('edit');
-        createTopicForm.setRecordIndex(record.getData());
-        
-        createTopicForm.down('form').getForm().setValues(record.getData());
-        
-        createTopicForm.show();
+    onTopicSelected: function(me, record, item, index) {
+        if (localStorage.getItem('role') == 'admin') { 
+            if (Ext.getCmp('addtopicwindow') != null) {
+                Ext.getCmp('addtopicwindow').destroy();
+            }
+            var createTopicForm = Ext.create('QsoftTrainingApp.view.topic.TopicForm');
+            createTopicForm.setTitle('Edit Topic');
+            createTopicForm.setAction('edit');
+            createTopicForm.setRecordIndex(record.getData());
 
+            createTopicForm.down('form').getForm().setValues(record.getData());
+
+            createTopicForm.show();
+        }
     },
     
     doAddOrUpdateTopic: function () {          
@@ -93,20 +94,21 @@ Ext.define('QsoftTrainingApp.view.topic.TopicController', {
                 },
                 failure: function (response) {
                     var messageShow = 'Error, ' + textMessage + ' topic failed';
-                    if(response.status == '401' || response.status == '404') {
-                        Ext.Msg.show({
-                            title: messageShow,
-                            msg: Ext.decode(response.responseText),
-                            buttons: Ext.Msg.OK,
-                            icon: Ext.Msg.ERROR
-                        }); 
-                    } else if (response.status == '412') {
+                    
+                    if (response.status == '412') {
                         var textReturn = Ext.decode(response.responseText);
                         var validationObject = textReturn.validation;
                         var messageError = validationObject[Object.keys(validationObject)[0]];
                         Ext.Msg.show({
                             title: messageShow,
                             msg: messageError,
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.ERROR
+                        }); 
+                    } else {
+                        Ext.Msg.show({
+                            title: messageShow,
+                            msg: Ext.decode(response.responseText),
                             buttons: Ext.Msg.OK,
                             icon: Ext.Msg.ERROR
                         }); 

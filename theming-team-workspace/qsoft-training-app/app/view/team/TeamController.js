@@ -19,19 +19,20 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
         });
     },   
     
-    onItemSelected: function(me, record, item, index) {
-        if (Ext.getCmp('addteamwindow') != null) {
-            Ext.getCmp('addteamwindow').destroy();
-        }
-        var createTeamForm = Ext.create('QsoftTrainingApp.view.team.TeamForm');
-        createTeamForm.setTitle('Edit Team');
-        createTeamForm.setAction('edit');
-        createTeamForm.setRecordIndex(record.getData());
-        
-        createTeamForm.down('form').getForm().setValues(record.getData());
-        
-        createTeamForm.show();
+    onTeamSelected: function(me, record, item, index) {
+        if (localStorage.getItem('role') == 'admin') { 
+            if (Ext.getCmp('addteamwindow') != null) {
+                Ext.getCmp('addteamwindow').destroy();
+            }
+            var createTeamForm = Ext.create('QsoftTrainingApp.view.team.TeamForm');
+            createTeamForm.setTitle('Edit Team');
+            createTeamForm.setAction('edit');
+            createTeamForm.setRecordIndex(record.getData());
 
+            createTeamForm.down('form').getForm().setValues(record.getData());
+
+            createTeamForm.show();
+        }
     },
     
     doAddOrUpdateTeam: function () {          
@@ -94,20 +95,20 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                 },
                 failure: function (response) {
                     var messageShow = 'Error, ' + textMessage + ' team failed';
-                    if(response.status == '401' || response.status == '404') {
-                        Ext.Msg.show({
-                            title: messageShow,
-                            msg: Ext.decode(response.responseText),
-                            buttons: Ext.Msg.OK,
-                            icon: Ext.Msg.ERROR
-                        }); 
-                    } else if (response.status == '412') {
+                    if (response.status == '412') {
                         var textReturn = Ext.decode(response.responseText);
                         var validationObject = textReturn.validation;
                         var messageError = validationObject[Object.keys(validationObject)[0]];
                         Ext.Msg.show({
                             title: messageShow,
                             msg: messageError,
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.ERROR
+                        }); 
+                    } else {
+                        Ext.Msg.show({
+                            title: messageShow,
+                            msg: Ext.decode(response.responseText),
                             buttons: Ext.Msg.OK,
                             icon: Ext.Msg.ERROR
                         }); 

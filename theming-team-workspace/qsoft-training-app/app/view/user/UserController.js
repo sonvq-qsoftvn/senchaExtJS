@@ -28,20 +28,21 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
     },
     
     onUserSelected: function(me, record, item, index) {
-        if (Ext.getCmp('adduserwindow') != null) {
-            Ext.getCmp('adduserwindow').destroy();
-        }
-        var editUserForm = Ext.create('QsoftTrainingApp.view.user.UserForm');
-        editUserForm.setTitle('Edit User');
-        editUserForm.setAction('edit');
-        editUserForm.setRecordIndex(record.getData());
-        
-        editUserForm.down('form').getForm().setValues(record.getData());
-        editUserForm.down('form').getForm().findField('password').hide();
-        editUserForm.down('form').getForm().findField('passcfrm').hide();
-        
-        editUserForm.show();
+        if (localStorage.getItem('role') == 'admin') { 
+            if (Ext.getCmp('adduserwindow') != null) {
+                Ext.getCmp('adduserwindow').destroy();
+            }
+            var editUserForm = Ext.create('QsoftTrainingApp.view.user.UserForm');
+            editUserForm.setTitle('Edit User');
+            editUserForm.setAction('edit');
+            editUserForm.setRecordIndex(record.getData());
 
+            editUserForm.down('form').getForm().setValues(record.getData());
+            editUserForm.down('form').getForm().findField('password').hide();
+            editUserForm.down('form').getForm().findField('passcfrm').hide();
+
+            editUserForm.show();
+        }
     },
     
     doAddOrUpdateUser: function () {          
@@ -127,6 +128,99 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
                 },
                 failure: function (response) {
                     var messageShow = 'Error, ' + textMessage + ' user failed';
+                    if (response.status == '412') {
+                        var textReturn = Ext.decode(response.responseText);
+                        var validationObject = textReturn.validation;
+                        var messageError = validationObject[Object.keys(validationObject)[0]];
+                        
+                        Ext.Msg.show({
+                            title: messageShow,
+                            msg: messageError,
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.ERROR
+                        });                         
+                    } else {
+                        Ext.Msg.show({
+                            title: messageShow,
+                            msg: Ext.decode(response.responseText),
+                            buttons: Ext.Msg.OK,
+                            icon: Ext.Msg.ERROR
+                        }); 
+                    }
+                }
+            });
+        }                
+    },
+    
+    doChangePasswordUser: function() {
+        var userFormValue = this.lookupReference('changepassform').getValues();        
+        
+        var that = this;       
+        var validated = true;
+        var validateMessage = '';
+        
+        var formAction = Ext.getCmp('changepasswindow').getAction();
+         
+        if (userFormValue.oldpassword == userFormValue.newpassword) {
+            validated = false;
+            validateMessage = 'The old and new password are the same';
+        }
+        
+        if (userFormValue.oldpassword == '' || userFormValue.newpassword == '' || userFormValue.passcfrm == '') {
+            validated = false;
+            validateMessage = 'Please fill in required fields';
+        }        
+
+        if (validated == false) {
+            Ext.Msg.show({
+                title: 'Form error',
+                msg: validateMessage,
+                buttons: Ext.Msg.OK,
+                icon: Ext.Msg.ERROR
+            });
+        } else {
+            
+            var userParams = new Object();
+            userParams.old_password                 = userFormValue.oldpassword;
+            userParams.new_password                 = userFormValue.newpassword;
+            userParams.new_password_confirmation    = userFormValue.passcfrm;            
+                        
+            userParams.token = localStorage.getItem("tokenKey");
+
+            var ajaxUrl = '';
+            var method = '';
+            var textMessage = '';
+            var objectEdit = Ext.getCmp('changepasswindow').getRecordIndex();
+            
+            ajaxUrl = QsoftTrainingApp.common.variable.Global.baseUserApiURL + '/password/' + objectEdit._id;
+            method = 'PUT';
+            textMessage = 'change';    
+            Ext.Ajax.request({
+                url: ajaxUrl,
+                method: method,
+                params: userParams,
+                success: function (response) {
+                    if (response.status == '200') {
+                        var messageShow = 'Successfully ' + textMessage + ' password of user named: ' + objectEdit.name;
+                        Ext.Msg.show({
+                            title: 'Change user password',
+                            msg: messageShow,
+                            buttons: Ext.Msg.OK,
+                            icon: 'smiles-icon',
+                            fn: function (btn) {
+                                if (btn == 'ok') {
+                                    Ext.getCmp('teamlistall').getStore().load();
+                                    Ext.getCmp('teamtreelistall').getStore().load();
+                                    Ext.getCmp('userlistall').getStore().load(); 
+                                    Ext.getCmp('topiclistall').getStore().load();
+                                    Ext.getCmp('changepasswindow').close();                                    
+                                }
+                            }
+                        });
+                    }                    
+                },
+                failure: function (response) {
+                    var messageShow = 'Error, ' + textMessage + ' user password failed';
                     if(response.status == '401' || response.status == '404' || response.status == '500') {
                         Ext.Msg.show({
                             title: messageShow,
@@ -148,7 +242,7 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
                     }
                 }
             });
-        }                
-    },
+        }        
+    }
    
 });

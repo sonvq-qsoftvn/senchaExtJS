@@ -13261,3 +13261,9 @@ html {
 .x-boundlist .x-boundlist-item {
     color: black;
 }
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:123 */
+.x-action-col-icon {
+    height: 22px;
+    width: 22px;
+    margin-right: 10px;
+}

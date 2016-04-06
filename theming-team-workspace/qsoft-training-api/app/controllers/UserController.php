@@ -42,7 +42,7 @@ class UserController extends BaseController {
             $user->role = Input::has('role') ? $input['role'] : 'user';
             
             if (!$user->save())
-                $user = ApiResponse::errorInternal('An error occured. Please, try again.');
+                return ApiResponse::errorInternal('An error occured. Please, try again.');
         }
         else {
             return ApiResponse::validation($validator);
@@ -78,7 +78,42 @@ class UserController extends BaseController {
             $user->role = Input::has('role') ? $input['role'] : 'user';
             
             if (!$user->save())
-                $user = ApiResponse::errorInternal('An error occured. Please, try again.');
+                return ApiResponse::errorInternal('An error occured. Please, try again.');
+        }
+        else {
+            return ApiResponse::validation($validator);
+        }
+
+        Log::info('<!> Updated : ' . $user);
+
+        $userReturn = User::where('email', '=', $user->email)->first();
+
+        return ApiResponse::json($userReturn->toArray());
+    }  
+
+    public function password($id) {
+
+        $input = Input::all();
+        $user = '';
+
+        $validator = Validator::make($input, User::getChangePasswordRules());
+
+        if ($validator->passes()) {
+
+            $user = User::where('_id', '=', $id)->first();
+            
+            if ( !($user instanceof User) ) {
+                return ApiResponse::errorNotFound("User does not exist!");
+            }
+            
+            if (Hash::check($input['old_password'], $user->password)) {
+                $user->password = Hash::make($input['new_password']);
+            } else {
+                return ApiResponse::errorNotFound("The old password is incorrect!");
+            }
+            
+            if (!$user->save())
+                return ApiResponse::errorInternal('An error occured. Please, try again.');
         }
         else {
             return ApiResponse::validation($validator);

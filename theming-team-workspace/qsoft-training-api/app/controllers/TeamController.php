@@ -25,7 +25,7 @@ class TeamController extends BaseController {
             $team->slogan = Input::has('slogan') ? $input['slogan'] : '';
             
             if (!$team->save())
-                $team = ApiResponse::errorInternal('An error occured. Please, try again.');
+                return ApiResponse::errorInternal('An error occured. Please, try again.');
         }
         else {
             return ApiResponse::validation($validator);
@@ -85,7 +85,7 @@ class TeamController extends BaseController {
             $team->slogan = Input::has('slogan') ? $input['slogan'] : '';
             
             if (!$team->save())
-                $team = ApiResponse::errorInternal('An error occured. Please, try again.');
+                return ApiResponse::errorInternal('An error occured. Please, try again.');
         }
         else {
             return ApiResponse::validation($validator);

@@ -8,7 +8,8 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
     requires: [
         'QsoftTrainingApp.store.Users',
         'QsoftTrainingApp.view.user.UserController',
-        'QsoftTrainingApp.view.user.UserForm'
+        'QsoftTrainingApp.view.user.UserForm',
+        'QsoftTrainingApp.view.user.ChangePassForm'
     ],
     
     title: 'User List',
@@ -33,10 +34,20 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
         ];
         
         if (localStorage.getItem('role') == 'admin') { 
-            var actionColumn = {header: '', width: 50, xtype:'actioncolumn',
-                items : [{
-                        iconAlign: 'center',
-                        textAlign: 'center',
+            var actionColumn = {header: '', width: 80, xtype:'actioncolumn',
+                items : [
+                {
+                    iconAlign: 'center',
+                    textAlign: 'center',
+                    icon: 'resources/images/change-password-btn.png',
+                    tooltip : 'Change Password',
+                    handler : function(gView, rowIndex, colIndex) {
+                        var grid = gView.up('grid');
+                        grid.changePasswordUser(grid, grid.getStore().getAt(rowIndex));
+                    }
+                },{
+                    iconAlign: 'center',
+                    textAlign: 'center',
                     icon: 'resources/images/remove-btn.png',
                     tooltip : 'Delete User',
                     handler : function(gView, rowIndex, colIndex) {
@@ -55,6 +66,33 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                 ui: 'round',
                 iconCls: 'fa fa-user-plus'
             }];
+        } else {
+            var actionColumn = {header: '', width: 80, xtype:'actioncolumn',
+                items : [
+                {
+                    iconAlign: 'center',
+                    textAlign: 'center',
+                    icon: 'resources/images/change-password-btn.png',
+                    tooltip : 'Change Password',
+                    handler : function(gView, rowIndex, colIndex) {
+                        var grid = gView.up('grid');
+                        grid.changePasswordUser(grid, grid.getStore().getAt(rowIndex));
+                    },
+                    isDisabled: function(view, rowIndex, colIndex, item, record) {
+                        // Returns true if 'editable' is false (, null, or undefined)
+                        var userData = record.getData();
+                        if (userData._id != localStorage.getItem("userLoggedInID")) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                        console.log(record.getData() );
+                        
+                    }
+                }]                
+            };
+            
+            this.columns.push(actionColumn);
         }
         this.callParent(arguments);        
     },
@@ -107,5 +145,19 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                 }
             );
         }
+    },
+    
+    changePasswordUser: function (grid, record) {
+        if (Ext.getCmp('changepasswindow') != null) {
+            Ext.getCmp('changepasswindow').destroy();
+        }
+        var changePassUserForm = Ext.create('QsoftTrainingApp.view.user.ChangePassForm');
+        changePassUserForm.setTitle('Change User Password');
+        changePassUserForm.setAction('edit');
+        changePassUserForm.setRecordIndex(record.getData());
+        
+        changePassUserForm.down('form').getForm().setValues(record.getData());
+        
+        changePassUserForm.show();
     }
 });
