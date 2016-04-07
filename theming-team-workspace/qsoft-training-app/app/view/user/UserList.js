@@ -86,7 +86,6 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                         } else {
                             return false;
                         }
-                        console.log(record.getData() );
                         
                     }
                 }]                

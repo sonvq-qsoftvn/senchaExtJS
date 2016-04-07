@@ -123,3 +123,159 @@ html {
     width: 22px;
     margin-right: 10px;
 }
+
+/* Sets the background image for the wheel */
+td.the_wheel
+{
+    background-image: url('images/wheel_back_green.png');
+    background-position: center;
+    background-repeat: none;
+}
+
+/* Do some css reset on selected elements */
+
+div.power_controls
+{
+    margin-right: 50px;
+}
+
+/* Styles for the power selection controls */
+table.power
+{
+    width: 100px;
+    background-color: #cccccc;
+    cursor: pointer;
+    border:1px solid #333333;
+    color: #000;
+    box-shadow: 6px 6px 6px #19191B;
+}
+
+#spin_button {
+    box-shadow: 6px 6px 6px #19191B;
+}
+
+table.power th
+{
+    background-color: white;
+    cursor: default;
+}
+
+td.pw1, td.pw2, td.pw3 {
+    font-weight: bold;
+}
+td.pw1
+{
+    background-color: #6fe8f0;
+}
+
+td.pw2
+{
+    background-color: #86ef6f;
+}
+
+td.pw3
+{
+    background-color: #ef6f6f;
+}
+
+/* Style applied to the spin button once a power has been selected */
+.clickable
+{
+    cursor: pointer;
+}
+
+/* Other misc styles */
+.margin_bottom
+{
+    margin-bottom: 5px;
+}
+
+.lucky-table {
+    padding-bottom: 20px;
+    margin-bottom: 50px; 
+}
+
+.wheel-title-big {
+    padding-top: 20px;
+    padding-bottom: 25px;
+    font-size: 46px;
+    margin-bottom: 5px;
+}
+
+#play_again {
+    width: 100px;
+    height: 100px;
+}
+
+
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    color: #292321;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Montserrat', helvetica, arial, verdana, sans-serif;    
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+}
+
+input[type="radio"] + label span {
+    background-color: #292321;
+}
+
+input[type="radio"]:checked + label span {
+    background-color: green;
+}
+
+input[type="radio"]:checked + label {
+    color: green;
+}
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+    -webkit-transition:background-color 0.4s linear;
+    -o-transition:background-color 0.4s linear;
+    -moz-transition:background-color 0.4s linear;
+    transition:background-color 0.4s linear;
+}
+
+.single-option {
+    display: block;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.radio-option-container {    
+    padding-left: 50px;     
+}
+
+.radio-option-main {
+    background-color: #ccc;
+    border: 1px solid #333;
+    box-shadow: 6px 6px 6px #19191B;
+}
+
+.single-option label {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.select-team-to-wheel {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    background: white;
+    display: block;
+    text-align: center;
+    padding: 10px;
+}

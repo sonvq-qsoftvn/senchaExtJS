@@ -17,7 +17,8 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         'QsoftTrainingApp.view.main.MainModel',
         'QsoftTrainingApp.view.user.UserList',
         'QsoftTrainingApp.view.team.TeamList',
-        'QsoftTrainingApp.view.teamtree.TeamTreeList'
+        'QsoftTrainingApp.view.teamtree.TeamTreeList',
+        'QsoftTrainingApp.view.topicteam.TopicTeam'
     ],
     
     plugins: 'viewport',
@@ -38,7 +39,7 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         title: {           
             flex: 0
         },
-        iconCls: 'fa fa-mortar-board',
+        iconCls: 'fa fa-mortar-board'
 //        bind: {
 //            title: '<div class="app-title">QSoft Training App<br> <span>Wellcome, ' + localStorage.getItem('username') + ' </span></div>'
 //        }
@@ -48,6 +49,42 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         afterrender: function (panel) {
             var headerTitle = '<div class="app-title">QSoft Training App<br> <span>Wellcome, ' + localStorage.getItem('username') + ' </span></div>'
             panel.setTitle(headerTitle);
+            
+            var topicTeamTab = {
+                title: 'Topic - Team',
+                iconCls: 'fa fa-tachometer',
+                items: [{
+                    xtype: 'topicteamslist' 
+                }],
+                id: 'topicteamwheel',
+                listeners: {
+                    show: 'onTopicTeamShow'
+                }
+            };
+            
+            var logoutTab = {
+                title: 'Sign out',        
+                iconCls: 'fa-sign-out',
+                ui: 'leftalign',
+                tabConfig: {
+                    iconAlign: 'left',
+                    textAlign: 'left',
+                    listeners: { 
+                        click: 'onLogoutClick'
+                    },
+                    tooltip: 'Click here to logout out the app!'
+                }
+            };
+            
+            if (localStorage.getItem('role') == 'admin') { 
+                panel.add(topicTeamTab);    
+            }
+            
+            panel.add(logoutTab);
+        },
+        
+        tabchange: function (tabPanel, tab) {
+           
         }
     },
     
@@ -105,22 +142,10 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
             xtype: 'teamtreelist' 
         }]
     }, {
-        title: 'Topic - Team',
+        title: 'Topic',
         iconCls: 'fa fa-book',
         items: [{
             xtype: 'topicslist' 
         }]
-    }, {
-        title: 'Sign out',        
-        iconCls: 'fa-sign-out',
-        ui: 'leftalign',
-        tabConfig: {
-            iconAlign: 'left',
-            textAlign: 'left',
-            listeners: { 
-                click: 'onLogoutClick'
-            },
-            tooltip: 'Click here to logout out the app!'
-        }
     }]
 });

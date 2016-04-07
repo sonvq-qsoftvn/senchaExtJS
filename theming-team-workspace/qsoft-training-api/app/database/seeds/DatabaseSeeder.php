@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder {
         
         $topic1 = Topic::create(
             array(
-                'name'                  => 'Introduction -  Core Concepts'
+                'name'                  => 'Core Concepts'
             )
         );
         
@@ -138,7 +138,7 @@ class DatabaseSeeder extends Seeder {
         
         $topic6 = Topic::create(
             array(
-                'name'                  => 'Tools and Debugging - Best Practices'
+                'name'                  => 'Tools and Debugging'
             )
         );
         

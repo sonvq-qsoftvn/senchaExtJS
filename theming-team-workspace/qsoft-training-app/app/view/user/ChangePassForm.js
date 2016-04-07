@@ -58,7 +58,7 @@ Ext.define('QsoftTrainingApp.view.user.ChangePassForm', {
                 allowBlank: false,
                 msgTarget: 'under',
                 regex: /^[a-zA-Z0-9!@#$%^&*]{6,16}$/,
-                regexText: 'Enter a valid password',                
+                regexText: 'Enter a valid password'                
             },
             {
                 name: 'newpassword',

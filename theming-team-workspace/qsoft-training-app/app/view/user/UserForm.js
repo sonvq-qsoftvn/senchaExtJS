@@ -65,6 +65,7 @@ Ext.define('QsoftTrainingApp.view.user.UserForm', {
                 msgTarget: 'under'
             }, {
                 name: 'phone_number',
+                inputType: 'number',
                 fieldLabel: 'Phone',
                 allowBlank: true,
                 msgTarget: 'under'
