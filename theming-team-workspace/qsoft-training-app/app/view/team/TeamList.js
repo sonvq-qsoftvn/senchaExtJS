@@ -2,19 +2,20 @@
  * This view is an example list of people.
  */
 Ext.define('QsoftTrainingApp.view.team.TeamList', {
-    extend: 'Ext.grid.Panel',
+    extend: 'QsoftTrainingApp.common.plugin.LiveSearchGridPanel',
     xtype: 'teamslist',
     
     requires: [
         'QsoftTrainingApp.store.Teams',
-        'QsoftTrainingApp.view.team.TeamController'
+        'QsoftTrainingApp.view.team.TeamController',
+        'QsoftTrainingApp.common.plugin.LiveSearchGridPanel'
     ],
     
     id: "teamlistall",
     controller: 'team',
     
     alias   : 'widget.teamslist',
-    
+    height: 500,
     title: 'Team List',
 
     store: {

@@ -2,17 +2,18 @@
  * This view is an example list of people.
  */
 Ext.define('QsoftTrainingApp.view.topic.TopicList', {
-    extend: 'Ext.grid.Panel',
+    extend: 'QsoftTrainingApp.common.plugin.LiveSearchGridPanel',
     xtype: 'topicslist',
     
     requires: [
         'QsoftTrainingApp.store.Topics',
-        'QsoftTrainingApp.view.topic.TopicController'
+        'QsoftTrainingApp.view.topic.TopicController',
+        'QsoftTrainingApp.common.plugin.LiveSearchGridPanel'
     ],
     
     id: "topiclistall",
     controller: 'topic',
-    
+    height: 500,
     alias   : 'widget.topicslist',
     
     title: 'Topic List',

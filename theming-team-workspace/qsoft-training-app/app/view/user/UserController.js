@@ -110,7 +110,7 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
                     if (response.status == '200') {
                         var messageShow = 'Successfully ' + textMessage + ' a user named: ' + userFormValue.name;
                         Ext.Msg.show({
-                            title: 'Created new user',
+                            title: 'User info',
                             msg: messageShow,
                             buttons: Ext.Msg.OK,
                             icon: 'smiles-icon',

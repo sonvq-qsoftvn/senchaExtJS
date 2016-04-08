@@ -2,16 +2,17 @@
  * This view is an example list of people.
  */
 Ext.define('QsoftTrainingApp.view.user.UserList', {
-    extend: 'Ext.grid.Panel',
+    extend: 'QsoftTrainingApp.common.plugin.LiveSearchGridPanel',
     xtype: 'userslist',
     
     requires: [
         'QsoftTrainingApp.store.Users',
         'QsoftTrainingApp.view.user.UserController',
         'QsoftTrainingApp.view.user.UserForm',
-        'QsoftTrainingApp.view.user.ChangePassForm'
+        'QsoftTrainingApp.view.user.ChangePassForm',
+        'QsoftTrainingApp.common.plugin.LiveSearchGridPanel'
     ],
-    
+    height: 500,
     title: 'User List',
     id: "userlistall",
     store: {

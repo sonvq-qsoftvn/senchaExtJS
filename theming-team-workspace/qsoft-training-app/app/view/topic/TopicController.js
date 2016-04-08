@@ -76,7 +76,7 @@ Ext.define('QsoftTrainingApp.view.topic.TopicController', {
                     if (response.status == '200') {
                         var messageShow = 'Successfully ' + textMessage + ' a topic named: ' + topicFormValue.name;
                         Ext.Msg.show({
-                            title: 'Created new topic',
+                            title: 'Topic info',
                             msg: messageShow,
                             buttons: Ext.Msg.OK,
                             icon: 'smiles-icon',

@@ -13246,38 +13246,47 @@ html {
     background: transparent;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:108 */
+.x-tabpanel-child .x-panel-body.x-panel-body-default .x-grid-view {
+    background: #000;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:112 */
+.x-livesearch-match {
+    color: yellow;
+    font-weight: bold;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:116 */
 .x-panel-body.x-panel-body-navigation {
     background: url('images/main-background8.jpg') top center;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:112 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:120 */
 .app-title {
     text-align: left;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:115 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:123 */
 .app-title span {
     font-size: 13px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:119 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:127 */
 .x-boundlist .x-boundlist-item {
     color: black;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:123 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:131 */
 .x-action-col-icon {
     height: 22px;
     width: 22px;
     margin-right: 10px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:133 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:141 */
 td.the_wheel {
     background-image: url('images/wheel_back_green.png');
     background-position: center;
     background-repeat: none;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:146 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:154 */
 div.power_controls {
     margin-right: 50px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:155 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:163 */
 table.power {
     width: 100px;
     background-color: #ccc;
@@ -13286,72 +13295,72 @@ table.power {
     color: #000;
     box-shadow: 6px 6px 6px #19191b;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:165 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:173 */
 #spin_button {
     box-shadow: 6px 6px 6px #19191b;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:171 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:179 */
 table.power th {
     background-color: white;
     cursor: default;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:179 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:187 */
 td.pw1,
 td.pw2,
 td.pw3 {
     font-weight: bold;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:183 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:191 */
 td.pw1 {
     background-color: #6fe8f0;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:190 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:198 */
 td.pw2 {
     background-color: #86ef6f;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:197 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:205 */
 td.pw3 {
     background-color: #ef6f6f;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:203 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:211 */
 .clickable {
     /* Style applied to the spin button once a power has been selected */
     cursor: pointer;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:209 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:217 */
 .margin_bottom {
     /* Other misc styles */
     margin-bottom: 5px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:214 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:222 */
 .lucky-table {
     padding-bottom: 20px;
     margin-bottom: 50px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:219 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:227 */
 .wheel-title-big {
     padding-top: 20px;
     padding-bottom: 25px;
     font-size: 46px;
     margin-bottom: 5px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:226 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:234 */
 #play_again {
     width: 100px;
     height: 100px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:235 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:243 */
 input[type="radio"] {
     display: none;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:239 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:247 */
 input[type="radio"] + label {
     color: #292321;
     font-size: 16px;
     font-weight: 300;
     font-family: 'Montserrat', helvetica, arial, verdana, sans-serif;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:246 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:254 */
 input[type="radio"] + label span {
     display: inline-block;
     width: 19px;
@@ -13362,19 +13371,19 @@ input[type="radio"] + label span {
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:259 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:267 */
 input[type="radio"] + label span {
     background-color: #292321;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:265 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:273 */
 input[type="radio"]:checked + label span {
     background-color: green;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:271 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:279 */
 input[type="radio"]:checked + label {
     color: green;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:277 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:285 */
 input[type="radio"] + label span,
 input[type="radio"]:checked + label span {
     -webkit-transition: background-color 0.4s linear;
@@ -13382,29 +13391,29 @@ input[type="radio"]:checked + label span {
     -moz-transition: background-color 0.4s linear;
     transition: background-color 0.4s linear;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:285 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:293 */
 .single-option {
     display: block;
     vertical-align: middle;
     padding: 10px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:291 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:299 */
 .radio-option-container {
     padding-left: 50px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:295 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:303 */
 .radio-option-main {
     background-color: #ccc;
     border: 1px solid #333;
     box-shadow: 6px 6px 6px #19191b;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:301 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:309 */
 .single-option label {
     cursor: pointer;
     font-weight: bold;
     font-size: 18px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:307 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:315 */
 .select-team-to-wheel {
     color: black;
     font-weight: bold;
@@ -13413,4 +13422,8 @@ input[type="radio"]:checked + label span {
     display: block;
     text-align: center;
     padding: 10px;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:325 */
+.ja_body {
+    line-height: 24px !important;
 }

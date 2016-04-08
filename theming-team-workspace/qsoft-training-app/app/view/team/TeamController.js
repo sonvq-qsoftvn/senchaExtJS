@@ -77,7 +77,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                     if (response.status == '200') {
                         var messageShow = 'Successfully ' + textMessage + ' a team named: ' + teamFormValue.name;
                         Ext.Msg.show({
-                            title: 'Created new team',
+                            title: 'Team info',
                             msg: messageShow,
                             buttons: Ext.Msg.OK,
                             icon: 'smiles-icon',

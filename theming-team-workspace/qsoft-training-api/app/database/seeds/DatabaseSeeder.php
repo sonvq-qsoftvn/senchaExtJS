@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder {
             )
         );
         
-        $team4 = Team::create(
+        $team6 = Team::create(
             array(
                 'name'                 => 'Team 6',
                 'slogan'               => 'Teamwork makes DREAM work'
@@ -100,6 +100,69 @@ class DatabaseSeeder extends Seeder {
             )
         );
         
+//        $user5 = User::create(
+//            array(
+//                'email'                 => 'taipm@qsoft.com.vn',
+//                'name'                  => 'Pham Minh Tai',
+//                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+//                'phone_number'          => '0984328656'
+//            )
+//        );
+//        
+//        $user6 = User::create(
+//            array(
+//                'email'                 => 'thainq@qsoft.com.vn',
+//                'name'                  => 'Ngo Quoc Thai',
+//                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+//                'phone_number'          => '0984134847'
+//            )
+//        );
+//        
+//        $user7 = User::create(
+//            array(
+//                'email'                 => 'sinhpn@qsoft.com.vn',
+//                'name'                  => 'Pham Ngoc Sinh',
+//                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+//                'phone_number'          => '0912460337'
+//            )
+//        );
+//        
+//        $user8 = User::create(
+//            array(
+//                'email'                 => 'lamnv@qsoft.com.vn',
+//                'name'                  => 'Nguyen Van Lam',
+//                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+//                'phone_number'          => '0918644264'
+//            )
+//        );
+//        
+//        $user9 = User::create(
+//            array(
+//                'email'                 => 'vietnh@qsoft.com.vn',
+//                'name'                  => 'Nguyen Hong Viet',
+//                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+//                'phone_number'          => '0918644264'
+//            )
+//        );
+//        
+//        $user10 = User::create(
+//            array(
+//                'email'                 => 'anhnv@qsoft.com.vn',
+//                'name'                  => 'Nguyen Viet Anh',
+//                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+//                'phone_number'          => '0918644264'
+//            )
+//        );
+//        
+//        $user11 = User::create(
+//            array(
+//                'email'                 => 'ducnt@qsoft.com.vn',
+//                'name'                  => 'Nguyen Thanh Duc',
+//                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
+//                'phone_number'          => '0918644264'
+//            )
+//        );
+        
         $this->command->info('User table seeded!');        
         
         DB::table('topics')->delete();
@@ -139,6 +202,24 @@ class DatabaseSeeder extends Seeder {
         $topic6 = Topic::create(
             array(
                 'name'                  => 'Tools and Debugging'
+            )
+        );
+        
+        $topic7 = Topic::create(
+            array(
+                'name'                  => 'Topic 7'
+            )
+        );
+        
+        $topic8 = Topic::create(
+            array(
+                'name'                  => 'Topic 8'
+            )
+        );
+        
+        $topic9 = Topic::create(
+            array(
+                'name'                  => 'Topic 9'
             )
         );
         

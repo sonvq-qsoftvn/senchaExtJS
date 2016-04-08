@@ -100,9 +100,17 @@ html {
 }
 
 .x-tabpanel-child .x-panel-body.x-panel-body-default {
-    background: transparent; 
+    background: transparent;  
 }
 
+.x-tabpanel-child .x-panel-body.x-panel-body-default .x-grid-view {
+    background: #000000;
+}
+
+.x-livesearch-match {
+    color: yellow;
+    font-weight: bold;
+}
 .x-panel-body.x-panel-body-navigation {
     background: url('images/main-background8.jpg') top center; 
 }
@@ -278,4 +286,8 @@ input[type="radio"]:checked + label span {
     display: block;
     text-align: center;
     padding: 10px;
+}
+
+.ja_body {
+    line-height: 24px !important;
 }
