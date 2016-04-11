@@ -237,7 +237,7 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                     topicParams.team_id = teamId;            
                     topicParams.token = localStorage.getItem("tokenKey");
 
-                    var ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTopicApiURL + '/' + winningSegment.topicId;
+                    var ajaxUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'topics/' + winningSegment.topicId;
                     var method = 'PUT';
                     var textMessage = 'update';    
 

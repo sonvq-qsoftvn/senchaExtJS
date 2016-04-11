@@ -61,11 +61,11 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
             var textMessage = '';
             if (formAction == 'add') {
                 textMessage = 'create';    
-                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL;
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'teams';
                 method = 'POST';
             } else if (formAction == 'edit') {
                 var objectEdit = Ext.getCmp('addteamwindow').getRecordIndex();
-                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + objectEdit._id;
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'teams/' + objectEdit._id;
                 method = 'PUT';
                 textMessage = 'update';    
             }
@@ -87,6 +87,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                                     Ext.getCmp('teamtreelistall').getStore().load();
                                     Ext.getCmp('userlistall').getStore().load();  
                                     Ext.getCmp('topiclistall').getStore().load();
+                                    Ext.getCmp('teamdashboardchart').getStore().load();                                                                    
                                     Ext.getCmp('addteamwindow').close();                                    
                                 }
                             }

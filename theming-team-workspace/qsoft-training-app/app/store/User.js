@@ -13,7 +13,7 @@ Ext.define('QsoftTrainingApp.store.Users', {
     
     proxy: {
         type: 'ajax',
-        url: QsoftTrainingApp.common.variable.Global.baseUserApiURL,
+        url: QsoftTrainingApp.common.variable.Global.baseApiURL + 'users',
         reader: {
             type: 'json',
             rootProperty: ''

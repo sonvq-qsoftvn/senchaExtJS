@@ -18,7 +18,8 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         'QsoftTrainingApp.view.user.UserList',
         'QsoftTrainingApp.view.team.TeamList',
         'QsoftTrainingApp.view.teamtree.TeamTreeList',
-        'QsoftTrainingApp.view.topicteam.TopicTeam'
+        'QsoftTrainingApp.view.topicteam.TopicTeam',
+        'QsoftTrainingApp.view.dashboard.TeamDashboard'        
     ],
     
     plugins: 'viewport',
@@ -124,6 +125,39 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
     },
 
     items: [{
+        title: 'Dashboard',
+        iconCls: 'fa fa-area-chart',
+        items:[{
+            title: 'Qsoft Training App Overview',
+            xtype: 'tabpanel',
+            style: 'background: #fff',
+            layout: 'fit',
+
+            items: [{
+                xtype: 'teamdashboard'               
+            },
+            {
+                xtype: 'panel',
+                title: 'Tab 2',
+                bodyPadding: 10,
+                html: 'An ius justo vitae antiopam, no duo veritus accusam, mei aeque corpora at'
+            },
+            {
+                xtype: 'panel',
+                title: 'Tab 3',
+                bodyPadding: 10,
+                html: 'Eos eu oblique ponderum, esse recteque vulputate usu ea'
+            },
+            {
+                xtype: 'panel',
+                title: 'Tab 4',
+                tabConfig: {
+                    xtype: 'tab',
+                    disabled: true
+                }
+            }]
+        }]
+    }, {
         title: 'Users',
         iconCls: 'fa-user',
         items: [{
@@ -149,3 +183,4 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         }]
     }]
 });
+

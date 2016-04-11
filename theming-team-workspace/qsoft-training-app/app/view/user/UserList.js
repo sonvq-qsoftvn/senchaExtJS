@@ -12,7 +12,7 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
         'QsoftTrainingApp.view.user.ChangePassForm',
         'QsoftTrainingApp.common.plugin.LiveSearchGridPanel'
     ],
-    height: 500,
+    height: 700,
     title: 'User List',
     id: "userlistall",
     store: {
@@ -99,7 +99,7 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
     
     deleteUser: function (grid, record) {
         var data = record.getData();
-        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseUserApiURL + '/' + data._id;
+        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'users/' + data._id;
         var userName = data.name;
         var userParams = new Object();          
             userParams.token = localStorage.getItem("tokenKey");
@@ -127,6 +127,7 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                                                 Ext.getCmp('teamtreelistall').getStore().load();
                                                 Ext.getCmp('teamlistall').getStore().load();                                                
                                                 Ext.getCmp('topiclistall').getStore().load();
+                                                Ext.getCmp('teamdashboardchart').getStore().load();
                                             }
                                         }
                                     });

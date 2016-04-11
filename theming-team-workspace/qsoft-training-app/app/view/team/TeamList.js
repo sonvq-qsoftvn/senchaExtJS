@@ -15,7 +15,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
     controller: 'team',
     
     alias   : 'widget.teamslist',
-    height: 500,
+    height: 700,
     title: 'Team List',
 
     store: {
@@ -63,7 +63,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
     deleteTeam: function (grid, record) {
         var data = record.getData();
         
-        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseTeamApiURL + '/' + data._id;
+        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'teams/' + data._id;
         var teamName = data.name;
         var teamParams = new Object();          
             teamParams.token = localStorage.getItem("tokenKey");
@@ -91,6 +91,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
                                                 Ext.getCmp('teamtreelistall').getStore().load();
                                                 Ext.getCmp('userlistall').getStore().load();  
                                                 Ext.getCmp('topiclistall').getStore().load();
+                                                Ext.getCmp('teamdashboardchart').getStore().load();
                                             }
                                         }
                                     });

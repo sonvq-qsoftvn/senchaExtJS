@@ -13,7 +13,7 @@ Ext.define('QsoftTrainingApp.view.topic.TopicList', {
     
     id: "topiclistall",
     controller: 'topic',
-    height: 500,
+    height: 700,
     alias   : 'widget.topicslist',
     
     title: 'Topic List',
@@ -63,7 +63,7 @@ Ext.define('QsoftTrainingApp.view.topic.TopicList', {
     deleteTopic: function (grid, record) {
         var data = record.getData();
         
-        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseTopicApiURL + '/' + data._id;
+        var deleteUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'topics/' + data._id;
         var topicName = data.name;
         var topicParams = new Object();          
             topicParams.token = localStorage.getItem("tokenKey");

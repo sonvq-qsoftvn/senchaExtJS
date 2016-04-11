@@ -94,11 +94,11 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
             var textMessage = '';
             if (formAction == 'add') {
                 textMessage = 'create';    
-                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseUserApiURL;
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'users';
                 method = 'POST';
             } else if (formAction == 'edit') {
                 var objectEdit = Ext.getCmp('adduserwindow').getRecordIndex();
-                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseUserApiURL + '/' + objectEdit._id;
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'users/' + objectEdit._id;
                 method = 'PUT';
                 textMessage = 'update';    
             }
@@ -120,6 +120,7 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
                                     Ext.getCmp('teamtreelistall').getStore().load();
                                     Ext.getCmp('userlistall').getStore().load(); 
                                     Ext.getCmp('topiclistall').getStore().load();
+                                    Ext.getCmp('teamdashboardchart').getStore().load();
                                     Ext.getCmp('adduserwindow').close();                                    
                                 }
                             }
@@ -192,7 +193,7 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
             var textMessage = '';
             var objectEdit = Ext.getCmp('changepasswindow').getRecordIndex();
             
-            ajaxUrl = QsoftTrainingApp.common.variable.Global.baseUserApiURL + '/password/' + objectEdit._id;
+            ajaxUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'users/password/' + objectEdit._id;
             method = 'PUT';
             textMessage = 'change';    
             Ext.Ajax.request({

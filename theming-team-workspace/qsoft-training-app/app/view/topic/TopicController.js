@@ -60,11 +60,11 @@ Ext.define('QsoftTrainingApp.view.topic.TopicController', {
             var textMessage = '';
             if (formAction == 'add') {
                 textMessage = 'create';    
-                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTopicApiURL;
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'topics';
                 method = 'POST';
             } else if (formAction == 'edit') {
                 var objectEdit = Ext.getCmp('addtopicwindow').getRecordIndex();
-                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseTopicApiURL + '/' + objectEdit._id;
+                ajaxUrl = QsoftTrainingApp.common.variable.Global.baseApiURL + 'topics/' + objectEdit._id;
                 method = 'PUT';
                 textMessage = 'update';    
             }

@@ -38,6 +38,14 @@ class TeamController extends BaseController {
         return ApiResponse::json($teamReturn->toArray());
     }
     
+    public function statistic() {
+        $allTeamObject = Team::all();
+        foreach ($allTeamObject as &$singleTeam) {
+            $singleTeam->memberCount = count($singleTeam['children']);
+        }
+        return $allTeamObject;
+    }
+    
     public function destroy($id) { 
         $teamObject = Team::where('_id', '=', $id)->first();
         
