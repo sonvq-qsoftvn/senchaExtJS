@@ -18,8 +18,8 @@ Ext.define('QsoftTrainingApp.view.dashboard.TeamDashboard', {
     layout: 'fit',
     items: [{
         xtype: 'polar',
-        width: 500,
-        height: 500,
+        width: 600,
+        height: 600,
         id: 'teamdashboardchart',
         store: {
             type: 'TeamStatics'
@@ -40,8 +40,9 @@ Ext.define('QsoftTrainingApp.view.dashboard.TeamDashboard', {
         insetPadding: 50,
         innerPadding: 20,
         
-        series: [{
+        series: [{            
             type: 'pie',
+            donut: 30,
             xField: 'memberCount',
             style: {
                 colors: ["red", "black", "green", "blue"]
@@ -52,9 +53,26 @@ Ext.define('QsoftTrainingApp.view.dashboard.TeamDashboard', {
                 font: '18px Helvetica',
                 // color: 'black',
                 display: 'outside',
+                // display: 'inside',
                 calloutLine: {
                     length: 60,
                     width: 3
+                },
+                renderer: function(value, label, storeItem) {
+                    var newValue = '';
+                    var teamStaticStore = Ext.getCmp('teamdashboardchart').getStore();
+                    var totalMemberInTeamCount = 0;
+                    Ext.each(teamStaticStore.data.items, function(item){
+                        totalMemberInTeamCount += item.data.memberCount;
+                    });
+
+                    Ext.each(teamStaticStore.data.items, function(item){
+                        if(item.data.name == value) {
+                            var percentage = (item.data.memberCount/totalMemberInTeamCount)*100;
+                            newValue = item.data.name + ' (' + percentage.toFixed(1)  + '%)';
+                        }
+                    });
+                    return newValue;
                 } 
             },
             

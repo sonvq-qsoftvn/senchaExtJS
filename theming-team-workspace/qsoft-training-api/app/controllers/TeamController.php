@@ -54,7 +54,7 @@ class TeamController extends BaseController {
         }
         
         // Remove relationship from user first
-        $allUserObject = User::where('team_id', '=', $id)->get();
+        $allUserObject = User::withTrashed()->where('team_id', '=', $id)->get();        
         
         foreach ($allUserObject as $singleUser) {
             $singleUser->team_id = null;

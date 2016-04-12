@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'ApiResponse' => $baseDir . '/app/models/ApiResponse.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
+    'CommonController' => $baseDir . '/app/controllers/CommonController.php',
     'CreateRelationForeignkeys' => $baseDir . '/app/database/migrations/2014_11_11_113836_create_relation_foreignkeys.php',
     'CreateResetKeysTable' => $baseDir . '/app/database/migrations/2014_10_03_180144_create_reset_keys_table.php',
     'CreateTeamsTable' => $baseDir . '/app/database/migrations/2014_10_14_163208_create_teams_table.php',

@@ -55,6 +55,8 @@ Route::group(array('prefix' => 'v1'), function() {
     
     Route::resource('topics', 'TopicController', array('only' => array('index')));
 
+    Route::get('commons/overview', array('as' => 'v1.commons.overview', 'uses' => 'CommonController@overview'));
+
     //	user needs to have a registered and active token
     Route::group(array('before' => 'logged_in'), function() {
 

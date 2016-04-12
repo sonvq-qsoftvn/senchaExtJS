@@ -134,13 +134,10 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
             layout: 'fit',
 
             items: [{
-                xtype: 'teamdashboard'               
+                xtype: 'overviewdashboard'               
             },
             {
-                xtype: 'panel',
-                title: 'Tab 2',
-                bodyPadding: 10,
-                html: 'An ius justo vitae antiopam, no duo veritus accusam, mei aeque corpora at'
+                xtype: 'teamdashboard'
             },
             {
                 xtype: 'panel',
