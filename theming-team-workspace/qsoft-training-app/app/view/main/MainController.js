@@ -370,5 +370,9 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                 'Accept': 'application/json'
             }
         });                       
+    },
+
+    onAboutUsShow: function () {
+        console.log("vao day");
     }
 });

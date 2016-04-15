@@ -56,6 +56,7 @@ Route::group(array('prefix' => 'v1'), function() {
     Route::resource('topics', 'TopicController', array('only' => array('index')));
 
     Route::get('commons/overview', array('as' => 'v1.commons.overview', 'uses' => 'CommonController@overview'));
+    Route::get('commons/scorechart', array('as' => 'v1.commons.scorechart', 'uses' => 'CommonController@scorechart'));
 
     //	user needs to have a registered and active token
     Route::group(array('before' => 'logged_in'), function() {

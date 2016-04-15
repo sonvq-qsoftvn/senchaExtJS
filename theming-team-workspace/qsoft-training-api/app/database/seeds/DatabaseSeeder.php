@@ -68,6 +68,7 @@ class DatabaseSeeder extends Seeder {
                 'name'                  => 'Vu Quang Son',
                 'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                 'phone_number'          => '0982413281',
+                'final_score'           => 9.75,
                 'team_id'               => $team1->getKey()
             )
         );
@@ -78,6 +79,7 @@ class DatabaseSeeder extends Seeder {
                 'name'                  => 'Tran Cao Cuong',
                 'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                 'phone_number'          => '0969696969',
+                'final_score'           => 9.25,
                 'team_id'               => $team2->getKey()
             )
         );
@@ -88,6 +90,7 @@ class DatabaseSeeder extends Seeder {
                 'name'                  => 'Vu Xuan Thang',
                 'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                 'phone_number'          => '0912456142',
+                'final_score'           => 9.50,
                 'team_id'               => $team3->getKey()
             )
         );
@@ -98,6 +101,7 @@ class DatabaseSeeder extends Seeder {
                 'name'                  => 'Nguyen Xuan Bach',
                 'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                 'phone_number'          => '0985621236',
+                'final_score'           => 9.00,
                 'team_id'               => $team4->getKey()
             )
         );
@@ -108,6 +112,7 @@ class DatabaseSeeder extends Seeder {
                'name'                  => 'Pham Minh Tai',
                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                'phone_number'          => '0984328656',
+               'final_score'           => 8.50,
                'team_id'               => $team5->getKey()
            )
        );
@@ -118,6 +123,7 @@ class DatabaseSeeder extends Seeder {
                'name'                  => 'Ngo Quoc Thai',
                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                'phone_number'          => '0984134847',
+               'final_score'           => 8.00,
                'team_id'               => $team6->getKey()
            )
        );
@@ -128,6 +134,7 @@ class DatabaseSeeder extends Seeder {
                'name'                  => 'Pham Ngoc Sinh',
                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                'phone_number'          => '0912460337',
+               'final_score'           => 7.75,
                'team_id'               => $team1->getKey()
            )
        );
@@ -138,6 +145,7 @@ class DatabaseSeeder extends Seeder {
                'name'                  => 'Nguyen Van Lam',
                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                'phone_number'          => '0918644264',
+               'final_score'           => 5.25,
                'team_id'               => $team2->getKey()
            )
        );
@@ -148,6 +156,7 @@ class DatabaseSeeder extends Seeder {
                'name'                  => 'Nguyen Hong Viet',
                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                'phone_number'          => '0918644264',
+               'final_score'           => 3.00,
                'team_id'               => $team3->getKey()
            )
        );
@@ -158,6 +167,7 @@ class DatabaseSeeder extends Seeder {
                'name'                  => 'Nguyen Viet Anh',
                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                'phone_number'          => '0918644264',
+               'final_score'           => 1.50,
                'team_id'               => $team4->getKey()
            )
        );
@@ -168,6 +178,7 @@ class DatabaseSeeder extends Seeder {
                'name'                  => 'Nguyen Thanh Duc',
                'password'              => '$2y$10$05PFShgW1pPx6w/jOYO25ucpGiYQ4Qxhu3e1qmg11c3Jo3mHR0cZ.',
                'phone_number'          => '0918644264',
+               'final_score'           => 0.50,
                'team_id'               => $team5->getKey()
            )
        );

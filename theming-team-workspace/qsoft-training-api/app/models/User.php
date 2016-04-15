@@ -22,21 +22,23 @@ class User extends SmartLoquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'deleted_at', 'created_at', 'updated_at');
 	protected $dates = ['deleted_at'];
-        protected $fillable = array('email', 'name', 'password', 'phone_number', 'team_id', 'role');        
+        protected $fillable = array('email', 'name', 'password', 'phone_number', 'team_id', 'role', 'final_score');        
     
 	protected static $createRules = array(
 		'name'                                  =>	'required',
 		'password'				=>	'required|min:6|confirmed',
 		'password_confirmation'                 =>	'required|min:6',
 		'email'					=>	'required|email|unique:users,email',
-                'phone_number'                          =>      'min:6'
+                'phone_number'                          =>      'min:6',
+                'final_score' => 'numeric|min:0|max:10|regex:/^\d*(\.\d{2})?$/'
 	);
         
         public static function getUpdateRules($id) {	
             return array(
                 'name'                                  =>	'required',
 		'email'					=>	"required|email|unique:users,email,$id,_id",
-                'phone_number'                          =>      'min:6'
+                'phone_number'                          =>      'min:6',
+                'final_score' => 'numeric|min:0|max:10|regex:/^\d*(\.\d{2})?$/'
             );     
         }
         

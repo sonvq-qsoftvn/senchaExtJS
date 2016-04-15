@@ -19,7 +19,8 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         'QsoftTrainingApp.view.team.TeamList',
         'QsoftTrainingApp.view.teamtree.TeamTreeList',
         'QsoftTrainingApp.view.topicteam.TopicTeam',
-        'QsoftTrainingApp.view.dashboard.TeamDashboard'        
+        'QsoftTrainingApp.view.dashboard.TeamDashboard',        
+        'QsoftTrainingApp.view.dashboard.ScoreDashboard'
     ],
     
     plugins: 'viewport',
@@ -140,17 +141,14 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
                 xtype: 'teamdashboard'
             },
             {
-                xtype: 'panel',
-                title: 'Tab 3',
-                bodyPadding: 10,
-                html: 'Eos eu oblique ponderum, esse recteque vulputate usu ea'
+                xtype: 'scoredashboard'
             },
             {
                 xtype: 'panel',
-                title: 'Tab 4',
-                tabConfig: {
-                    xtype: 'tab',
-                    disabled: true
+                title: 'About Me',
+                html: '<div class="about-us-section"><header><h1><a href="/">Mr. Vu Quang Son</a></h1><p>aa</p></div>',
+                listeners: {
+                    show: 'onAboutUsShow'
                 }
             }]
         }]

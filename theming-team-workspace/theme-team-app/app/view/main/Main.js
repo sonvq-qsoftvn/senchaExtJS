@@ -79,8 +79,10 @@ Ext.define('ThemeTeamApp.view.main.Main', {
 
     items: [
     {
-        title: 'Home',
+        title: 'Homes',
         iconCls: 'fa-home',
+        cls: 'my-custom-class',
+        id: 'my-custom-id',
         items: [{
             xtype: 'mainlist'
         }]
@@ -599,7 +601,7 @@ Ext.define('ThemeTeamApp.view.main.Main', {
                         scale: 'medium',
                         ui: 'round'
                     }]
-                },
+                }
             }
         ]
     }]

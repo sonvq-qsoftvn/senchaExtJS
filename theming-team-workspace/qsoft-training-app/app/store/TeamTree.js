@@ -19,10 +19,6 @@ Ext.define('QsoftTrainingApp.store.TeamsTree', {
             rootProperty: ''
         }
     },
-    
+     
     groupField: 'team_name'
-});
-
-var groupingFeature = Ext.create('Ext.grid.feature.Grouping',{
-    groupHeaderTpl: '{name} ({rows.length} User{[values.rows.length > 1 ? "s" : ""]})'
 });

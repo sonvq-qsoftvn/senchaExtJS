@@ -92,6 +92,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
                                                 Ext.getCmp('userlistall').getStore().load();  
                                                 Ext.getCmp('topiclistall').getStore().load();
                                                 Ext.getCmp('teamdashboardchart').getStore().load();
+                                                Ext.getCmp('overivewdashboardchart').getStore().load();
                                             }
                                         }
                                     });

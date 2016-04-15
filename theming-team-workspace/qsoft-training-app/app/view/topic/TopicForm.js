@@ -39,7 +39,7 @@ Ext.define('QsoftTrainingApp.view.topic.TopicForm', {
         items: [
             {
                 name: 'name',
-                fieldLabel: 'Topic Name',
+                fieldLabel: 'Topic Name<span style="color:#13F513;font-weight:bold;">*</span> ',
                 allowBlank: false,
                 msgTarget: 'under'
             }, {

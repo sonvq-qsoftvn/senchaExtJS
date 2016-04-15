@@ -79,7 +79,8 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
             userParams.password                 = userFormValue.password;
             userParams.password_confirmation    = userFormValue.passcfrm;
             userParams.role                     = userFormValue.role;
-            
+            userParams.final_score              = userFormValue.final_score;
+
             if(userFormValue.phone_number != '') {
                 userParams.phone_number         = userFormValue.phone_number;
             }
@@ -121,6 +122,7 @@ Ext.define('QsoftTrainingApp.view.user.UserController', {
                                     Ext.getCmp('userlistall').getStore().load(); 
                                     Ext.getCmp('topiclistall').getStore().load();
                                     Ext.getCmp('teamdashboardchart').getStore().load();
+                                    Ext.getCmp('overivewdashboardchart').getStore().load();                                    
                                     Ext.getCmp('adduserwindow').close();                                    
                                 }
                             }

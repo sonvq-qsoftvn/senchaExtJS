@@ -86,6 +86,7 @@ Ext.define('QsoftTrainingApp.view.topic.TopicController', {
                                     Ext.getCmp('teamtreelistall').getStore().load();
                                     Ext.getCmp('userlistall').getStore().load();  
                                     Ext.getCmp('topiclistall').getStore().load();
+                                    Ext.getCmp('overivewdashboardchart').getStore().load();
                                     Ext.getCmp('addtopicwindow').close();                                    
                                 }
                             }

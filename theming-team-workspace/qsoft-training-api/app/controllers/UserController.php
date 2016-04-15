@@ -37,6 +37,7 @@ class UserController extends BaseController {
             $user->name = Input::has('name') ? $input['name'] : '';
             $user->password = Hash::make($input['password']);
             $user->phone_number = Input::has('phone_number') ? $input['phone_number'] : '';
+            $user->final_score = Input::has('final_score') ? $input['final_score'] : '';
             
             $user->team_id = Input::has('team_id') ? $input['team_id'] : null;
             $user->role = Input::has('role') ? $input['role'] : 'user';
@@ -73,6 +74,7 @@ class UserController extends BaseController {
             $user->email = Input::has('email') ? $input['email'] : '';
             $user->name = Input::has('name') ? $input['name'] : '';
             $user->phone_number = Input::has('phone_number') ? $input['phone_number'] : '';
+            $user->final_score = Input::has('final_score') ? $input['final_score'] : '';
             
             $user->team_id = Input::has('team_id') ? $input['team_id'] : null;
             $user->role = Input::has('role') ? $input['role'] : 'user';

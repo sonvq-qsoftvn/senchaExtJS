@@ -1,6 +1,11 @@
 /**
  * This view is an example list of people.
  */
+
+var groupingFeature = Ext.create('Ext.grid.feature.Grouping',{
+    groupHeaderTpl: '{name} ({rows.length} User{[values.rows.length > 1 ? "s" : ""]})'
+});
+
 Ext.define('QsoftTrainingApp.view.teamtree.TeamTreeList', {
     extend: 'Ext.grid.Panel',
     xtype: 'teamtreelist',

@@ -39,12 +39,12 @@ Ext.define('QsoftTrainingApp.view.team.TeamForm', {
         items: [
             {
                 name: 'name',
-                fieldLabel: 'Team Name',
+                fieldLabel: 'Name<span style="color:#13F513;font-weight:bold;">*</span> ',
                 allowBlank: false,
                 msgTarget: 'under'
             }, {
                 name: 'slogan',
-                fieldLabel: 'Team Slogan',
+                fieldLabel: 'Slogan<span style="color:#13F513;font-weight:bold;">*</span> ',
                 allowBlank: false,
                 msgTarget: 'under'
             }]

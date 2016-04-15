@@ -31,9 +31,9 @@ Ext.define('QsoftTrainingApp.view.dashboard.OverviewDashboard', {
         },  
 
         //set legend configuration
-        legend: {
-            docked: 'bottom'
-        },
+        // legend: {
+        //     docked: 'bottom'
+        // },
 
         sprites: [{
             type: 'text',
@@ -69,7 +69,7 @@ Ext.define('QsoftTrainingApp.view.dashboard.OverviewDashboard', {
                 // font: 'bold italic 14px Helvetica'
                 fontSize: '20px',
                 fontStyle: 'italic'
-            },
+            }
         }],
 
         //define the actual bar series.
@@ -113,7 +113,13 @@ Ext.define('QsoftTrainingApp.view.dashboard.OverviewDashboard', {
                     toolTip.setHtml('<span style="color:#fff;font-size:24px;">There are ' + storeItem.get('count') + ' ' + storeItem.get('name') + plural + ' in total</span>');
                 }
             },    
-            title:['Total Count on each Item']
+            title:['Total Count on each Item'],
+            renderer: function(sprite, record, attr, index, store) {
+                return Ext.apply(attr, {
+                    fill: ['#9ACD32', '#FFFF00', '#EE82EE', '#40E0D0', '#00FF7F', '#FF8C00', '#FF1493', '#ADFF2F', '#F08080', '#FFA07A', '#F0E68C', '#CD5C5C', '#00BFFF'][index%13],
+                    stroke: ['#9ACD32', '#FFFF00', '#EE82EE', '#40E0D0', '#00FF7F', '#FF8C00', '#FF1493', '#ADFF2F', '#F08080', '#FFA07A', '#F0E68C', '#CD5C5C', '#00BFFF'][index%13]
+                });
+            }
         }]
     }]
 });

@@ -7,7 +7,22 @@ Ext.apply(Ext.form.field.VTypes, {
         return true;
     },
     passwordText: 'Passwords do not match'
-});   
+}); 
+
+var myNumberField = Ext.extend(Ext.form.NumberField, {
+    setValue : function(v){
+        v = typeof v == 'number' ? v : String(v).replace(this.decimalSeparator, ".");
+        v = isNaN(v) ? '' : String(v).replace(".", this.decimalSeparator);
+        return Ext.form.NumberField.superclass.setValue.call(this, v);
+    },
+    fixPrecision : function(value){
+        var nan = isNaN(value);
+        if(!this.allowDecimals || this.decimalPrecision == -1 || nan || !value){
+           return nan ? '' : value;
+        }
+        return parseFloat(value).toFixed(this.decimalPrecision);
+    }
+});  
 
 Ext.define('QsoftTrainingApp.view.user.UserForm', {
     extend: 'Ext.window.Window',
@@ -52,7 +67,7 @@ Ext.define('QsoftTrainingApp.view.user.UserForm', {
             {
                 name: 'email',
                 xtype: 'textfield',
-                fieldLabel: 'Email',
+                fieldLabel: 'Email<span style="color:#13F513;font-weight:bold;">*</span> ',
                 allowBlank: false,
                 msgTarget: 'under',
                 vtype: 'email',
@@ -60,7 +75,7 @@ Ext.define('QsoftTrainingApp.view.user.UserForm', {
                 emptyText: 'user@qsoft.com.vn'
             }, {
                 name: 'name',
-                fieldLabel: 'Full Name',
+                fieldLabel: 'Full Name<span style="color:#13F513;font-weight:bold;">*</span> ',
                 allowBlank: false,
                 msgTarget: 'under'
             }, {
@@ -74,7 +89,7 @@ Ext.define('QsoftTrainingApp.view.user.UserForm', {
                 name: 'password',
                 xtype: 'textfield',
                 inputType: 'password',
-                fieldLabel: 'Password',
+                fieldLabel: 'Password<span style="color:#13F513;font-weight:bold;">*</span> ',
                 id: 'password',
                 allowBlank: false,
                 msgTarget: 'under',
@@ -88,7 +103,7 @@ Ext.define('QsoftTrainingApp.view.user.UserForm', {
                 }
             },
             {
-                fieldLabel: 'Confirm Pass',
+                fieldLabel: 'Confirm Pass<span style="color:#13F513;font-weight:bold;">*</span> ',
                 name: 'passcfrm',
                 inputType: 'password',  
                 vtype: 'password',
@@ -131,6 +146,13 @@ Ext.define('QsoftTrainingApp.view.user.UserForm', {
                 valueField: '_id',
                 editable: false,
                 name: 'team_id'
+            },
+            {
+                name: 'final_score',
+                inputType: 'number',
+                fieldLabel: 'Final Score',
+                allowBlank: true,
+                msgTarget: 'under'
             }
             
         ]

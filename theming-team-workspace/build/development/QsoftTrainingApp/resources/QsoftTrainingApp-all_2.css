@@ -13626,3 +13626,32 @@ input[type="radio"]:checked + label span {
 .ja_body {
     line-height: 24px !important;
 }
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:329 */
+.about-us-section {
+    width: 100%;
+    height: 500px;
+    background: #548ca3;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:339 */
+header {
+    padding-top: 20px;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:343 */
+header h1 {
+    display: block;
+    margin: 10px auto 0;
+    text-align: center;
+    width: auto;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:350 */
+header h1 a:link,
+header h1 a:visited,
+header h1 a:active,
+header h1 a:hover {
+    color: #3d6879;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+}

@@ -31,7 +31,8 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
             {header: 'Name', dataIndex: 'name', flex: 1},
             {header: 'Role', dataIndex: 'role', flex: 1},
             {header: 'Phone Number', dataIndex: 'phone_number', flex: 1},
-            {header: 'Team Name', dataIndex: 'team_name', flex: 1}
+            {header: 'Team Name', dataIndex: 'team_name', flex: 1},
+            {header: 'Final Score', dataIndex: 'final_score', flex: 1}
         ];
         
         if (localStorage.getItem('role') == 'admin') { 
@@ -128,6 +129,7 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                                                 Ext.getCmp('teamlistall').getStore().load();                                                
                                                 Ext.getCmp('topiclistall').getStore().load();
                                                 Ext.getCmp('teamdashboardchart').getStore().load();
+                                                Ext.getCmp('overivewdashboardchart').getStore().load();
                                             }
                                         }
                                     });
