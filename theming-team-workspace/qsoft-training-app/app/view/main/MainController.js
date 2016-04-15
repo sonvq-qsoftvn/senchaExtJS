@@ -372,7 +372,127 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
         });                       
     },
 
+    onAboutMeShow: function () {
+        var clickCount = 0;
+        var content = '<div class="content">\
+            <div class="content-container">\
+                <div class="avatar-image-container">\
+                    <div class="avatar-image animated tada"></div>\
+                </div>\
+                <div class="user-information">\
+                    <ul class="key-features">\
+                        <li class="first-key-feature">3.5 years experienced in Web development at QSoft Vietnam Co.,</li>\
+                        <li class="second-key-feature">Frontend, Backend and APIs developer</li>\
+                        <li class="third-key-feature"><b>Specialties:</b> \
+                            <ul>\
+                                <li>Mobile (Games, Apps) API development, Web application development</li>\
+                                <li>PHP (Zend Framework 1.x & 2.x, Symfony, Laravel, Phalcon, Prado, Drupal, Wordpress)</li>\
+                                <li>JavaScript (jQuery, jQuery Mobile, AngularJS, ExtJS), (X)HTML</li>\
+                                <li>CSS, Twitter Bootstrap, Responsive, MySQL, Multi Programming Languages Adaption</li>\
+                            </ul>\
+                        </li>\
+                    </ul>\
+                </div>\
+            </div>\
+        </div>';
+
+        $('.about-me-section .content').empty();
+        $('.about-me-section').html('<header><h1><a href="#">Vu Quang Son</a></h1><header>');
+        $('.about-me-section').append(content);
+        $('.about-me-section .content').on('click', function(){
+            $('.about-me-section .key-features').css('background', 'none');
+            if(clickCount == 0) {
+                $('.about-me-section .first-key-feature').addClass('visible animated fadeInUp');
+            } else if(clickCount == 1) {
+                $('.about-me-section .second-key-feature').addClass('visible animated tada');
+            } else if(clickCount == 2) {
+                $('.about-me-section .third-key-feature').addClass('visible animated lightSpeedIn');
+            }
+            clickCount++;
+        });
+    },
+    onAboutAppShow: function () {
+        var clickCount = 0;
+        var content = '<div class="content">\
+            <div class="content-container">\
+                <h2>Project key features</h2>\
+                <ul class="key-features">\
+                    <li class="first-key-feature"><b>Brief:</b> \
+                        <ul>\
+                            <li>Build a tool for managing QSoft training process</li>\
+                            <li>Manage User, Team, Topic with strict validation and relationship</li>\
+                            <li>Clear analytic charts and useful lucky wheel for team-topic picking</li>\
+                        </ul>\
+                    </li>\
+                    <li class="second-key-feature"><b>Framework:</b> \
+                        <ul>\
+                            <li><em><span class="highlight">Laravel</span></em> version 4.2.19 as Restful API;</li>\
+                            <li><em><span class="highlight">Extjs</span></em> version 6.0.1.250 </li>\
+                        </ul>\
+                    </li>\
+                    <li class="third-key-feature"><b>Use various Extjs Components<b>: \
+                        <ul>\
+                            <li>Tab, Grid Panel, Form, Chart, Window, etc. </li>\
+                            <li>Style <em><span class="highlight">Dark</span></em> custom theme for the above components</li>\
+                        </ul>\
+                    </li>\
+                    <li class="forth-key-feature">Integrate <em><span class="highlight">Extjs</span></em> and <em><span class="highlight">jQuery</span></em> to work together</li>\
+                </ul>\
+            </div>\
+        </div>';
+
+        $('.about-app-section .content').empty();
+        $('.about-app-section').html('<header><h1><a href="#">QSoft Training App</a></h1></header>');
+        $('.about-app-section').append(content);
+        $('.about-app-section .content').on('click', function(){
+            $('.about-app-section .key-features').css('background', 'none');
+            if(clickCount == 0) {
+                $('.about-app-section .first-key-feature').addClass('visible animated fadeInUp');
+            } else if(clickCount == 1) {
+                $('.about-app-section .second-key-feature').addClass('visible animated tada');
+            } else if(clickCount == 2) {
+                $('.about-app-section .third-key-feature').addClass('visible animated rubberBand');
+            } else if(clickCount == 3) {
+                $('.about-app-section .forth-key-feature').addClass('visible animated rollIn');
+            }
+            clickCount++;
+        });
+    },
     onAboutUsShow: function () {
-        console.log("vao day");
+        var clickCount = 0;
+        var content = '<div class="content">\
+            <div class="content-container">\
+                <h2>Project members:</h2>\
+                <ul class="key-features">\
+                    <li class="first-key-feature">Vu Quang Son</li>\
+                    <li class="second-key-feature">Nguyen Xuan Bach</li>\
+                    <li class="third-key-feature">Cao Tung</li>\
+                    <li class="forth-key-feature">Tran Quoc Hung</li>\
+                    <li class="fifth-key-feature">Vu Manh Quyet</li>\
+                    <li class="sixth-key-feature">Vu Xuan Thang</li>\
+                </ul>\
+            </div>\
+        </div>';
+
+        $('.about-us-section .content').empty();
+        $('.about-us-section').html('<header><h1><a href="#">Team 5 - Theming team</a></h1></header>');
+        $('.about-us-section').append(content);
+        $('.about-us-section .content').on('click', function(){
+            $('.about-us-section .key-features').css('background', 'none');
+            if(clickCount == 0) {
+                $('.about-us-section .first-key-feature').addClass('visible animated fadeInUp');
+            } else if(clickCount == 1) {
+                $('.about-us-section .second-key-feature').addClass('visible animated tada');
+            } else if(clickCount == 2) {
+                $('.about-us-section .third-key-feature').addClass('visible animated rubberBand');
+            } else if(clickCount == 3) {
+                $('.about-us-section .forth-key-feature').addClass('visible animated rollIn');
+            } else if(clickCount == 4) {
+                $('.about-us-section .fifth-key-feature').addClass('visible animated rotateIn');
+            } else if(clickCount == 5) {
+                $('.about-us-section .sixth-key-feature').addClass('visible animated slideInRight');
+            }
+            clickCount++;
+        });
     }
 });

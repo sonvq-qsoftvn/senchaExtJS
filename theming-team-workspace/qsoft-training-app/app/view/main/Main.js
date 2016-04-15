@@ -145,12 +145,29 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
             },
             {
                 xtype: 'panel',
+                title: 'About App',
+                html: '<div class="about-app-section"></div>',
+                listeners: {
+                    show: 'onAboutAppShow'
+                }
+            },
+            {
+                xtype: 'panel',
                 title: 'About Me',
-                html: '<div class="about-us-section"><header><h1><a href="/">Mr. Vu Quang Son</a></h1><p>aa</p></div>',
+                html: '<div class="about-me-section"></div>',
+                listeners: {
+                    show: 'onAboutMeShow'
+                }
+            },
+            {
+                xtype: 'panel',
+                title: 'About Us',
+                html: '<div class="about-us-section"></div>',
                 listeners: {
                     show: 'onAboutUsShow'
                 }
-            }]
+            }
+            ]
         }]
     }, {
         title: 'Users',

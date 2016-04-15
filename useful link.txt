@@ -1,3 +1,13 @@
+commandline:
+sencha app watch
+sencha app build
+sencha app refresh
+php artisan migrate
+php artisan migrate:reset
+php artisan db:seed
+composer dump-autoload
+
+
 https://www.sencha.com/blog/how-to-create-a-dark-ext-js-theme-part-1/
 
 https://www.sencha.com/blog/how-to-create-a-dark-ext-js-theme-part-2/

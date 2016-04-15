@@ -598,6 +598,9 @@ Ext.define('ThemeTeamApp.view.main.Main', {
                         listeners: {
                             click: 'onLoginClick'
                         },
+                        // textAlign: 'right',
+                        // width: 200,
+                        // scale: 'large',
                         scale: 'medium',
                         ui: 'round'
                     }]
