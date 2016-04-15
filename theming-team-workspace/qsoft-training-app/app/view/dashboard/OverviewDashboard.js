@@ -53,12 +53,12 @@ Ext.define('QsoftTrainingApp.view.dashboard.OverviewDashboard', {
             minimum: 0,
             fields: ['count'],
             label: {
-                renderer: Ext.util.Format.numberRenderer('0'),
                 rotate: {
                     degrees: -45
                 },
                 fontSize: '20px'
             },
+            
             title: 'Total count'
         }, {
             type: 'category',

@@ -41,9 +41,7 @@ Ext.define('QsoftTrainingApp.view.dashboard.ScoreDashboard', {
             type: 'numeric',
             position: 'left',
             fields: ['percentage'],
-            label: {
-                renderer: function(v) { return v + '%'; }
-            },
+            renderer: function(axis, label) { return label + '%'; },
             grid: true,
             minimum: 0            
         }, {
@@ -51,11 +49,11 @@ Ext.define('QsoftTrainingApp.view.dashboard.ScoreDashboard', {
             position: 'bottom',
             fields: ['name'],
             grid: true,
-            label: {
-                rotate: {
-                    degrees: -45
-                }
-            },
+            // label: {
+            //     rotate: {
+            //         degrees: -45
+            //     }
+            // },
             title: 'Score Range'
         }],
         series: [{
