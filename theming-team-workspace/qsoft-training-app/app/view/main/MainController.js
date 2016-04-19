@@ -27,8 +27,8 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                                 <img id="play_again" src="resources/images/play-again.png" alt="Play Again" title="Play Again" /><br />\
                             </div>\
                         </td>\
-                        <td width="438" height="582" class="the_wheel" align="center" valign="center">\
-                            <canvas id="canvas" width="434" height="434"></canvas>\
+                        <td width="338" height="450" class="the_wheel" align="center" valign="center">\
+                            <canvas id="canvas" width="334" height="334"></canvas>\
                         </td>\
                         <td align="left" valign="center" class="radio-option-container">\
                             <div class="radio-option-main"></div>\
@@ -101,8 +101,8 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
             
             var theWheel = new Winwheel({
                 'numSegments'  : arraySegments.length,
-                'outerRadius'  : 212,
-                'textFontSize' : 16,
+                'outerRadius'  : 162,
+                'textFontSize' : 12,
                 'segments'     : arraySegments,
                 'animation' :
                 {
@@ -247,10 +247,7 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                         params: topicParams,
                         success: function (response) {
                             if (response.status == '200') {
-                                Ext.getCmp('teamlistall').getStore().load();
-                                Ext.getCmp('teamtreelistall').getStore().load();
-                                Ext.getCmp('userlistall').getStore().load();  
-                                Ext.getCmp('topiclistall').getStore().load();
+                                QsoftTrainingApp.common.function.CommonFunction.reloadStore();
                                 $.jAlert({
                                     'title': 'Lucky Wheel Result',
                                     'content': messageResult,
@@ -430,13 +427,13 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                             <li><em><span class="highlight">Extjs</span></em> version 6.0.1.250 </li>\
                         </ul>\
                     </li>\
-                    <li class="third-key-feature"><b>Use various Extjs Components<b>: \
+                    <li class="third-key-feature"><b>Use various Extjs Components</b>: \
                         <ul>\
                             <li>Tab, Grid Panel, Form, Chart, Window, etc. </li>\
                             <li>Style <em><span class="highlight">Dark</span></em> custom theme for the above components</li>\
                         </ul>\
                     </li>\
-                    <li class="forth-key-feature">Integrate <em><span class="highlight">Extjs</span></em> and <em><span class="highlight">jQuery</span></em> to work together</li>\
+                    <li class="forth-key-feature"><b>Combine <em><span class="highlight">Extjs</span></em> and <em><span class="highlight">jQuery</span></em> to work together</b></li>\
                 </ul>\
             </div>\
         </div>';

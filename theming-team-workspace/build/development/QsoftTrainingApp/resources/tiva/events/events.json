@@ -1,0 +1,48 @@
+{
+    "items": [
+		{
+			"name": "Corrido Fest 2016",
+			"image": "events/images/corrido_fest_2016.jpg",
+			"day": "11",
+			"month": "4",
+			"year": "2016",
+			"time": "8:00 am",
+			"duration": "2",
+			"location": "Celebrity Theatre, Phoenix, United States, 85008",
+			"description": "Rigo Entertainment presents <br>Corrido Fest 2016<br> Hijos de Barron<br> Los Cachorros de Juan Villarreal<br> Legado 7<br><br> Saturday, May 14, 2016<br> Sábado, 14 de Mayo de 2016<br><br> Showtime – 8:00 PM<br> Theatre Doors Open – 7:00 PM<br> Club Doors Open – 6:00 PM<br><br> El Show Comenzara a las 8:00<br> Las Puertas del teatro se abrirán a las 7:00<br> y las puertas del club abrirán a las 6:00<br><br> Ticket Prices: Rows 1-8 = $80 Rows 9-13 = $45 GA/B-Ring = $25 All ticket prices increase $10 on 5/7/16 Los precios de los boletos son de $80 de la fila 1-8 $45 de la fila 9-13 $25 La entrada general/B-Ring Todos los boletos aumentaran $10 5/7/16 All tickets subject to service charge. Se agrega un cobro adicional por servicios a cada boleto. Seating is in the round. Los asientos estarán en la ronda. Tickets purchased within 10 days of show will be held in Will Call. Los boletos adquiridos 10 días antes del show serán puestos en Will Call. Early arrival is suggested to allow for parking and security check. Lleque Temprano para chequeo de seguridad y estacionamiento."
+		},
+		{
+			"name": "RuPaul's Drag Race: Battle of the Seasons",
+			"image": "events/images/rupauls_drag_race.jpg",
+			"day": "8",
+			"month": "4",
+			"year": "2016",
+			"time": "9:00 pm",
+			"duration": "1",
+			"location": "Celebrity Theatre, Phoenix, United States, 85008",
+			"description": "AEG Live and Danny Zelisko Presents RuPaul's Drag Race: Battle of the Seasons 2016 Extravaganza Tour Wednesday, April 27, 2016 Showtime – 9:00 PM Theatre Doors Open – 8:00 PM Club Doors Open – 7:00 PM Ticket Prices: Rows 1-25 = $37.50 ALL tickets subject to service charge. 3/4 House - stage will NOT rotate. Tickets purchased within 10 days of show will be held in Will Call. Print @ Home option only available until 2 hours prior to show time. Early arrival is suggested to allow for parking and security check."
+		},
+		{
+			"name": "Lucha Libre",
+			"image": "events/images/lucha_libre.jpg",
+			"day": "21",
+			"month": "4",
+			"year": "2016",
+			"time": "6:00 pm",
+			"duration": "2",
+			"location": "Celebrity Theatre, Phoenix, United States, 85008",
+			"description": "Midway Nissan and Rigo Entertainment Lucha Libre Sunday April 24 2016 Domingo, 24 de Abril de 2015 Showtime – 6:00 PM Theatre Doors Open – 5:00 PM Club Doors Open – 4:00 PM El Show Comenzara a las 6:00 Las Puertas del teatro se abrirán a las 5:00 y las puertas del club abrirán a las 4:00 Ticket Prices General Admission Ticket Prices: $15 Children 12 and under - $5 All ticket prices increase $5 on 4/18/16 Los precios de los boletos son de General Admisión = $15 Niños menores de 12 años = $5 Todos los boletos aumentaran $5 4/18/16 All tickets subject to service charge. Se agrega un cobro adicional por servicios a cada boleto. Tickets purchased within 10 days of show will be held in Will Call. Los boletos adquiridos 10 días antes del show serán puestos en Will Call. Seating is in the round. Los asientos estarán en la ronda. Early arrival is suggested to allow for parking and security check. Lleque Temprano para chequeo de seguridad y estacionamiento."
+		},
+		{
+			"name": "Roberto Tapia",
+			"image": "events/images/roberto_tapia.jpg",
+			"day": "24",
+			"month": "4",
+			"year": "2016",
+			"time": "8:00 pm",
+			"duration": "1",
+			"location": "Celebrity Theatre, Phoenix, United States, 85008",
+			"description": "Rigo Entertainment presents Roberto Tapia Saturday, April 23, 2016 Sábado, 23 de Abril 2016 Showtime – 8:30 PM Theatre Doors Open – 7:30 PM Club Doors Open – 6:30 PM El Show Comenzara a las 8:30 Las Puertas del teatro se abrirán a las 7:30 y las puertas del club abrirán a las 6:30 Ticket Prices: Rows 1-8 = $95 Rows 9-13 = $65 Rows 14-25 = $35 All ticket prices increase $10 on 4/18/16 Los precios de los boletos son de $95 de la fila 1-8 $65 de la fila 9-13 $35 de la fila 14-25 Todos los boletos aumentaran $10 4/18/16 All tickets subject to service charge. Se agrega un cobro adicional por servicios a cada boleto. Tickets purchased within 10 days of show will be held in Will Call. Los boletos adquiridos 10 días antes del show serán puestos en Will Call. Seating is in the round. Los asientos estarán en la ronda. Early arrival is suggested to allow for parking and security check. Lleque Temprano para chequeo de seguridad y estacionamiento."
+		}
+	]
+}

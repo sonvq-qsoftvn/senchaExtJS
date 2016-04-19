@@ -15,7 +15,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
     controller: 'team',
     
     alias   : 'widget.teamslist',
-    height: 700,
+    height: 600,
     title: 'Team List',
 
     store: {
@@ -87,12 +87,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamList', {
                                         icon: 'smiles-icon',
                                         fn: function (btn) {
                                             if (btn == 'ok') {
-                                                grid.getStore().load();                           
-                                                Ext.getCmp('teamtreelistall').getStore().load();
-                                                Ext.getCmp('userlistall').getStore().load();  
-                                                Ext.getCmp('topiclistall').getStore().load();
-                                                Ext.getCmp('teamdashboardchart').getStore().load();
-                                                Ext.getCmp('overivewdashboardchart').getStore().load();
+                                                QsoftTrainingApp.common.function.CommonFunction.reloadStore();                                                
                                             }
                                         }
                                     });

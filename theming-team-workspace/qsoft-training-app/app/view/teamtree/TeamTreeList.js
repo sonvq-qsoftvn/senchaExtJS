@@ -13,7 +13,7 @@ Ext.define('QsoftTrainingApp.view.teamtree.TeamTreeList', {
     requires: [
         'QsoftTrainingApp.store.TeamsTree'
     ],
-    height: 700,
+    height: 600,
     title: 'Team Member List',
     
     id: "teamtreelistall",

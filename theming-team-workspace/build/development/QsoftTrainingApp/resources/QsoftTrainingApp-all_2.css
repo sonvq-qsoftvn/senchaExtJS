@@ -13477,7 +13477,7 @@ html {
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:141 */
 td.the_wheel {
-    background-image: url('images/wheel_back_green.png');
+    background-image: url('images/wheel_back_green_small.png');
     background-position: center;
     background-repeat: none;
 }
@@ -13631,14 +13631,14 @@ input[type="radio"]:checked + label span {
 .about-app-section,
 .about-us-section {
     width: 100%;
-    height: 650px;
+    height: 560px;
     background: #548ca3;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:330 */
 .about-me-section h1,
 .about-app-section h1,
 .about-us-section h1 {
-    margin-top: 30px;
+    margin-top: 27px;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:338 */
 .about-me-section .content,
@@ -13648,11 +13648,11 @@ input[type="radio"]:checked + label span {
     background-size: cover;
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
-    height: 510px;
+    height: 425px;
     -moz-box-shadow: inset 0 13px 15px -8px black, inset 0 -13px 20px -8px black;
     -webkit-box-shadow: inset 0 13px 15px -8px black, inset 0 -13px 20px -8px black;
     box-shadow: inset 0 13px 15px -8px black, inset 0 -13px 20px -8px black;
-    top: 120px;
+    top: 90px;
     position: absolute;
     width: 100%;
     z-index: 20;
@@ -13662,7 +13662,7 @@ input[type="radio"]:checked + label span {
 .about-app-section .content .content-container,
 .about-us-section .content .content-container {
     min-height: 400px;
-    padding-top: 15px;
+    padding-top: 10px;
     width: 80%;
     margin: 0 auto;
 }
@@ -13673,7 +13673,7 @@ input[type="radio"]:checked + label span {
     min-height: 300px;
     background: url('images/enter-button.png') center center no-repeat;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 18px;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:364 */
 .about-me-section .content .content-container .key-features li,
@@ -13728,13 +13728,14 @@ input[type="radio"]:checked + label span {
 .about-app-section .content .content-container .avatar-image-container .avatar-image,
 .about-us-section .content .content-container .avatar-image-container .avatar-image {
     background: url('images/about-profilepic.png') center center no-repeat;
-    width: 305px;
-    height: 305px;
+    background-size: cover;
+    width: 240px;
+    height: 240px;
     border: none;
     outline: none;
     margin-top: 30px;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:392 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:393 */
 .about-me-section .content .content-container .user-information,
 .about-app-section .content .content-container .user-information,
 .about-us-section .content .content-container .user-information {
@@ -13742,18 +13743,19 @@ input[type="radio"]:checked + label span {
     float: right;
     display: inline-block;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:408 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:409 */
 header {
-    padding-top: 20px;
+    padding-top: 10px;
+    text-align: center;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:412 */
 header h1 {
-    display: block;
+    display: inline-block;
     margin: 10px auto 0;
     text-align: center;
     width: auto;
 }
-/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:419 */
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:422 */
 header h1 a:link,
 header h1 a:visited,
 header h1 a:active,

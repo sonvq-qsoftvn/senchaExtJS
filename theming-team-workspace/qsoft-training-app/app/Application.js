@@ -9,7 +9,8 @@ Ext.define('QsoftTrainingApp.Application', {
     name: 'QsoftTrainingApp',
 
     requires: [
-        'QsoftTrainingApp.common.variable.Global'
+        'QsoftTrainingApp.common.variable.Global',
+        'QsoftTrainingApp.common.function.CommonFunction'
     ],
     
     stores: [

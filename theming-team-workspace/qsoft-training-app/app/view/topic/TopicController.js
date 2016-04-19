@@ -82,11 +82,7 @@ Ext.define('QsoftTrainingApp.view.topic.TopicController', {
                             icon: 'smiles-icon',
                             fn: function (btn) {
                                 if (btn == 'ok') {
-                                    Ext.getCmp('teamlistall').getStore().load();
-                                    Ext.getCmp('teamtreelistall').getStore().load();
-                                    Ext.getCmp('userlistall').getStore().load();  
-                                    Ext.getCmp('topiclistall').getStore().load();
-                                    Ext.getCmp('overivewdashboardchart').getStore().load();
+                                    QsoftTrainingApp.common.function.CommonFunction.reloadStore();
                                     Ext.getCmp('addtopicwindow').close();                                    
                                 }
                             }

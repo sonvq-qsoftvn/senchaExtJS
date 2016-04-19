@@ -21,6 +21,7 @@ Ext.define('QsoftTrainingApp.view.dashboard.ScoreDashboard', {
         xtype: 'chart',
         width: 500,
         height: 500,
+        id: 'scoredashboardchart',
         insetPadding: 60,
         animate: true,
         shadow: false,

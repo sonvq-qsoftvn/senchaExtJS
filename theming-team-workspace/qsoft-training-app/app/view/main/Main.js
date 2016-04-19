@@ -125,7 +125,7 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
         }
     },
 
-    items: [{
+    items: [{        
         title: 'Dashboard',
         iconCls: 'fa fa-area-chart',
         items:[{
@@ -133,8 +133,9 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
             xtype: 'tabpanel',
             style: 'background: #fff',
             layout: 'fit',
-
-            items: [{
+            id: 'dashboardtab',
+            items: [
+            {
                 xtype: 'overviewdashboard'               
             },
             {
@@ -142,7 +143,7 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
             },
             {
                 xtype: 'scoredashboard'
-            },
+            }, 
             {
                 xtype: 'panel',
                 title: 'About App',

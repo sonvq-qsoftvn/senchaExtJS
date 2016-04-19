@@ -13,7 +13,7 @@ Ext.define('QsoftTrainingApp.view.topic.TopicList', {
     
     id: "topiclistall",
     controller: 'topic',
-    height: 700,
+    height: 600,
     alias   : 'widget.topicslist',
     
     title: 'Topic List',
@@ -87,11 +87,7 @@ Ext.define('QsoftTrainingApp.view.topic.TopicList', {
                                         icon: 'smiles-icon',
                                         fn: function (btn) {
                                             if (btn == 'ok') {
-                                                grid.getStore().load();                           
-                                                Ext.getCmp('teamtreelistall').getStore().load();
-                                                Ext.getCmp('userlistall').getStore().load(); 
-                                                Ext.getCmp('teamlistall').getStore().load();
-                                                Ext.getCmp('overivewdashboardchart').getStore().load();
+                                                QsoftTrainingApp.common.function.CommonFunction.reloadStore();
                                             }
                                         }
                                     });

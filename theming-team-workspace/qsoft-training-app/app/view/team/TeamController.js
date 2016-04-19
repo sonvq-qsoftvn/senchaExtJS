@@ -83,12 +83,7 @@ Ext.define('QsoftTrainingApp.view.team.TeamController', {
                             icon: 'smiles-icon',
                             fn: function (btn) {
                                 if (btn == 'ok') {
-                                    Ext.getCmp('teamlistall').getStore().load();
-                                    Ext.getCmp('teamtreelistall').getStore().load();
-                                    Ext.getCmp('userlistall').getStore().load();  
-                                    Ext.getCmp('topiclistall').getStore().load();
-                                    Ext.getCmp('teamdashboardchart').getStore().load();   
-                                    Ext.getCmp('overivewdashboardchart').getStore().load();                                                                 
+                                    QsoftTrainingApp.common.function.CommonFunction.reloadStore();
                                     Ext.getCmp('addteamwindow').close();                                    
                                 }
                             }

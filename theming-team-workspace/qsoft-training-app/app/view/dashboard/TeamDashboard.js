@@ -18,8 +18,8 @@ Ext.define('QsoftTrainingApp.view.dashboard.TeamDashboard', {
     layout: 'fit',
     items: [{
         xtype: 'polar',
-        width: 600,
-        height: 600,
+        width: 500,
+        height: 500,
         id: 'teamdashboardchart',
         store: {
             type: 'TeamStatics'
@@ -35,7 +35,7 @@ Ext.define('QsoftTrainingApp.view.dashboard.TeamDashboard', {
             y: 40 
         }],
         legend: {
-            docked: 'bottom'
+            docked: 'right'
         },
         insetPadding: 50,
         innerPadding: 20,

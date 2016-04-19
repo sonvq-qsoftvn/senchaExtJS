@@ -12,7 +12,7 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
         'QsoftTrainingApp.view.user.ChangePassForm',
         'QsoftTrainingApp.common.plugin.LiveSearchGridPanel'
     ],
-    height: 700,
+    height: 600,
     title: 'User List',
     id: "userlistall",
     store: {
@@ -124,12 +124,7 @@ Ext.define('QsoftTrainingApp.view.user.UserList', {
                                         icon: 'smiles-icon',
                                         fn: function (btn) {
                                             if (btn == 'ok') {
-                                                grid.getStore().load();                                                       
-                                                Ext.getCmp('teamtreelistall').getStore().load();
-                                                Ext.getCmp('teamlistall').getStore().load();                                                
-                                                Ext.getCmp('topiclistall').getStore().load();
-                                                Ext.getCmp('teamdashboardchart').getStore().load();
-                                                Ext.getCmp('overivewdashboardchart').getStore().load();
+                                                QsoftTrainingApp.common.function.CommonFunction.reloadStore();
                                             }
                                         }
                                     });

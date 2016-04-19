@@ -1,6 +1,6 @@
 /**
  * A GridPanel class with live search support.
- * @author Nicolas Ferrero
+ * @author Vu Quang Son
  */
 Ext.define('QsoftTrainingApp.common.plugin.LiveSearchGridPanel', {
     extend: 'Ext.grid.Panel',
