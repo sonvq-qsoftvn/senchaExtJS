@@ -38,16 +38,16 @@ Ext.define('QsoftTrainingApp.view.teamtree.TeamTreeList', {
             },
             ui: 'round',
             iconCls: 'fa fa-unlock'
-        },
-        {
-            xtype: 'button',
-            text: 'Enable Grouping',
-            handler : function(){
-                groupingFeature.enable();
-            },
-            ui: 'round',
-            iconCls: 'fa fa-unlock-alt'
         }
+//        {
+//            xtype: 'button',
+//            text: 'Enable Grouping',
+//            handler : function(){
+//                groupingFeature.enable();
+//            },
+//            ui: 'round',
+//            iconCls: 'fa fa-unlock-alt'
+//        }
     ],
     columns: [
         {header: 'Email', dataIndex: 'email', flex: 1, sortable:false},

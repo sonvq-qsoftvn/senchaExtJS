@@ -18,7 +18,8 @@ class Topic extends SmartLoquent {
     }
     
     protected static $createRules = array(
-        'name'				=>	'required|unique:topics'
+        "name"				=>	"required|unique:topics",
+        "team_id"			=>	"required|unique:topics"
     );
         
     public static function getCreateRules() {		
@@ -27,7 +28,8 @@ class Topic extends SmartLoquent {
     
     public static function getUpdateRules($id) {	
         return array(
-            'name'			=>	"required|unique:topics,name,$id,_id"
+            "name"			=>	"required|unique:topics,name,$id,_id",
+            "team_id"			=>	"required|unique:topics,team_id,$id,_id"
         );     
     }
     
