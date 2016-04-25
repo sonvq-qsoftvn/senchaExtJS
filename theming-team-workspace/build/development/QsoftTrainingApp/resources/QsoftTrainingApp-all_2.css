@@ -13767,3 +13767,65 @@ header h1 a:hover {
     text-transform: uppercase;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
 }
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:434 */
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+    color: #79ac38;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:442 */
+@keyframes blink {
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:443 */
+    0% {
+        opacity: 1;
+    }
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:444 */
+    50% {
+        opacity: 0;
+    }
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:445 */
+    100% {
+        opacity: 1;
+    }
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:448 */
+@-webkit-keyframes blink {
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:449 */
+    0% {
+        opacity: 1;
+    }
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:450 */
+    50% {
+        opacity: 0;
+    }
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:451 */
+    100% {
+        opacity: 1;
+    }
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:454 */
+@-moz-keyframes blink {
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:455 */
+    0% {
+        opacity: 1;
+    }
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:456 */
+    50% {
+        opacity: 0;
+    }
+    /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:457 */
+    100% {
+        opacity: 1;
+    }
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:460 */
+.title-typing {
+    line-height: 24px;
+    font-size: 26px;
+}
+/* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:465 */
+.typed-element {
+    color: #79ac38;
+}

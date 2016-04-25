@@ -390,3 +390,35 @@ header h1 a:hover {
     text-transform: uppercase;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
 }
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+    color: #79AC38;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.title-typing {
+    line-height: 24px;
+    font-size: 26px;
+}
+
+.typed-element {
+    color: #79AC38;
+}

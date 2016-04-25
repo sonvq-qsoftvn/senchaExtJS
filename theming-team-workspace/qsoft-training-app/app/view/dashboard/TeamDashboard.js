@@ -81,7 +81,23 @@ Ext.define('QsoftTrainingApp.view.dashboard.TeamDashboard', {
                 trackMouse:true, 
                 scope: this, 
                 renderer:function(toolTip, storeItem, item){
-                    toolTip.setHtml('<span style="color:#fff;font-size:24px;">' + storeItem.get('name') + ' has ' + storeItem.get('memberCount') + ' members </span>');
+                    var newValue = '';
+                    var teamStaticStore = Ext.getCmp('teamdashboardchart').getStore();
+                    var totalMemberInTeamCount = 0;
+                    Ext.each(teamStaticStore.data.items, function(item){
+                        totalMemberInTeamCount += item.data.memberCount;
+                    });
+
+                    Ext.each(teamStaticStore.data.items, function(item){
+                        if(item.data.name == storeItem.get('name')) {
+                            var percentage = (item.data.memberCount/totalMemberInTeamCount)*100;
+                            newValue = percentage.toFixed(1)  + '%';
+                        }
+                    });
+
+                    toolTip.setHtml('<span style="color:#fff;font-size:24px;line-height:24px;">' + storeItem.get('name') 
+                        + ' has ' + storeItem.get('memberCount') 
+                        + ' members, accounting for ' + newValue + ' in total</span>');
                 }
             },
             renderer: function(sprite, record, attr, index, store) {

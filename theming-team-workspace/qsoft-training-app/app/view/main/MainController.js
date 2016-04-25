@@ -459,14 +459,14 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
         var clickCount = 0;
         var content = '<div class="content">\
             <div class="content-container">\
-                <h2>Project members:</h2>\
+                <h1 class="title-typing">We are a <span class="typed-element"></span> Team\
                 <ul class="key-features">\
-                    <li class="first-key-feature">Vu Quang Son</li>\
-                    <li class="second-key-feature">Nguyen Xuan Bach</li>\
-                    <li class="third-key-feature">Cao Tung</li>\
-                    <li class="forth-key-feature">Tran Quoc Hung</li>\
-                    <li class="fifth-key-feature">Vu Manh Quyet</li>\
-                    <li class="sixth-key-feature">Vu Xuan Thang</li>\
+                    <li class="first-key-feature"><span style="color:#79AC38">Vu Quang Son</span> - Team lead - Dashboard & topic team</li>\
+                    <li class="second-key-feature"><span style="color:#79AC38">Nguyen Xuan Bach</span> - Team</li>\
+                    <li class="third-key-feature"><span style="color:#79AC38">Cao Tung</span> - Users</li>\
+                    <li class="forth-key-feature"><span style="color:#79AC38">Tran Quoc Hung</span> - Team members</li>\
+                    <li class="fifth-key-feature"><span style="color:#79AC38">Vu Manh Quyet</span> - Login & Manage localStorage</li>\
+                    <li class="sixth-key-feature"><span style="color:#79AC38">Vu Xuan Thang</span> - Topic</li>\
                 </ul>\
             </div>\
         </div>';
@@ -490,6 +490,16 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                 $('.about-us-section .sixth-key-feature').addClass('visible animated slideInRight');
             }
             clickCount++;
+        });
+
+        $(function(){            
+            $(".typed-element").typed({
+                strings: ["CREATIVE", "WELL CO-WORKING", "SMART", "PASSIONATE", "FUNNY"],
+                typeSpeed: 100,
+                backDelay: 500,
+                loop: true,
+                contentType: 'html'
+            });
         });
     }
 });
