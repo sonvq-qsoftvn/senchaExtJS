@@ -167,6 +167,14 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
                 listeners: {
                     show: 'onAboutUsShow'
                 }
+            },
+            {
+                xtype: 'panel',
+                title: 'Future work',
+                html: '<div class="future-work-section"></div>',
+                listeners: {
+                    show: 'onFutureWorkShow'
+                }
             }
             ]
         }]

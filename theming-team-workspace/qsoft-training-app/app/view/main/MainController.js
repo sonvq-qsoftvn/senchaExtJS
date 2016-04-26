@@ -501,5 +501,35 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
                 contentType: 'html'
             });
         });
+    },
+
+    onFutureWorkShow: function () {
+        var content = '<div class="content">\
+            <div class="content-container">\
+                <h1 class="title-typing"><span class="typed-element"></span>\
+                <ul class="key-features"></ul>\
+            </div>\
+        </div>';
+
+        $('.future-work-section .content').empty();
+        $('.future-work-section').html('<header><h1><a href="#">In Construction</a></h1></header>');
+        $('.future-work-section').append(content);
+        $('.future-work-section .content').on('click', function(){
+            $('.future-work-section .key-features').css('background', 'none');
+            $(function(){            
+                $(".typed-element").typed({
+                    strings: ["- Manage roles more clearly (Super admin, admin, user)^1000 <br/><br/>\
+                    - Divide into courses or training sessions (PHP, CSS, jQuery.^300 .^300 .^300 .^1000) <br/><br/>\
+                    - Make the app fully responsive^1000 <br/><br/>\
+                    - Allow admin/user to import and export data/chart^1000 <br/><br/>\
+                    - Add topic start datetime and add calendar to dashboard screen^1000 <br/><br/>\
+                    - And many more ;)) ^1000\
+                    "],
+                    typeSpeed: 20,
+                    loop: false,
+                    contentType: 'html'
+                });
+            }); 
+        });        
     }
 });

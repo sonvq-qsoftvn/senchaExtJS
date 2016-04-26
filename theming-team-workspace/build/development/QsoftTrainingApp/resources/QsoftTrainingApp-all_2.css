@@ -13629,7 +13629,8 @@ input[type="radio"]:checked + label span {
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:329 */
 .about-me-section,
 .about-app-section,
-.about-us-section {
+.about-us-section,
+.future-work-section {
     width: 100%;
     height: 560px;
     background: #548ca3;
@@ -13637,13 +13638,15 @@ input[type="radio"]:checked + label span {
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:330 */
 .about-me-section h1,
 .about-app-section h1,
-.about-us-section h1 {
+.about-us-section h1,
+.future-work-section h1 {
     margin-top: 27px;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:338 */
 .about-me-section .content,
 .about-app-section .content,
-.about-us-section .content {
+.about-us-section .content,
+.future-work-section .content {
     background: #152329 url('images/content_bg.jpg') center top no-repeat;
     background-size: cover;
     border-bottom: 1px solid #000;
@@ -13660,7 +13663,8 @@ input[type="radio"]:checked + label span {
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:354 */
 .about-me-section .content .content-container,
 .about-app-section .content .content-container,
-.about-us-section .content .content-container {
+.about-us-section .content .content-container,
+.future-work-section .content .content-container {
     min-height: 400px;
     padding-top: 10px;
     width: 80%;
@@ -13669,7 +13673,8 @@ input[type="radio"]:checked + label span {
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:359 */
 .about-me-section .content .content-container .key-features,
 .about-app-section .content .content-container .key-features,
-.about-us-section .content .content-container .key-features {
+.about-us-section .content .content-container .key-features,
+.future-work-section .content .content-container .key-features {
     min-height: 300px;
     background: url('images/enter-button.png') center center no-repeat;
     cursor: pointer;
@@ -13678,7 +13683,8 @@ input[type="radio"]:checked + label span {
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:364 */
 .about-me-section .content .content-container .key-features li,
 .about-app-section .content .content-container .key-features li,
-.about-us-section .content .content-container .key-features li {
+.about-us-section .content .content-container .key-features li,
+.future-work-section .content .content-container .key-features li {
     line-height: 30px;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:367 */
@@ -13699,26 +13705,35 @@ input[type="radio"]:checked + label span {
 .about-us-section .content .content-container .key-features .third-key-feature,
 .about-us-section .content .content-container .key-features .forth-key-feature,
 .about-us-section .content .content-container .key-features .fifth-key-feature,
-.about-us-section .content .content-container .key-features .sixth-key-feature {
+.about-us-section .content .content-container .key-features .sixth-key-feature,
+.future-work-section .content .content-container .key-features .first-key-feature,
+.future-work-section .content .content-container .key-features .second-key-feature,
+.future-work-section .content .content-container .key-features .third-key-feature,
+.future-work-section .content .content-container .key-features .forth-key-feature,
+.future-work-section .content .content-container .key-features .fifth-key-feature,
+.future-work-section .content .content-container .key-features .sixth-key-feature {
     visibility: hidden;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:370 */
 .about-me-section .content .content-container .key-features .visible,
 .about-app-section .content .content-container .key-features .visible,
-.about-us-section .content .content-container .key-features .visible {
+.about-us-section .content .content-container .key-features .visible,
+.future-work-section .content .content-container .key-features .visible {
     visibility: visible;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:374 */
 .about-me-section .content .content-container span.highlight,
 .about-app-section .content .content-container span.highlight,
-.about-us-section .content .content-container span.highlight {
+.about-us-section .content .content-container span.highlight,
+.future-work-section .content .content-container span.highlight {
     color: #79ac38;
     font-weight: bold;
 }
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:378 */
 .about-me-section .content .content-container .avatar-image-container,
 .about-app-section .content .content-container .avatar-image-container,
-.about-us-section .content .content-container .avatar-image-container {
+.about-us-section .content .content-container .avatar-image-container,
+.future-work-section .content .content-container .avatar-image-container {
     width: 30%;
     float: left;
     display: inline-block;
@@ -13726,7 +13741,8 @@ input[type="radio"]:checked + label span {
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:382 */
 .about-me-section .content .content-container .avatar-image-container .avatar-image,
 .about-app-section .content .content-container .avatar-image-container .avatar-image,
-.about-us-section .content .content-container .avatar-image-container .avatar-image {
+.about-us-section .content .content-container .avatar-image-container .avatar-image,
+.future-work-section .content .content-container .avatar-image-container .avatar-image {
     background: url('images/about-profilepic.png') center center no-repeat;
     background-size: cover;
     width: 240px;
@@ -13738,7 +13754,8 @@ input[type="radio"]:checked + label span {
 /* http://localhost:1841/qsoft-training-app/sass/src/view/main/Main.scss:393 */
 .about-me-section .content .content-container .user-information,
 .about-app-section .content .content-container .user-information,
-.about-us-section .content .content-container .user-information {
+.about-us-section .content .content-container .user-information,
+.future-work-section .content .content-container .user-information {
     width: 70%;
     float: right;
     display: inline-block;
