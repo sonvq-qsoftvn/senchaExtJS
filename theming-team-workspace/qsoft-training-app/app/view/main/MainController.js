@@ -459,20 +459,20 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
         var clickCount = 0;
         var content = '<div class="content">\
             <div class="content-container">\
-                <h1 class="title-typing">We are a <span class="typed-element"></span> Team\
+                <h1 class="title-typing">I am a <span class="typed-element"></span> developer\
                 <ul class="key-features">\
-                    <li class="first-key-feature"><span style="color:#79AC38">Vu Quang Son</span> - Team lead - Dashboard & topic team</li>\
-                    <li class="second-key-feature"><span style="color:#79AC38">Nguyen Xuan Bach</span> - Team</li>\
-                    <li class="third-key-feature"><span style="color:#79AC38">Cao Tung</span> - Users</li>\
-                    <li class="forth-key-feature"><span style="color:#79AC38">Tran Quoc Hung</span> - Team members</li>\
-                    <li class="fifth-key-feature"><span style="color:#79AC38">Vu Manh Quyet</span> - Login & Manage localStorage</li>\
-                    <li class="sixth-key-feature"><span style="color:#79AC38">Vu Xuan Thang</span> - Topic</li>\
+                    <li class="first-key-feature">Visit my <span style="color:#79AC38">Linkedin</span> - <a target="_blank" style="color: #FF00E9" href="https://vn.linkedin.com/in/vũ-quang-sơn-85a32b104">https://vn.linkedin.com/in/vũ-quang-sơn-85a32b104</a>, for full profile</li>\
+                    <li class="second-key-feature">Visit my <span style="color:#79AC38">Github</span> - <a target="_blank" style="color: #FF00E9" href="https://github.com/sonvq-qsoftvn">https://github.com/sonvq-qsoftvn</a>, there are plenty of developed projects</li>\
+                    <li class="third-key-feature">Contact me via <span style="color:#79AC38">Skype</span> - <a style="color: #FF00E9" href="skype:langtutuoiteen5011?call">langtutuoiteen5011</a></li>\
+                    <li class="forth-key-feature">Send me a message via <span style="color:#79AC38">Gmail</span> - <a style="color: #FF00E9" href="mailto:vuquangson1610@gmail.com?Subject=Hire%20For%20Job">vuquangson1610@gmail.com</a></li>\
+                    <li class="fifth-key-feature">Be my friends via <span style="color:#79AC38">Facebook</span> - <a target="_blank" style="color: #FF00E9" href="https://www.facebook.com/quangsonpro">https://www.facebook.com/quangsonpro</a></li>\
+                    <li class="sixth-key-feature">Or call me maybe <span style="color:#79AC38">Phone</span> - <a style="color: #FF00E9" href="tel:098 241 3281">098 241 3281</a></li>\
                 </ul>\
             </div>\
         </div>';
 
         $('.about-us-section .content').empty();
-        $('.about-us-section').html('<header><h1><a href="#">Team 5 - Theming team</a></h1></header>');
+        $('.about-us-section').html('<header><h1><a href="#">Interested in my app? Hiring me!</a></h1></header>');
         $('.about-us-section').append(content);
         $('.about-us-section .content').on('click', function(){
             $('.about-us-section .key-features').css('background', 'none');
@@ -494,7 +494,7 @@ Ext.define('QsoftTrainingApp.view.main.MainController', {
 
         $(function(){            
             $(".typed-element").typed({
-                strings: ["CREATIVE", "WELL CO-WORKING", "SMART", "PASSIONATE", "FUNNY"],
+                strings: ["CREATIVE", "WELL CO-WORKING", "SMART", "PASSIONATE", "FUNNY", "CAREFUL"],
                 typeSpeed: 100,
                 backDelay: 500,
                 loop: true,

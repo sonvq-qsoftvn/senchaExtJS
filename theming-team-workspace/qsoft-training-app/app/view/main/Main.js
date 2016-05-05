@@ -162,7 +162,7 @@ Ext.define('QsoftTrainingApp.view.main.Main', {
             },
             {
                 xtype: 'panel',
-                title: 'About Us',
+                title: 'Hiring me',
                 html: '<div class="about-us-section"></div>',
                 listeners: {
                     show: 'onAboutUsShow'
